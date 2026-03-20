@@ -3,7 +3,7 @@
 Plugin Name: Google Sheets Api
 Plugin URI: https://github.com/franciscoblancojn/google-sheets-api-wordpress
 Description: It is an plugin of wordpress, for send information to google sheets.
-Version: 1.2.2
+Version: 1.2.3
 Author: franciscoblancojn
 Author URI: https://franciscoblanco.vercel.app/
 License: GPL2+

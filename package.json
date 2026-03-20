@@ -1,6 +1,6 @@
 {
   "name": "google-sheets-api-wordpress",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "It is an plugin of wordpress, for send information to google sheets.",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,10 @@
     "sync:readme": "VERSION=$(npm run -s v) && sed -i \"s/^Stable tag:.*/Stable tag: $VERSION/\" README.md",
     "sync:version": "npm run sync:package && npm run sync:readme",
     "push-tag": "npm run sync:version && VERSION=$(npm run -s v) && git add . && git commit -m \"Release $VERSION\" && git tag $VERSION && git push origin master && git push origin $VERSION",
-    "install": "composer install --no-dev --optimize-autoloader",
+    "rm-composer-lock": "rm composer.lock || true",
+    "rm-vendor": "npm run rm-composer-lock && rm -r ./vendor",
+    "update": "npm run rm-vendor && npm run install",
+    "install": "composer install --no-dev --optimize-autoloader && npm run rm-composer-lock",
     "optimize": "composer install --no-dev --optimize-autoloader"
   },
   "repository": {
