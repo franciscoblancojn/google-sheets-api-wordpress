@@ -17,6 +17,7 @@ if (!function_exists( 'is_plugin_active' ))
 //GOSHAP_
 define("GOSHAP_KEY",'GOSHAP');
 define("GOSHAP_LOG",true);
+define("GOSHAP_LOG_KEY","GOSHAP_LOG");
 define("GOSHAP_LOG_COUNT",100);
 define("GOSHAP_BASENAME",plugin_basename(__FILE__));
 define("GOSHAP_DIR",plugin_dir_path( __FILE__ ));
@@ -73,3 +74,5 @@ github_updater_plugin_wordpress([
     ]
 ]);
 
+
+require_once GOSHAP_DIR . 'src/_.php';
