@@ -1,0 +1,40 @@
+{
+    "packages": [
+        {
+            "name": "franciscoblancojn/wordpress_utils",
+            "version": "v1.0.1",
+            "version_normalized": "1.0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/franciscoblancojn/wordpress_utils.git",
+                "reference": "f957b3b6147a3ecd985b58bc527e25c96ad50e6f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/franciscoblancojn/wordpress_utils/zipball/f957b3b6147a3ecd985b58bc527e25c96ad50e6f",
+                "reference": "f957b3b6147a3ecd985b58bc527e25c96ad50e6f",
+                "shasum": ""
+            },
+            "time": "2026-03-20T01:51:06+00:00",
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-4": {
+                    "franciscoblancojn\\wordpress_utils\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Libreria que ofrece multiples funcionalidades",
+            "support": {
+                "issues": "https://github.com/franciscoblancojn/wordpress_utils/issues",
+                "source": "https://github.com/franciscoblancojn/wordpress_utils/tree/v1.0.1"
+            },
+            "install-path": "../franciscoblancojn/wordpress_utils"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}

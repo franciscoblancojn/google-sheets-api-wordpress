@@ -14,6 +14,7 @@ Text Domain: wc-google-sheets-api-wordpress
 if (!function_exists( 'is_plugin_active' ))
     require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
 
+require_once __DIR__ . '/vendor/autoload.php';
 //GOSHAP_
 define("GOSHAP_KEY",'GOSHAP');
 define("GOSHAP_LOG",true);
@@ -22,6 +23,10 @@ define("GOSHAP_LOG_COUNT",100);
 define("GOSHAP_BASENAME",plugin_basename(__FILE__));
 define("GOSHAP_DIR",plugin_dir_path( __FILE__ ));
 define("GOSHAP_URL",plugin_dir_url(__FILE__));
+
+//importar libreria
+// add_system_log("GOSHAP")
+
 
 require_once GOSHAP_DIR . 'update.php';
 github_updater_plugin_wordpress([
@@ -74,5 +79,13 @@ github_updater_plugin_wordpress([
     ]
 ]);
 
+use franciscoblancojn\wordpress_utils\FWUSystemLog;
+FWUSystemLog::init("GOSHAP");
 
 require_once GOSHAP_DIR . 'src/_.php';
+
+// FWUSystemLog::add("GOSHAP", [
+//     "type" => "API",
+//     "message" => "Se envió data a Google Sheets",
+//     "data" => ["id" => 123]
+// ]);
