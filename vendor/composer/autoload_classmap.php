@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'franciscoblancojn\\wordpress_utils\\FWUSystemLog' => $vendorDir . '/franciscoblancojn/wordpress_utils/src/FWUSystemLog.php',
 );

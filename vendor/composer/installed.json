@@ -17,7 +17,7 @@
             },
             "time": "2026-03-20T01:51:06+00:00",
             "type": "library",
-            "installation-source": "source",
+            "installation-source": "dist",
             "autoload": {
                 "psr-4": {
                     "franciscoblancojn\\wordpress_utils\\": "src/"
@@ -35,6 +35,6 @@
             "install-path": "../franciscoblancojn/wordpress_utils"
         }
     ],
-    "dev": true,
+    "dev": false,
     "dev-package-names": []
 }

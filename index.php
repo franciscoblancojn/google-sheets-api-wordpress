@@ -14,7 +14,8 @@ Text Domain: wc-google-sheets-api-wordpress
 if (!function_exists( 'is_plugin_active' ))
     require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
 
-require_once __DIR__ . '/vendor/franciscoblancojn/wordpress_utils/src/FWUSystemLog.php';
+require_once __DIR__ . '/vendor/autoload.php';
+// require_once __DIR__ . '/vendor/franciscoblancojn/wordpress_utils/src/FWUSystemLog.php';
 //GOSHAP_
 define("GOSHAP_KEY",'GOSHAP');
 define("GOSHAP_CONFIG",'GOSHAP_CONFIG');
@@ -81,7 +82,9 @@ github_updater_plugin_wordpress([
 ]);
 
 use franciscoblancojn\wordpress_utils\FWUSystemLog;
-FWUSystemLog::init("GOSHAP");
+if (is_admin()) {
+    FWUSystemLog::init("GOSHAP");
+}
 
 require_once GOSHAP_DIR . 'src/_.php';
 
