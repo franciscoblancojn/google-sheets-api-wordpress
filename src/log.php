@@ -117,6 +117,9 @@ if (GOSHAP_LOG) {
                 *:has(  .GOSHAP_LOG_PAGE_VIEW_HEADER){
                     position: static;
                 }
+                #wpbody-content > *:not(.GOSHAP_LOG_PAGE_VIEW){
+                    display: none !important;
+                }
                 #wpcontent{
                     position: relative;
                 }
