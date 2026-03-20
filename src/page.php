@@ -1,6 +1,6 @@
 <?php
 
-use franciscoblancojn\wordpress_utils\FWUSystemLog;
+// use franciscoblancojn\wordpress_utils\FWUSystemLog;
 // 1. Crear menú en el admin
 add_action('admin_menu', function () {
     add_menu_page(

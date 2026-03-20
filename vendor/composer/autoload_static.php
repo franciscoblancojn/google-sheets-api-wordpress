@@ -22,7 +22,6 @@ class ComposerStaticInit0b10829a557e232b0851b25dad4f4921
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
-        'franciscoblancojn\\wordpress_utils\\FWUSystemLog' => __DIR__ . '/..' . '/franciscoblancojn/wordpress_utils/src/FWUSystemLog.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
