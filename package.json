@@ -9,8 +9,8 @@
     "sync:readme": "VERSION=$(npm run -s v) && sed -i \"s/^Stable tag:.*/Stable tag: $VERSION/\" README.md",
     "sync:version": "npm run sync:package && npm run sync:readme",
     "push-tag": "npm run sync:version && VERSION=$(npm run -s v) && git add . && git commit -m \"Release $VERSION\" && git tag $VERSION && git push origin master && git push origin $VERSION",
-    "install":"composer install --no-dev --optimize-autoloader",
-    "optimize":"composer install --no-dev --optimize-autoloader"
+    "install": "composer install --no-dev --optimize-autoloader",
+    "optimize": "composer install --no-dev --optimize-autoloader"
   },
   "repository": {
     "type": "git",
