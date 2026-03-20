@@ -17,6 +17,7 @@ if (!function_exists( 'is_plugin_active' ))
 require_once __DIR__ . '/vendor/autoload.php';
 //GOSHAP_
 define("GOSHAP_KEY",'GOSHAP');
+define("GOSHAP_CONFIG",'GOSHAP_CONFIG');
 define("GOSHAP_LOG",true);
 define("GOSHAP_LOG_KEY","GOSHAP_LOG");
 define("GOSHAP_LOG_COUNT",100);
