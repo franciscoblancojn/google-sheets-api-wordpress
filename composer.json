@@ -1,5 +1,6 @@
 {
     "require": {
-        "franciscoblancojn/wordpress_utils": "^1"
+        "franciscoblancojn/wordpress_utils": "^1",
+        "google/apiclient": "^2.0"
     }
 }

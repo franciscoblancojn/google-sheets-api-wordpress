@@ -1,21 +1,26 @@
 <div class="wrap">
     <h1>Google Sheets Api</h1>
     <div class="nav-tab-wrapper woo-nav-tab-wrapper">
-        <button class="nav-tab nav-tab-active" data-tab="tab1">Configuracion</button>
-        <button class="nav-tab" data-tab="tab2">Pruebas</button>
+        <button class="nav-tab nav-tab-active" data-tab="config">Configuracion</button>
+        <button class="nav-tab" data-tab="test">Pruebas</button>
     </div>
 
-    <div class="tab-content nav-tab-active" id="tab1">
+    <div class="tab-content nav-tab-active" id="config">
         <?php
         require_once GOSHAP_DIR . 'src/page/sections/config.php';
         ?>
     </div>
-    <div class="tab-content" id="tab2">
-        Contenido 2
+    <div class="tab-content" id="test">
+        <?php
+        require_once GOSHAP_DIR . 'src/page/sections/test.php';
+        ?>
     </div>
     <style>
         .tab-content:not(.nav-tab-active) {
             display: none;
+        }
+        .tab-content{
+            padding-top: 1rem;
         }
         .nav-tab{
             cursor: pointer;

@@ -1,4 +1,6 @@
 <?php
+
+use franciscoblancojn\wordpress_utils\FWUSystemLog;
 if (isset($_POST['save']) && $_POST['save'] == 1) {
     if (isset($_POST['AUTH_CONFIG'])) {
         $_POST['AUTH_CONFIG'] = json_decode(stripslashes($_POST['AUTH_CONFIG']), true);

@@ -1,5 +1,7 @@
 <?php
 
+namespace franciscoblancojn\wordpress_utils;
+
 if (
     !class_exists("FWUSystemLog")
     &&
