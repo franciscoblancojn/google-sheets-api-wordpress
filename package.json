@@ -1,6 +1,6 @@
 {
   "name": "google-sheets-api-wordpress",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "It is an plugin of wordpress, for send information to google sheets.",
   "main": "index.js",
   "scripts": {
