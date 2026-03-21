@@ -1,5 +1,8 @@
 <?php
 ?>
+<p for="APP_NAME">
+    Se enviar una Fila con los datos : ["Fila 1","Fila 2","Fila 3","Fila 4","Fila 5"]
+</p>
 <button
     id="<?= GOSHAP_KEY ?>_btnSend"
     class="button primary"
