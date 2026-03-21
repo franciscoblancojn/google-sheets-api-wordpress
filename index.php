@@ -3,7 +3,7 @@
 Plugin Name: Google Sheets Api
 Plugin URI: https://github.com/franciscoblancojn/google-sheets-api-wordpress
 Description: It is an plugin of wordpress, for send information to google sheets.
-Version: 1.4.0
+Version: 1.4.1
 Author: franciscoblancojn
 Author URI: https://franciscoblanco.vercel.app/
 License: GPL2+
@@ -15,7 +15,6 @@ if (!function_exists( 'is_plugin_active' ))
     require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
 
 require_once __DIR__ . '/libs/autoload.php';
-// require_once __DIR__ . '/libs/franciscoblancojn/wordpress_utils/src/FWUSystemLog.php';
 
 //GOSHAP_
 define("GOSHAP_KEY",'GOSHAP');
