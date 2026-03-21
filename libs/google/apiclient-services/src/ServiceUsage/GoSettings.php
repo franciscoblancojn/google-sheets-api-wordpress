@@ -21,20 +21,9 @@ class GoSettings extends \Google\Model
 {
   protected $commonType = CommonLanguageSettings::class;
   protected $commonDataType = '';
-  /**
-   * Map of service names to renamed services. Keys are the package relative
-   * service names and values are the name to be used for the service client and
-   * call options. Example: publishing: go_settings: renamed_services:
-   * Publisher: TopicAdmin
-   *
-   * @var string[]
-   */
-  public $renamedServices;
 
   /**
-   * Some settings.
-   *
-   * @param CommonLanguageSettings $common
+   * @param CommonLanguageSettings
    */
   public function setCommon(CommonLanguageSettings $common)
   {
@@ -46,25 +35,6 @@ class GoSettings extends \Google\Model
   public function getCommon()
   {
     return $this->common;
-  }
-  /**
-   * Map of service names to renamed services. Keys are the package relative
-   * service names and values are the name to be used for the service client and
-   * call options. Example: publishing: go_settings: renamed_services:
-   * Publisher: TopicAdmin
-   *
-   * @param string[] $renamedServices
-   */
-  public function setRenamedServices($renamedServices)
-  {
-    $this->renamedServices = $renamedServices;
-  }
-  /**
-   * @return string[]
-   */
-  public function getRenamedServices()
-  {
-    return $this->renamedServices;
   }
 }
 

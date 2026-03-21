@@ -41,7 +41,7 @@ class Spanner extends \Google\Service
   /** Administer your Spanner databases. */
   const SPANNER_ADMIN =
       "https://www.googleapis.com/auth/spanner.admin";
-  /** See, edit, configure, and delete your Google Cloud Spanner data and see the email address for your Google Account. */
+  /** View and manage the contents of your Spanner databases. */
   const SPANNER_DATA =
       "https://www.googleapis.com/auth/spanner.data";
 
@@ -55,7 +55,6 @@ class Spanner extends \Google\Service
   public $projects_instances_backups_operations;
   public $projects_instances_databaseOperations;
   public $projects_instances_databases;
-  public $projects_instances_databases_backupSchedules;
   public $projects_instances_databases_databaseRoles;
   public $projects_instances_databases_operations;
   public $projects_instances_databases_sessions;
@@ -248,10 +247,6 @@ class Spanner extends \Google\Service
                   'location' => 'query',
                   'type' => 'string',
                 ],
-                'returnPartialSuccess' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ],
               ],
             ],
           ]
@@ -313,10 +308,6 @@ class Spanner extends \Google\Service
                 'pageToken' => [
                   'location' => 'query',
                   'type' => 'string',
-                ],
-                'returnPartialSuccess' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
                 ],
               ],
             ],
@@ -665,10 +656,6 @@ class Spanner extends \Google\Service
                   'location' => 'query',
                   'type' => 'string',
                 ],
-                'returnPartialSuccess' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ],
               ],
             ],
           ]
@@ -712,27 +699,7 @@ class Spanner extends \Google\Service
         'databases',
         [
           'methods' => [
-            'addSplitPoints' => [
-              'path' => 'v1/{+database}:addSplitPoints',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'database' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'changequorum' => [
-              'path' => 'v1/{+name}:changequorum',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'create' => [
+            'create' => [
               'path' => 'v1/{+parent}/databases',
               'httpMethod' => 'POST',
               'parameters' => [
@@ -880,112 +847,6 @@ class Spanner extends \Google\Service
           ]
         ]
     );
-    $this->projects_instances_databases_backupSchedules = new Spanner\Resource\ProjectsInstancesDatabasesBackupSchedules(
-        $this,
-        $this->serviceName,
-        'backupSchedules',
-        [
-          'methods' => [
-            'create' => [
-              'path' => 'v1/{+parent}/backupSchedules',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'parent' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'backupScheduleId' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
-            ],'delete' => [
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'DELETE',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'get' => [
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'getIamPolicy' => [
-              'path' => 'v1/{+resource}:getIamPolicy',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'resource' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'list' => [
-              'path' => 'v1/{+parent}/backupSchedules',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'parent' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'pageSize' => [
-                  'location' => 'query',
-                  'type' => 'integer',
-                ],
-                'pageToken' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
-            ],'patch' => [
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'PATCH',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'updateMask' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
-            ],'setIamPolicy' => [
-              'path' => 'v1/{+resource}:setIamPolicy',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'resource' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'testIamPermissions' => [
-              'path' => 'v1/{+resource}:testIamPermissions',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'resource' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],
-          ]
-        ]
-    );
     $this->projects_instances_databases_databaseRoles = new Spanner\Resource\ProjectsInstancesDatabasesDatabaseRoles(
         $this,
         $this->serviceName,
@@ -1081,10 +942,6 @@ class Spanner extends \Google\Service
                   'location' => 'query',
                   'type' => 'string',
                 ],
-                'returnPartialSuccess' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ],
               ],
             ],
           ]
@@ -1096,27 +953,7 @@ class Spanner extends \Google\Service
         'sessions',
         [
           'methods' => [
-            'adaptMessage' => [
-              'path' => 'v1/{+name}:adaptMessage',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'adapter' => [
-              'path' => 'v1/{+parent}/sessions:adapter',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'parent' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'batchCreate' => [
+            'batchCreate' => [
               'path' => 'v1/{+database}/sessions:batchCreate',
               'httpMethod' => 'POST',
               'parameters' => [
@@ -1461,10 +1298,6 @@ class Spanner extends \Google\Service
                   'location' => 'query',
                   'type' => 'string',
                 ],
-                'returnPartialSuccess' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ],
               ],
             ],
           ]
@@ -1526,10 +1359,6 @@ class Spanner extends \Google\Service
                 'pageToken' => [
                   'location' => 'query',
                   'type' => 'string',
-                ],
-                'returnPartialSuccess' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
                 ],
               ],
             ],

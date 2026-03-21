@@ -17,7 +17,6 @@
 
 namespace Google\Service\Dataform\Resource;
 
-use Google\Service\Dataform\Config;
 use Google\Service\Dataform\ListLocationsResponse;
 use Google\Service\Dataform\Location;
 
@@ -46,34 +45,13 @@ class ProjectsLocations extends \Google\Service\Resource
     return $this->call('get', [$params], Location::class);
   }
   /**
-   * Get default config for a given project and location. (locations.getConfig)
-   *
-   * @param string $name Required. The config name.
-   * @param array $optParams Optional parameters.
-   * @return Config
-   * @throws \Google\Service\Exception
-   */
-  public function getConfig($name, $optParams = [])
-  {
-    $params = ['name' => $name];
-    $params = array_merge($params, $optParams);
-    return $this->call('getConfig', [$params], Config::class);
-  }
-  /**
-   * Lists information about the supported locations for this service. This method
-   * can be called in two ways: * **List all public locations:** Use the path `GET
-   * /v1/locations`. * **List project-visible locations:** Use the path `GET
-   * /v1/projects/{project_id}/locations`. This may include public locations as
-   * well as private or other locations specifically visible to the project.
+   * Lists information about the supported locations for this service.
    * (locations.listProjectsLocations)
    *
    * @param string $name The resource that owns the locations collection, if
    * applicable.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string extraLocationTypes Optional. Do not use this field. It is
-   * unsupported and is ignored unless explicitly documented otherwise. This is
-   * primarily for internal usage.
    * @opt_param string filter A filter to narrow down results to a preferred
    * subset. The filtering language accepts strings like `"displayName=tokyo"`,
    * and is documented in more detail in [AIP-160](https://google.aip.dev/160).
@@ -89,28 +67,6 @@ class ProjectsLocations extends \Google\Service\Resource
     $params = ['name' => $name];
     $params = array_merge($params, $optParams);
     return $this->call('list', [$params], ListLocationsResponse::class);
-  }
-  /**
-   * Update default config for a given project and location. **Note:** *This
-   * method does not fully implement [AIP/134](https://google.aip.dev/134). The
-   * wildcard entry () is treated as a bad request, and when the `field_mask` is
-   * omitted, the request is treated as a full update on all modifiable fields.*
-   * (locations.updateConfig)
-   *
-   * @param string $name Identifier. The config name.
-   * @param Config $postBody
-   * @param array $optParams Optional parameters.
-   *
-   * @opt_param string updateMask Optional. Specifies the fields to be updated in
-   * the config.
-   * @return Config
-   * @throws \Google\Service\Exception
-   */
-  public function updateConfig($name, Config $postBody, $optParams = [])
-  {
-    $params = ['name' => $name, 'postBody' => $postBody];
-    $params = array_merge($params, $optParams);
-    return $this->call('updateConfig', [$params], Config::class);
   }
 }
 

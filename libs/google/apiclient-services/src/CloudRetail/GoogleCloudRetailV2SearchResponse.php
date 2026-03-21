@@ -21,27 +21,14 @@ class GoogleCloudRetailV2SearchResponse extends \Google\Collection
 {
   protected $collection_key = 'results';
   /**
-   * The fully qualified resource name of applied
-   * [controls](https://cloud.google.com/retail/docs/serving-control-rules).
-   *
    * @var string[]
    */
   public $appliedControls;
   /**
-   * A unique search token. This should be included in the UserEvent logs
-   * resulting from this search, which enables accurate attribution of search
-   * model performance.
-   *
    * @var string
    */
   public $attributionToken;
-  protected $conversationalSearchResultType = GoogleCloudRetailV2SearchResponseConversationalSearchResult::class;
-  protected $conversationalSearchResultDataType = '';
   /**
-   * Contains the spell corrected query, if found. If the spell correction type
-   * is AUTOMATIC, then the search results are based on corrected_query.
-   * Otherwise the original query is used for search.
-   *
    * @var string
    */
   public $correctedQuery;
@@ -52,42 +39,24 @@ class GoogleCloudRetailV2SearchResponse extends \Google\Collection
   protected $invalidConditionBoostSpecsType = GoogleCloudRetailV2SearchRequestBoostSpecConditionBoostSpec::class;
   protected $invalidConditionBoostSpecsDataType = 'array';
   /**
-   * A token that can be sent as SearchRequest.page_token to retrieve the next
-   * page. If this field is omitted, there are no subsequent pages.
-   *
    * @var string
    */
   public $nextPageToken;
-  protected $pinControlMetadataType = GoogleCloudRetailV2PinControlMetadata::class;
-  protected $pinControlMetadataDataType = '';
   protected $queryExpansionInfoType = GoogleCloudRetailV2SearchResponseQueryExpansionInfo::class;
   protected $queryExpansionInfoDataType = '';
   /**
-   * The URI of a customer-defined redirect page. If redirect action is
-   * triggered, no search is performed, and only redirect_uri and
-   * attribution_token are set in the response.
-   *
    * @var string
    */
   public $redirectUri;
   protected $resultsType = GoogleCloudRetailV2SearchResponseSearchResult::class;
   protected $resultsDataType = 'array';
-  protected $tileNavigationResultType = GoogleCloudRetailV2SearchResponseTileNavigationResult::class;
-  protected $tileNavigationResultDataType = '';
   /**
-   * The estimated total count of matched items irrespective of pagination. The
-   * count of results returned by pagination may be less than the total_size
-   * that matches.
-   *
    * @var int
    */
   public $totalSize;
 
   /**
-   * The fully qualified resource name of applied
-   * [controls](https://cloud.google.com/retail/docs/serving-control-rules).
-   *
-   * @param string[] $appliedControls
+   * @param string[]
    */
   public function setAppliedControls($appliedControls)
   {
@@ -101,11 +70,7 @@ class GoogleCloudRetailV2SearchResponse extends \Google\Collection
     return $this->appliedControls;
   }
   /**
-   * A unique search token. This should be included in the UserEvent logs
-   * resulting from this search, which enables accurate attribution of search
-   * model performance.
-   *
-   * @param string $attributionToken
+   * @param string
    */
   public function setAttributionToken($attributionToken)
   {
@@ -119,28 +84,7 @@ class GoogleCloudRetailV2SearchResponse extends \Google\Collection
     return $this->attributionToken;
   }
   /**
-   * This field specifies all related information that is needed on client side
-   * for UI rendering of conversational retail search.
-   *
-   * @param GoogleCloudRetailV2SearchResponseConversationalSearchResult $conversationalSearchResult
-   */
-  public function setConversationalSearchResult(GoogleCloudRetailV2SearchResponseConversationalSearchResult $conversationalSearchResult)
-  {
-    $this->conversationalSearchResult = $conversationalSearchResult;
-  }
-  /**
-   * @return GoogleCloudRetailV2SearchResponseConversationalSearchResult
-   */
-  public function getConversationalSearchResult()
-  {
-    return $this->conversationalSearchResult;
-  }
-  /**
-   * Contains the spell corrected query, if found. If the spell correction type
-   * is AUTOMATIC, then the search results are based on corrected_query.
-   * Otherwise the original query is used for search.
-   *
-   * @param string $correctedQuery
+   * @param string
    */
   public function setCorrectedQuery($correctedQuery)
   {
@@ -154,10 +98,7 @@ class GoogleCloudRetailV2SearchResponse extends \Google\Collection
     return $this->correctedQuery;
   }
   /**
-   * Metadata related to A/B testing experiment associated with this response.
-   * Only exists when an experiment is triggered.
-   *
-   * @param GoogleCloudRetailV2ExperimentInfo[] $experimentInfo
+   * @param GoogleCloudRetailV2ExperimentInfo[]
    */
   public function setExperimentInfo($experimentInfo)
   {
@@ -171,9 +112,7 @@ class GoogleCloudRetailV2SearchResponse extends \Google\Collection
     return $this->experimentInfo;
   }
   /**
-   * Results of facets requested by user.
-   *
-   * @param GoogleCloudRetailV2SearchResponseFacet[] $facets
+   * @param GoogleCloudRetailV2SearchResponseFacet[]
    */
   public function setFacets($facets)
   {
@@ -187,10 +126,7 @@ class GoogleCloudRetailV2SearchResponse extends \Google\Collection
     return $this->facets;
   }
   /**
-   * The invalid SearchRequest.BoostSpec.condition_boost_specs that are not
-   * applied during serving.
-   *
-   * @param GoogleCloudRetailV2SearchRequestBoostSpecConditionBoostSpec[] $invalidConditionBoostSpecs
+   * @param GoogleCloudRetailV2SearchRequestBoostSpecConditionBoostSpec[]
    */
   public function setInvalidConditionBoostSpecs($invalidConditionBoostSpecs)
   {
@@ -204,10 +140,7 @@ class GoogleCloudRetailV2SearchResponse extends \Google\Collection
     return $this->invalidConditionBoostSpecs;
   }
   /**
-   * A token that can be sent as SearchRequest.page_token to retrieve the next
-   * page. If this field is omitted, there are no subsequent pages.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -221,28 +154,7 @@ class GoogleCloudRetailV2SearchResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * Metadata for pin controls which were applicable to the request. This
-   * contains two map fields, one for all matched pins and one for pins which
-   * were matched but not applied. The two maps are keyed by pin position, and
-   * the values are the product ids which were matched to that pin.
-   *
-   * @param GoogleCloudRetailV2PinControlMetadata $pinControlMetadata
-   */
-  public function setPinControlMetadata(GoogleCloudRetailV2PinControlMetadata $pinControlMetadata)
-  {
-    $this->pinControlMetadata = $pinControlMetadata;
-  }
-  /**
-   * @return GoogleCloudRetailV2PinControlMetadata
-   */
-  public function getPinControlMetadata()
-  {
-    return $this->pinControlMetadata;
-  }
-  /**
-   * Query expansion information for the returned results.
-   *
-   * @param GoogleCloudRetailV2SearchResponseQueryExpansionInfo $queryExpansionInfo
+   * @param GoogleCloudRetailV2SearchResponseQueryExpansionInfo
    */
   public function setQueryExpansionInfo(GoogleCloudRetailV2SearchResponseQueryExpansionInfo $queryExpansionInfo)
   {
@@ -256,11 +168,7 @@ class GoogleCloudRetailV2SearchResponse extends \Google\Collection
     return $this->queryExpansionInfo;
   }
   /**
-   * The URI of a customer-defined redirect page. If redirect action is
-   * triggered, no search is performed, and only redirect_uri and
-   * attribution_token are set in the response.
-   *
-   * @param string $redirectUri
+   * @param string
    */
   public function setRedirectUri($redirectUri)
   {
@@ -274,9 +182,7 @@ class GoogleCloudRetailV2SearchResponse extends \Google\Collection
     return $this->redirectUri;
   }
   /**
-   * A list of matched items. The order represents the ranking.
-   *
-   * @param GoogleCloudRetailV2SearchResponseSearchResult[] $results
+   * @param GoogleCloudRetailV2SearchResponseSearchResult[]
    */
   public function setResults($results)
   {
@@ -290,28 +196,7 @@ class GoogleCloudRetailV2SearchResponse extends \Google\Collection
     return $this->results;
   }
   /**
-   * This field specifies all related information for tile navigation that will
-   * be used in client side.
-   *
-   * @param GoogleCloudRetailV2SearchResponseTileNavigationResult $tileNavigationResult
-   */
-  public function setTileNavigationResult(GoogleCloudRetailV2SearchResponseTileNavigationResult $tileNavigationResult)
-  {
-    $this->tileNavigationResult = $tileNavigationResult;
-  }
-  /**
-   * @return GoogleCloudRetailV2SearchResponseTileNavigationResult
-   */
-  public function getTileNavigationResult()
-  {
-    return $this->tileNavigationResult;
-  }
-  /**
-   * The estimated total count of matched items irrespective of pagination. The
-   * count of results returned by pagination may be less than the total_size
-   * that matches.
-   *
-   * @param int $totalSize
+   * @param int
    */
   public function setTotalSize($totalSize)
   {

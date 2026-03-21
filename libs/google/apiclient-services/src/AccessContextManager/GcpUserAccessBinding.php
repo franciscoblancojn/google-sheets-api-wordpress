@@ -19,61 +19,28 @@ namespace Google\Service\AccessContextManager;
 
 class GcpUserAccessBinding extends \Google\Collection
 {
-  protected $collection_key = 'scopedAccessSettings';
+  protected $collection_key = 'restrictedClientApplications';
   /**
-   * Optional. Access level that a user must have to be granted access. Only one
-   * access level is supported, not multiple. This repeated field must have
-   * exactly one element. Example:
-   * "accessPolicies/9522/accessLevels/device_trusted"
-   *
    * @var string[]
    */
   public $accessLevels;
   /**
-   * Optional. Dry run access level that will be evaluated but will not be
-   * enforced. The access denial based on dry run policy will be logged. Only
-   * one access level is supported, not multiple. This list must have exactly
-   * one element. Example: "accessPolicies/9522/accessLevels/device_trusted"
-   *
    * @var string[]
    */
   public $dryRunAccessLevels;
   /**
-   * Optional. Immutable. Google Group id whose users are subject to this
-   * binding's restrictions. See "id" in the [Google Workspace Directory API's
-   * Group Resource] (https://developers.google.com/admin-
-   * sdk/directory/v1/reference/groups#resource). If a group's email
-   * address/alias is changed, this resource will continue to point at the
-   * changed group. This field does not accept group email addresses or aliases.
-   * Example: "01d520gv4vjcrht"
-   *
    * @var string
    */
   public $groupKey;
   /**
-   * Immutable. Assigned by the server during creation. The last segment has an
-   * arbitrary length and has only URI unreserved characters (as defined by [RFC
-   * 3986 Section 2.3](https://tools.ietf.org/html/rfc3986#section-2.3)). Should
-   * not be specified by the client during creation. Example:
-   * "organizations/256/gcpUserAccessBindings/b3-BhcX_Ud5N"
-   *
    * @var string
    */
   public $name;
   protected $restrictedClientApplicationsType = Application::class;
   protected $restrictedClientApplicationsDataType = 'array';
-  protected $scopedAccessSettingsType = ScopedAccessSettings::class;
-  protected $scopedAccessSettingsDataType = 'array';
-  protected $sessionSettingsType = SessionSettings::class;
-  protected $sessionSettingsDataType = '';
 
   /**
-   * Optional. Access level that a user must have to be granted access. Only one
-   * access level is supported, not multiple. This repeated field must have
-   * exactly one element. Example:
-   * "accessPolicies/9522/accessLevels/device_trusted"
-   *
-   * @param string[] $accessLevels
+   * @param string[]
    */
   public function setAccessLevels($accessLevels)
   {
@@ -87,12 +54,7 @@ class GcpUserAccessBinding extends \Google\Collection
     return $this->accessLevels;
   }
   /**
-   * Optional. Dry run access level that will be evaluated but will not be
-   * enforced. The access denial based on dry run policy will be logged. Only
-   * one access level is supported, not multiple. This list must have exactly
-   * one element. Example: "accessPolicies/9522/accessLevels/device_trusted"
-   *
-   * @param string[] $dryRunAccessLevels
+   * @param string[]
    */
   public function setDryRunAccessLevels($dryRunAccessLevels)
   {
@@ -106,15 +68,7 @@ class GcpUserAccessBinding extends \Google\Collection
     return $this->dryRunAccessLevels;
   }
   /**
-   * Optional. Immutable. Google Group id whose users are subject to this
-   * binding's restrictions. See "id" in the [Google Workspace Directory API's
-   * Group Resource] (https://developers.google.com/admin-
-   * sdk/directory/v1/reference/groups#resource). If a group's email
-   * address/alias is changed, this resource will continue to point at the
-   * changed group. This field does not accept group email addresses or aliases.
-   * Example: "01d520gv4vjcrht"
-   *
-   * @param string $groupKey
+   * @param string
    */
   public function setGroupKey($groupKey)
   {
@@ -128,13 +82,7 @@ class GcpUserAccessBinding extends \Google\Collection
     return $this->groupKey;
   }
   /**
-   * Immutable. Assigned by the server during creation. The last segment has an
-   * arbitrary length and has only URI unreserved characters (as defined by [RFC
-   * 3986 Section 2.3](https://tools.ietf.org/html/rfc3986#section-2.3)). Should
-   * not be specified by the client during creation. Example:
-   * "organizations/256/gcpUserAccessBindings/b3-BhcX_Ud5N"
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -148,11 +96,7 @@ class GcpUserAccessBinding extends \Google\Collection
     return $this->name;
   }
   /**
-   * Optional. A list of applications that are subject to this binding's
-   * restrictions. If the list is empty, the binding restrictions will
-   * universally apply to all applications.
-   *
-   * @param Application[] $restrictedClientApplications
+   * @param Application[]
    */
   public function setRestrictedClientApplications($restrictedClientApplications)
   {
@@ -164,40 +108,6 @@ class GcpUserAccessBinding extends \Google\Collection
   public function getRestrictedClientApplications()
   {
     return $this->restrictedClientApplications;
-  }
-  /**
-   * Optional. A list of scoped access settings that set this binding's
-   * restrictions on a subset of applications. This field cannot be set if
-   * restricted_client_applications is set.
-   *
-   * @param ScopedAccessSettings[] $scopedAccessSettings
-   */
-  public function setScopedAccessSettings($scopedAccessSettings)
-  {
-    $this->scopedAccessSettings = $scopedAccessSettings;
-  }
-  /**
-   * @return ScopedAccessSettings[]
-   */
-  public function getScopedAccessSettings()
-  {
-    return $this->scopedAccessSettings;
-  }
-  /**
-   * Optional. The Google Cloud session length (GCSL) policy for the group key.
-   *
-   * @param SessionSettings $sessionSettings
-   */
-  public function setSessionSettings(SessionSettings $sessionSettings)
-  {
-    $this->sessionSettings = $sessionSettings;
-  }
-  /**
-   * @return SessionSettings
-   */
-  public function getSessionSettings()
-  {
-    return $this->sessionSettings;
   }
 }
 

@@ -80,9 +80,7 @@ class ProjectsLocationsWorkstationClustersWorkstationConfigsWorkstations extends
   }
   /**
    * Returns a short-lived credential that can be used to send authenticated and
-   * authorized traffic to a workstation. Once generated this token cannot be
-   * revoked and is good for the lifetime of the token.
-   * (workstations.generateAccessToken)
+   * authorized traffic to a workstation. (workstations.generateAccessToken)
    *
    * @param string $workstation Required. Name of the workstation for which the
    * access token should be generated.
@@ -150,8 +148,6 @@ class ProjectsLocationsWorkstationClustersWorkstationConfigsWorkstations extends
    * @param string $parent Required. Parent resource name.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string filter Optional. Filter the Workstations to be listed.
-   * Possible filters are described in https://google.aip.dev/160.
    * @opt_param int pageSize Optional. Maximum number of items to return.
    * @opt_param string pageToken Optional. next_page_token value returned from a
    * previous List request, if any.

@@ -37,9 +37,6 @@ class CloudComposer extends \Google\Service
   /** See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.. */
   const CLOUD_PLATFORM =
       "https://www.googleapis.com/auth/cloud-platform";
-  /** See, edit, configure, and delete your Google Cloud Composer data and see the email address for your Google Account. */
-  const CLOUDCOMPOSER =
-      "https://www.googleapis.com/auth/cloudcomposer";
 
   public $projects_locations_environments;
   public $projects_locations_environments_userWorkloadsConfigMaps;
@@ -72,17 +69,7 @@ class CloudComposer extends \Google\Service
         'environments',
         [
           'methods' => [
-            'checkUpgrade' => [
-              'path' => 'v1/{+environment}:checkUpgrade',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'environment' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'create' => [
+            'create' => [
               'path' => 'v1/{+parent}/environments',
               'httpMethod' => 'POST',
               'parameters' => [
@@ -189,16 +176,6 @@ class CloudComposer extends \Google\Service
               'httpMethod' => 'POST',
               'parameters' => [
                 'environment' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'restartWebServer' => [
-              'path' => 'v1/{+name}:restartWebServer',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'name' => [
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
@@ -474,10 +451,6 @@ class CloudComposer extends \Google\Service
                 'pageToken' => [
                   'location' => 'query',
                   'type' => 'string',
-                ],
-                'returnPartialSuccess' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
                 ],
               ],
             ],

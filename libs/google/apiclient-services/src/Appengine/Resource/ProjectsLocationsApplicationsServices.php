@@ -17,7 +17,7 @@
 
 namespace Google\Service\Appengine\Resource;
 
-use Google\Service\Appengine\Operation;
+use Google\Service\Appengine\ListServicesResponse;
 use Google\Service\Appengine\Service;
 
 /**
@@ -31,60 +31,45 @@ use Google\Service\Appengine\Service;
 class ProjectsLocationsApplicationsServices extends \Google\Service\Resource
 {
   /**
-   * Deletes the specified service and all enclosed versions. (services.delete)
+   * Gets the current configuration of the specified service. (services.get)
    *
-   * @param string $projectsId Part of `name`. Required. Name of the resource
-   * requested. Example: apps/myapp/services/default.
+   * @param string $projectsId Part of `name`. Name of the resource requested.
+   * Example: apps/myapp/services/default.
    * @param string $locationsId Part of `name`. See documentation of `projectsId`.
    * @param string $applicationsId Part of `name`. See documentation of
    * `projectsId`.
    * @param string $servicesId Part of `name`. See documentation of `projectsId`.
    * @param array $optParams Optional parameters.
-   * @return Operation
-   * @throws \Google\Service\Exception
+   * @return Service
    */
-  public function delete($projectsId, $locationsId, $applicationsId, $servicesId, $optParams = [])
+  public function get($projectsId, $locationsId, $applicationsId, $servicesId, $optParams = [])
   {
     $params = ['projectsId' => $projectsId, 'locationsId' => $locationsId, 'applicationsId' => $applicationsId, 'servicesId' => $servicesId];
     $params = array_merge($params, $optParams);
-    return $this->call('delete', [$params], Operation::class);
+    return $this->call('get', [$params], Service::class);
   }
   /**
-   * Updates the configuration of the specified service. (services.patch)
+   * Lists all the services in the application.
+   * (services.listProjectsLocationsApplicationsServices)
    *
-   * @param string $projectsId Part of `name`. Required. Name of the resource to
-   * update. Example: apps/myapp/services/default.
-   * @param string $locationsId Part of `name`. See documentation of `projectsId`.
-   * @param string $applicationsId Part of `name`. See documentation of
+   * @param string $projectsId Part of `parent`. Name of the parent Application
+   * resource. Example: apps/myapp.
+   * @param string $locationsId Part of `parent`. See documentation of
    * `projectsId`.
-   * @param string $servicesId Part of `name`. See documentation of `projectsId`.
-   * @param Service $postBody
+   * @param string $applicationsId Part of `parent`. See documentation of
+   * `projectsId`.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param bool migrateTraffic Set to true to gradually shift traffic to one
-   * or more versions that you specify. By default, traffic is shifted
-   * immediately. For gradual traffic migration, the target versions must be
-   * located within instances that are configured for both warmup requests
-   * (https://cloud.google.com/appengine/docs/admin-
-   * api/reference/rest/v1/apps.services.versions#InboundServiceType) and
-   * automatic scaling (https://cloud.google.com/appengine/docs/admin-
-   * api/reference/rest/v1/apps.services.versions#AutomaticScaling). You must
-   * specify the shardBy (https://cloud.google.com/appengine/docs/admin-
-   * api/reference/rest/v1/apps.services#ShardBy) field in the Service resource.
-   * Gradual traffic migration is not supported in the App Engine flexible
-   * environment. For examples, see Migrating and Splitting Traffic
-   * (https://cloud.google.com/appengine/docs/admin-api/migrating-splitting-
-   * traffic).
-   * @opt_param string updateMask Required. Standard field mask for the set of
-   * fields to be updated.
-   * @return Operation
-   * @throws \Google\Service\Exception
+   * @opt_param int pageSize Maximum results to return per page.
+   * @opt_param string pageToken Continuation token for fetching the next page of
+   * results.
+   * @return ListServicesResponse
    */
-  public function patch($projectsId, $locationsId, $applicationsId, $servicesId, Service $postBody, $optParams = [])
+  public function listProjectsLocationsApplicationsServices($projectsId, $locationsId, $applicationsId, $optParams = [])
   {
-    $params = ['projectsId' => $projectsId, 'locationsId' => $locationsId, 'applicationsId' => $applicationsId, 'servicesId' => $servicesId, 'postBody' => $postBody];
+    $params = ['projectsId' => $projectsId, 'locationsId' => $locationsId, 'applicationsId' => $applicationsId];
     $params = array_merge($params, $optParams);
-    return $this->call('patch', [$params], Operation::class);
+    return $this->call('list', [$params], ListServicesResponse::class);
   }
 }
 

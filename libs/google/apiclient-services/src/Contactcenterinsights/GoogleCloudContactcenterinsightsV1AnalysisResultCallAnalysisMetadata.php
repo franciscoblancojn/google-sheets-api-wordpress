@@ -30,17 +30,13 @@ class GoogleCloudContactcenterinsightsV1AnalysisResultCallAnalysisMetadata exten
   protected $issueModelResultDataType = '';
   protected $phraseMatchersType = GoogleCloudContactcenterinsightsV1PhraseMatchData::class;
   protected $phraseMatchersDataType = 'map';
-  protected $qaScorecardResultsType = GoogleCloudContactcenterinsightsV1QaScorecardResult::class;
-  protected $qaScorecardResultsDataType = 'array';
   protected $sentimentsType = GoogleCloudContactcenterinsightsV1ConversationLevelSentiment::class;
   protected $sentimentsDataType = 'array';
   protected $silenceType = GoogleCloudContactcenterinsightsV1ConversationLevelSilence::class;
   protected $silenceDataType = '';
 
   /**
-   * A list of call annotations that apply to this call.
-   *
-   * @param GoogleCloudContactcenterinsightsV1CallAnnotation[] $annotations
+   * @param GoogleCloudContactcenterinsightsV1CallAnnotation[]
    */
   public function setAnnotations($annotations)
   {
@@ -54,9 +50,7 @@ class GoogleCloudContactcenterinsightsV1AnalysisResultCallAnalysisMetadata exten
     return $this->annotations;
   }
   /**
-   * All the entities in the call.
-   *
-   * @param GoogleCloudContactcenterinsightsV1Entity[] $entities
+   * @param GoogleCloudContactcenterinsightsV1Entity[]
    */
   public function setEntities($entities)
   {
@@ -70,9 +64,7 @@ class GoogleCloudContactcenterinsightsV1AnalysisResultCallAnalysisMetadata exten
     return $this->entities;
   }
   /**
-   * All the matched intents in the call.
-   *
-   * @param GoogleCloudContactcenterinsightsV1Intent[] $intents
+   * @param GoogleCloudContactcenterinsightsV1Intent[]
    */
   public function setIntents($intents)
   {
@@ -86,9 +78,7 @@ class GoogleCloudContactcenterinsightsV1AnalysisResultCallAnalysisMetadata exten
     return $this->intents;
   }
   /**
-   * Overall conversation-level issue modeling result.
-   *
-   * @param GoogleCloudContactcenterinsightsV1IssueModelResult $issueModelResult
+   * @param GoogleCloudContactcenterinsightsV1IssueModelResult
    */
   public function setIssueModelResult(GoogleCloudContactcenterinsightsV1IssueModelResult $issueModelResult)
   {
@@ -102,9 +92,7 @@ class GoogleCloudContactcenterinsightsV1AnalysisResultCallAnalysisMetadata exten
     return $this->issueModelResult;
   }
   /**
-   * All the matched phrase matchers in the call.
-   *
-   * @param GoogleCloudContactcenterinsightsV1PhraseMatchData[] $phraseMatchers
+   * @param GoogleCloudContactcenterinsightsV1PhraseMatchData[]
    */
   public function setPhraseMatchers($phraseMatchers)
   {
@@ -118,25 +106,7 @@ class GoogleCloudContactcenterinsightsV1AnalysisResultCallAnalysisMetadata exten
     return $this->phraseMatchers;
   }
   /**
-   * Results of scoring QaScorecards.
-   *
-   * @param GoogleCloudContactcenterinsightsV1QaScorecardResult[] $qaScorecardResults
-   */
-  public function setQaScorecardResults($qaScorecardResults)
-  {
-    $this->qaScorecardResults = $qaScorecardResults;
-  }
-  /**
-   * @return GoogleCloudContactcenterinsightsV1QaScorecardResult[]
-   */
-  public function getQaScorecardResults()
-  {
-    return $this->qaScorecardResults;
-  }
-  /**
-   * Overall conversation-level sentiment for each channel of the call.
-   *
-   * @param GoogleCloudContactcenterinsightsV1ConversationLevelSentiment[] $sentiments
+   * @param GoogleCloudContactcenterinsightsV1ConversationLevelSentiment[]
    */
   public function setSentiments($sentiments)
   {
@@ -150,9 +120,7 @@ class GoogleCloudContactcenterinsightsV1AnalysisResultCallAnalysisMetadata exten
     return $this->sentiments;
   }
   /**
-   * Overall conversation-level silence during the call.
-   *
-   * @param GoogleCloudContactcenterinsightsV1ConversationLevelSilence $silence
+   * @param GoogleCloudContactcenterinsightsV1ConversationLevelSilence
    */
   public function setSilence(GoogleCloudContactcenterinsightsV1ConversationLevelSilence $silence)
   {

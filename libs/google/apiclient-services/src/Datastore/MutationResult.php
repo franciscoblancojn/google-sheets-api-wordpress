@@ -17,51 +17,29 @@
 
 namespace Google\Service\Datastore;
 
-class MutationResult extends \Google\Collection
+class MutationResult extends \Google\Model
 {
-  protected $collection_key = 'transformResults';
   /**
-   * Whether a conflict was detected for this mutation. Always false when a
-   * conflict detection strategy field is not set in the mutation.
-   *
    * @var bool
    */
   public $conflictDetected;
   /**
-   * The create time of the entity. This field will not be set after a 'delete'.
-   *
    * @var string
    */
   public $createTime;
   protected $keyType = Key::class;
   protected $keyDataType = '';
-  protected $transformResultsType = Value::class;
-  protected $transformResultsDataType = 'array';
   /**
-   * The update time of the entity on the server after processing the mutation.
-   * If the mutation doesn't change anything on the server, then the timestamp
-   * will be the update timestamp of the current entity. This field will not be
-   * set after a 'delete'.
-   *
    * @var string
    */
   public $updateTime;
   /**
-   * The version of the entity on the server after processing the mutation. If
-   * the mutation doesn't change anything on the server, then the version will
-   * be the version of the current entity or, if no entity is present, a version
-   * that is strictly greater than the version of any previous entity and less
-   * than the version of any possible future entity.
-   *
    * @var string
    */
   public $version;
 
   /**
-   * Whether a conflict was detected for this mutation. Always false when a
-   * conflict detection strategy field is not set in the mutation.
-   *
-   * @param bool $conflictDetected
+   * @param bool
    */
   public function setConflictDetected($conflictDetected)
   {
@@ -75,9 +53,7 @@ class MutationResult extends \Google\Collection
     return $this->conflictDetected;
   }
   /**
-   * The create time of the entity. This field will not be set after a 'delete'.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -91,10 +67,7 @@ class MutationResult extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * The automatically allocated key. Set only when the mutation allocated a
-   * key.
-   *
-   * @param Key $key
+   * @param Key
    */
   public function setKey(Key $key)
   {
@@ -108,29 +81,7 @@ class MutationResult extends \Google\Collection
     return $this->key;
   }
   /**
-   * The results of applying each PropertyTransform, in the same order of the
-   * request.
-   *
-   * @param Value[] $transformResults
-   */
-  public function setTransformResults($transformResults)
-  {
-    $this->transformResults = $transformResults;
-  }
-  /**
-   * @return Value[]
-   */
-  public function getTransformResults()
-  {
-    return $this->transformResults;
-  }
-  /**
-   * The update time of the entity on the server after processing the mutation.
-   * If the mutation doesn't change anything on the server, then the timestamp
-   * will be the update timestamp of the current entity. This field will not be
-   * set after a 'delete'.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {
@@ -144,13 +95,7 @@ class MutationResult extends \Google\Collection
     return $this->updateTime;
   }
   /**
-   * The version of the entity on the server after processing the mutation. If
-   * the mutation doesn't change anything on the server, then the version will
-   * be the version of the current entity or, if no entity is present, a version
-   * that is strictly greater than the version of any previous entity and less
-   * than the version of any possible future entity.
-   *
-   * @param string $version
+   * @param string
    */
   public function setVersion($version)
   {

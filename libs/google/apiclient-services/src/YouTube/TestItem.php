@@ -20,12 +20,6 @@ namespace Google\Service\YouTube;
 class TestItem extends \Google\Model
 {
   /**
-   * Etag for the resource. See https://en.wikipedia.org/wiki/HTTP_ETag.
-   *
-   * @var string
-   */
-  public $etag;
-  /**
    * @var bool
    */
   public $featuredPart;
@@ -41,23 +35,7 @@ class TestItem extends \Google\Model
   protected $snippetDataType = '';
 
   /**
-   * Etag for the resource. See https://en.wikipedia.org/wiki/HTTP_ETag.
-   *
-   * @param string $etag
-   */
-  public function setEtag($etag)
-  {
-    $this->etag = $etag;
-  }
-  /**
-   * @return string
-   */
-  public function getEtag()
-  {
-    return $this->etag;
-  }
-  /**
-   * @param bool $featuredPart
+   * @param bool
    */
   public function setFeaturedPart($featuredPart)
   {
@@ -71,7 +49,7 @@ class TestItem extends \Google\Model
     return $this->featuredPart;
   }
   /**
-   * @param string $gaia
+   * @param string
    */
   public function setGaia($gaia)
   {
@@ -85,7 +63,7 @@ class TestItem extends \Google\Model
     return $this->gaia;
   }
   /**
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -99,7 +77,7 @@ class TestItem extends \Google\Model
     return $this->id;
   }
   /**
-   * @param TestItemTestItemSnippet $snippet
+   * @param TestItemTestItemSnippet
    */
   public function setSnippet(TestItemTestItemSnippet $snippet)
   {

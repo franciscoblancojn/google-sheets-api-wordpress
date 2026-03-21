@@ -22,28 +22,12 @@ class CommitResponse extends \Google\Model
   protected $commitStatsType = CommitStats::class;
   protected $commitStatsDataType = '';
   /**
-   * The Cloud Spanner timestamp at which the transaction committed.
-   *
    * @var string
    */
   public $commitTimestamp;
-  protected $precommitTokenType = MultiplexedSessionPrecommitToken::class;
-  protected $precommitTokenDataType = '';
-  /**
-   * If `TransactionOptions.isolation_level` is set to
-   * `IsolationLevel.REPEATABLE_READ`, then the snapshot timestamp is the
-   * timestamp at which all reads in the transaction ran. This timestamp is
-   * never returned.
-   *
-   * @var string
-   */
-  public $snapshotTimestamp;
 
   /**
-   * The statistics about this `Commit`. Not returned by default. For more
-   * information, see CommitRequest.return_commit_stats.
-   *
-   * @param CommitStats $commitStats
+   * @param CommitStats
    */
   public function setCommitStats(CommitStats $commitStats)
   {
@@ -57,9 +41,7 @@ class CommitResponse extends \Google\Model
     return $this->commitStats;
   }
   /**
-   * The Cloud Spanner timestamp at which the transaction committed.
-   *
-   * @param string $commitTimestamp
+   * @param string
    */
   public function setCommitTimestamp($commitTimestamp)
   {
@@ -71,42 +53,6 @@ class CommitResponse extends \Google\Model
   public function getCommitTimestamp()
   {
     return $this->commitTimestamp;
-  }
-  /**
-   * If specified, transaction has not committed yet. You must retry the commit
-   * with the new precommit token.
-   *
-   * @param MultiplexedSessionPrecommitToken $precommitToken
-   */
-  public function setPrecommitToken(MultiplexedSessionPrecommitToken $precommitToken)
-  {
-    $this->precommitToken = $precommitToken;
-  }
-  /**
-   * @return MultiplexedSessionPrecommitToken
-   */
-  public function getPrecommitToken()
-  {
-    return $this->precommitToken;
-  }
-  /**
-   * If `TransactionOptions.isolation_level` is set to
-   * `IsolationLevel.REPEATABLE_READ`, then the snapshot timestamp is the
-   * timestamp at which all reads in the transaction ran. This timestamp is
-   * never returned.
-   *
-   * @param string $snapshotTimestamp
-   */
-  public function setSnapshotTimestamp($snapshotTimestamp)
-  {
-    $this->snapshotTimestamp = $snapshotTimestamp;
-  }
-  /**
-   * @return string
-   */
-  public function getSnapshotTimestamp()
-  {
-    return $this->snapshotTimestamp;
   }
 }
 

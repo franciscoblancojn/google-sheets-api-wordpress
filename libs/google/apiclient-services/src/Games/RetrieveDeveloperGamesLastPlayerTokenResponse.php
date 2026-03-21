@@ -19,26 +19,22 @@ namespace Google\Service\Games;
 
 class RetrieveDeveloperGamesLastPlayerTokenResponse extends \Google\Model
 {
-  protected $gamePlayerTokenType = GamePlayerToken::class;
-  protected $gamePlayerTokenDataType = '';
+  protected $tokenType = RecallToken::class;
+  protected $tokenDataType = '';
 
   /**
-   * The recall token associated with the requested PGS Player principal. It can
-   * be unset if there is no recall token associated with the requested
-   * principal.
-   *
-   * @param GamePlayerToken $gamePlayerToken
+   * @param RecallToken
    */
-  public function setGamePlayerToken(GamePlayerToken $gamePlayerToken)
+  public function setToken(RecallToken $token)
   {
-    $this->gamePlayerToken = $gamePlayerToken;
+    $this->token = $token;
   }
   /**
-   * @return GamePlayerToken
+   * @return RecallToken
    */
-  public function getGamePlayerToken()
+  public function getToken()
   {
-    return $this->gamePlayerToken;
+    return $this->token;
   }
 }
 

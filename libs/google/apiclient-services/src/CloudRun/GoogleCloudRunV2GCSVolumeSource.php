@@ -17,33 +17,19 @@
 
 namespace Google\Service\CloudRun;
 
-class GoogleCloudRunV2GCSVolumeSource extends \Google\Collection
+class GoogleCloudRunV2GCSVolumeSource extends \Google\Model
 {
-  protected $collection_key = 'mountOptions';
   /**
-   * Cloud Storage Bucket name.
-   *
    * @var string
    */
   public $bucket;
   /**
-   * A list of additional flags to pass to the gcsfuse CLI. Options should be
-   * specified without the leading "--".
-   *
-   * @var string[]
-   */
-  public $mountOptions;
-  /**
-   * If true, the volume will be mounted as read only for all mounts.
-   *
    * @var bool
    */
   public $readOnly;
 
   /**
-   * Cloud Storage Bucket name.
-   *
-   * @param string $bucket
+   * @param string
    */
   public function setBucket($bucket)
   {
@@ -57,26 +43,7 @@ class GoogleCloudRunV2GCSVolumeSource extends \Google\Collection
     return $this->bucket;
   }
   /**
-   * A list of additional flags to pass to the gcsfuse CLI. Options should be
-   * specified without the leading "--".
-   *
-   * @param string[] $mountOptions
-   */
-  public function setMountOptions($mountOptions)
-  {
-    $this->mountOptions = $mountOptions;
-  }
-  /**
-   * @return string[]
-   */
-  public function getMountOptions()
-  {
-    return $this->mountOptions;
-  }
-  /**
-   * If true, the volume will be mounted as read only for all mounts.
-   *
-   * @param bool $readOnly
+   * @param bool
    */
   public function setReadOnly($readOnly)
   {

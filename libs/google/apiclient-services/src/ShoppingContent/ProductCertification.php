@@ -20,39 +20,20 @@ namespace Google\Service\ShoppingContent;
 class ProductCertification extends \Google\Model
 {
   /**
-   * The certification authority, for example "European_Commission". Maximum
-   * length is 2000 characters.
-   *
    * @var string
    */
   public $certificationAuthority;
   /**
-   * The certification code, for eaxample "123456". Maximum length is 2000
-   * characters.
-   *
    * @var string
    */
   public $certificationCode;
   /**
-   * The name of the certification, for example "EPREL". Maximum length is 2000
-   * characters.
-   *
    * @var string
    */
   public $certificationName;
-  /**
-   * The certification value (also known as class, level or grade), for example
-   * "A+", "C", "gold". Maximum length is 2000 characters.
-   *
-   * @var string
-   */
-  public $certificationValue;
 
   /**
-   * The certification authority, for example "European_Commission". Maximum
-   * length is 2000 characters.
-   *
-   * @param string $certificationAuthority
+   * @param string
    */
   public function setCertificationAuthority($certificationAuthority)
   {
@@ -66,10 +47,7 @@ class ProductCertification extends \Google\Model
     return $this->certificationAuthority;
   }
   /**
-   * The certification code, for eaxample "123456". Maximum length is 2000
-   * characters.
-   *
-   * @param string $certificationCode
+   * @param string
    */
   public function setCertificationCode($certificationCode)
   {
@@ -83,10 +61,7 @@ class ProductCertification extends \Google\Model
     return $this->certificationCode;
   }
   /**
-   * The name of the certification, for example "EPREL". Maximum length is 2000
-   * characters.
-   *
-   * @param string $certificationName
+   * @param string
    */
   public function setCertificationName($certificationName)
   {
@@ -98,23 +73,6 @@ class ProductCertification extends \Google\Model
   public function getCertificationName()
   {
     return $this->certificationName;
-  }
-  /**
-   * The certification value (also known as class, level or grade), for example
-   * "A+", "C", "gold". Maximum length is 2000 characters.
-   *
-   * @param string $certificationValue
-   */
-  public function setCertificationValue($certificationValue)
-  {
-    $this->certificationValue = $certificationValue;
-  }
-  /**
-   * @return string
-   */
-  public function getCertificationValue()
-  {
-    return $this->certificationValue;
   }
 }
 

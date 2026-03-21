@@ -22,36 +22,20 @@ class Customer extends \Google\Model
   protected $customerOnboardingStateType = CustomerOnboardingState::class;
   protected $customerOnboardingStateDataType = '';
   /**
-   * Required. Display name for the customer
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Output only. Indicates whether a customer is fully onboarded
-   *
    * @var bool
    */
   public $isOnboarded;
   /**
-   * Identifier. Format:
-   * `organizations/{organization}/locations/{location}/customers/{customer}`
-   *
    * @var string
    */
   public $name;
-  /**
-   * Output only. The customer organization domain, extracted from CRM
-   * Organization’s display_name field. e.g. "google.com"
-   *
-   * @var string
-   */
-  public $organizationDomain;
 
   /**
-   * Output only. Container for customer onboarding steps
-   *
-   * @param CustomerOnboardingState $customerOnboardingState
+   * @param CustomerOnboardingState
    */
   public function setCustomerOnboardingState(CustomerOnboardingState $customerOnboardingState)
   {
@@ -65,9 +49,7 @@ class Customer extends \Google\Model
     return $this->customerOnboardingState;
   }
   /**
-   * Required. Display name for the customer
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -81,9 +63,7 @@ class Customer extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Output only. Indicates whether a customer is fully onboarded
-   *
-   * @param bool $isOnboarded
+   * @param bool
    */
   public function setIsOnboarded($isOnboarded)
   {
@@ -97,10 +77,7 @@ class Customer extends \Google\Model
     return $this->isOnboarded;
   }
   /**
-   * Identifier. Format:
-   * `organizations/{organization}/locations/{location}/customers/{customer}`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -112,23 +89,6 @@ class Customer extends \Google\Model
   public function getName()
   {
     return $this->name;
-  }
-  /**
-   * Output only. The customer organization domain, extracted from CRM
-   * Organization’s display_name field. e.g. "google.com"
-   *
-   * @param string $organizationDomain
-   */
-  public function setOrganizationDomain($organizationDomain)
-  {
-    $this->organizationDomain = $organizationDomain;
-  }
-  /**
-   * @return string
-   */
-  public function getOrganizationDomain()
-  {
-    return $this->organizationDomain;
   }
 }
 

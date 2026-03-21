@@ -19,18 +19,20 @@ namespace Google\Service\AndroidEnterprise;
 
 class CreateEnrollmentTokenResponse extends \Google\Model
 {
-  protected $enrollmentTokenType = EnrollmentToken::class;
-  protected $enrollmentTokenDataType = '';
+  /**
+   * @var string
+   */
+  public $enrollmentToken;
 
   /**
-   * @param EnrollmentToken
+   * @param string
    */
-  public function setEnrollmentToken(EnrollmentToken $enrollmentToken)
+  public function setEnrollmentToken($enrollmentToken)
   {
     $this->enrollmentToken = $enrollmentToken;
   }
   /**
-   * @return EnrollmentToken
+   * @return string
    */
   public function getEnrollmentToken()
   {

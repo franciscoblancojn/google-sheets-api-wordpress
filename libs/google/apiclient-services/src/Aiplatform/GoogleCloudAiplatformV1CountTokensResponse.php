@@ -17,46 +17,19 @@
 
 namespace Google\Service\Aiplatform;
 
-class GoogleCloudAiplatformV1CountTokensResponse extends \Google\Collection
+class GoogleCloudAiplatformV1CountTokensResponse extends \Google\Model
 {
-  protected $collection_key = 'promptTokensDetails';
-  protected $promptTokensDetailsType = GoogleCloudAiplatformV1ModalityTokenCount::class;
-  protected $promptTokensDetailsDataType = 'array';
   /**
-   * The total number of billable characters counted across all instances from
-   * the request.
-   *
    * @var int
    */
   public $totalBillableCharacters;
   /**
-   * The total number of tokens counted across all instances from the request.
-   *
    * @var int
    */
   public $totalTokens;
 
   /**
-   * Output only. List of modalities that were processed in the request input.
-   *
-   * @param GoogleCloudAiplatformV1ModalityTokenCount[] $promptTokensDetails
-   */
-  public function setPromptTokensDetails($promptTokensDetails)
-  {
-    $this->promptTokensDetails = $promptTokensDetails;
-  }
-  /**
-   * @return GoogleCloudAiplatformV1ModalityTokenCount[]
-   */
-  public function getPromptTokensDetails()
-  {
-    return $this->promptTokensDetails;
-  }
-  /**
-   * The total number of billable characters counted across all instances from
-   * the request.
-   *
-   * @param int $totalBillableCharacters
+   * @param int
    */
   public function setTotalBillableCharacters($totalBillableCharacters)
   {
@@ -70,9 +43,7 @@ class GoogleCloudAiplatformV1CountTokensResponse extends \Google\Collection
     return $this->totalBillableCharacters;
   }
   /**
-   * The total number of tokens counted across all instances from the request.
-   *
-   * @param int $totalTokens
+   * @param int
    */
   public function setTotalTokens($totalTokens)
   {

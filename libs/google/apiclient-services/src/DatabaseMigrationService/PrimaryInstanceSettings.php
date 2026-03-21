@@ -17,53 +17,29 @@
 
 namespace Google\Service\DatabaseMigrationService;
 
-class PrimaryInstanceSettings extends \Google\Collection
+class PrimaryInstanceSettings extends \Google\Model
 {
-  protected $collection_key = 'outboundPublicIpAddresses';
   /**
-   * Database flags to pass to AlloyDB when DMS is creating the AlloyDB cluster
-   * and instances. See the AlloyDB documentation for how these can be used.
-   *
    * @var string[]
    */
   public $databaseFlags;
   /**
-   * Required. The ID of the AlloyDB primary instance. The ID must satisfy the
-   * regex expression "[a-z0-9-]+".
-   *
    * @var string
    */
   public $id;
-  protected $instanceNetworkConfigType = InstanceNetworkConfig::class;
-  protected $instanceNetworkConfigDataType = '';
   /**
-   * Labels for the AlloyDB primary instance created by DMS. An object
-   * containing a list of 'key', 'value' pairs.
-   *
    * @var string[]
    */
   public $labels;
   protected $machineConfigType = MachineConfig::class;
   protected $machineConfigDataType = '';
   /**
-   * Output only. All outbound public IP addresses configured for the instance.
-   *
-   * @var string[]
-   */
-  public $outboundPublicIpAddresses;
-  /**
-   * Output only. The private IP address for the Instance. This is the
-   * connection endpoint for an end-user application.
-   *
    * @var string
    */
   public $privateIp;
 
   /**
-   * Database flags to pass to AlloyDB when DMS is creating the AlloyDB cluster
-   * and instances. See the AlloyDB documentation for how these can be used.
-   *
-   * @param string[] $databaseFlags
+   * @param string[]
    */
   public function setDatabaseFlags($databaseFlags)
   {
@@ -77,10 +53,7 @@ class PrimaryInstanceSettings extends \Google\Collection
     return $this->databaseFlags;
   }
   /**
-   * Required. The ID of the AlloyDB primary instance. The ID must satisfy the
-   * regex expression "[a-z0-9-]+".
-   *
-   * @param string $id
+   * @param string
    */
   public function setId($id)
   {
@@ -94,26 +67,7 @@ class PrimaryInstanceSettings extends \Google\Collection
     return $this->id;
   }
   /**
-   * Optional. Metadata related to instance level network configuration.
-   *
-   * @param InstanceNetworkConfig $instanceNetworkConfig
-   */
-  public function setInstanceNetworkConfig(InstanceNetworkConfig $instanceNetworkConfig)
-  {
-    $this->instanceNetworkConfig = $instanceNetworkConfig;
-  }
-  /**
-   * @return InstanceNetworkConfig
-   */
-  public function getInstanceNetworkConfig()
-  {
-    return $this->instanceNetworkConfig;
-  }
-  /**
-   * Labels for the AlloyDB primary instance created by DMS. An object
-   * containing a list of 'key', 'value' pairs.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -127,9 +81,7 @@ class PrimaryInstanceSettings extends \Google\Collection
     return $this->labels;
   }
   /**
-   * Configuration for the machines that host the underlying database engine.
-   *
-   * @param MachineConfig $machineConfig
+   * @param MachineConfig
    */
   public function setMachineConfig(MachineConfig $machineConfig)
   {
@@ -143,26 +95,7 @@ class PrimaryInstanceSettings extends \Google\Collection
     return $this->machineConfig;
   }
   /**
-   * Output only. All outbound public IP addresses configured for the instance.
-   *
-   * @param string[] $outboundPublicIpAddresses
-   */
-  public function setOutboundPublicIpAddresses($outboundPublicIpAddresses)
-  {
-    $this->outboundPublicIpAddresses = $outboundPublicIpAddresses;
-  }
-  /**
-   * @return string[]
-   */
-  public function getOutboundPublicIpAddresses()
-  {
-    return $this->outboundPublicIpAddresses;
-  }
-  /**
-   * Output only. The private IP address for the Instance. This is the
-   * connection endpoint for an end-user application.
-   *
-   * @param string $privateIp
+   * @param string
    */
   public function setPrivateIp($privateIp)
   {

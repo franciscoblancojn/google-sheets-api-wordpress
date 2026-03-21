@@ -20,11 +20,7 @@ namespace Google\Service\Translate;
 class AdaptiveMtTranslateResponse extends \Google\Collection
 {
   protected $collection_key = 'translations';
-  protected $glossaryTranslationsType = AdaptiveMtTranslation::class;
-  protected $glossaryTranslationsDataType = 'array';
   /**
-   * Output only. The translation's language code.
-   *
    * @var string
    */
   public $languageCode;
@@ -32,26 +28,7 @@ class AdaptiveMtTranslateResponse extends \Google\Collection
   protected $translationsDataType = 'array';
 
   /**
-   * Text translation response if a glossary is provided in the request. This
-   * could be the same as 'translation' above if no terms apply.
-   *
-   * @param AdaptiveMtTranslation[] $glossaryTranslations
-   */
-  public function setGlossaryTranslations($glossaryTranslations)
-  {
-    $this->glossaryTranslations = $glossaryTranslations;
-  }
-  /**
-   * @return AdaptiveMtTranslation[]
-   */
-  public function getGlossaryTranslations()
-  {
-    return $this->glossaryTranslations;
-  }
-  /**
-   * Output only. The translation's language code.
-   *
-   * @param string $languageCode
+   * @param string
    */
   public function setLanguageCode($languageCode)
   {
@@ -65,9 +42,7 @@ class AdaptiveMtTranslateResponse extends \Google\Collection
     return $this->languageCode;
   }
   /**
-   * Output only. The translation.
-   *
-   * @param AdaptiveMtTranslation[] $translations
+   * @param AdaptiveMtTranslation[]
    */
   public function setTranslations($translations)
   {

@@ -19,40 +19,30 @@ namespace Google\Service\Testing;
 
 class ApkManifest extends \Google\Collection
 {
-  protected $collection_key = 'usesPermissionTags';
+  protected $collection_key = 'usesPermission';
   /**
-   * User-readable name for the application.
-   *
    * @var string
    */
   public $applicationLabel;
   protected $intentFiltersType = IntentFilter::class;
   protected $intentFiltersDataType = 'array';
   /**
-   * Maximum API level on which the application is designed to run.
-   *
    * @var int
    */
   public $maxSdkVersion;
   protected $metadataType = Metadata::class;
   protected $metadataDataType = 'array';
   /**
-   * Minimum API level required for the application to run.
-   *
    * @var int
    */
   public $minSdkVersion;
   /**
-   * Full Java-style package name for this application, e.g. "com.example.foo".
-   *
    * @var string
    */
   public $packageName;
   protected $servicesType = Service::class;
   protected $servicesDataType = 'array';
   /**
-   * Specifies the API Level on which the application is designed to run.
-   *
    * @var int
    */
   public $targetSdkVersion;
@@ -62,25 +52,17 @@ class ApkManifest extends \Google\Collection
    * @var string[]
    */
   public $usesPermission;
-  protected $usesPermissionTagsType = UsesPermissionTag::class;
-  protected $usesPermissionTagsDataType = 'array';
   /**
-   * Version number used internally by the app.
-   *
    * @var string
    */
   public $versionCode;
   /**
-   * Version number shown to users.
-   *
    * @var string
    */
   public $versionName;
 
   /**
-   * User-readable name for the application.
-   *
-   * @param string $applicationLabel
+   * @param string
    */
   public function setApplicationLabel($applicationLabel)
   {
@@ -94,7 +76,7 @@ class ApkManifest extends \Google\Collection
     return $this->applicationLabel;
   }
   /**
-   * @param IntentFilter[] $intentFilters
+   * @param IntentFilter[]
    */
   public function setIntentFilters($intentFilters)
   {
@@ -108,9 +90,7 @@ class ApkManifest extends \Google\Collection
     return $this->intentFilters;
   }
   /**
-   * Maximum API level on which the application is designed to run.
-   *
-   * @param int $maxSdkVersion
+   * @param int
    */
   public function setMaxSdkVersion($maxSdkVersion)
   {
@@ -124,9 +104,7 @@ class ApkManifest extends \Google\Collection
     return $this->maxSdkVersion;
   }
   /**
-   * Meta-data tags defined in the manifest.
-   *
-   * @param Metadata[] $metadata
+   * @param Metadata[]
    */
   public function setMetadata($metadata)
   {
@@ -140,9 +118,7 @@ class ApkManifest extends \Google\Collection
     return $this->metadata;
   }
   /**
-   * Minimum API level required for the application to run.
-   *
-   * @param int $minSdkVersion
+   * @param int
    */
   public function setMinSdkVersion($minSdkVersion)
   {
@@ -156,9 +132,7 @@ class ApkManifest extends \Google\Collection
     return $this->minSdkVersion;
   }
   /**
-   * Full Java-style package name for this application, e.g. "com.example.foo".
-   *
-   * @param string $packageName
+   * @param string
    */
   public function setPackageName($packageName)
   {
@@ -172,9 +146,7 @@ class ApkManifest extends \Google\Collection
     return $this->packageName;
   }
   /**
-   * Services contained in the tag.
-   *
-   * @param Service[] $services
+   * @param Service[]
    */
   public function setServices($services)
   {
@@ -188,9 +160,7 @@ class ApkManifest extends \Google\Collection
     return $this->services;
   }
   /**
-   * Specifies the API Level on which the application is designed to run.
-   *
-   * @param int $targetSdkVersion
+   * @param int
    */
   public function setTargetSdkVersion($targetSdkVersion)
   {
@@ -204,9 +174,7 @@ class ApkManifest extends \Google\Collection
     return $this->targetSdkVersion;
   }
   /**
-   * Feature usage tags defined in the manifest.
-   *
-   * @param UsesFeature[] $usesFeature
+   * @param UsesFeature[]
    */
   public function setUsesFeature($usesFeature)
   {
@@ -220,7 +188,7 @@ class ApkManifest extends \Google\Collection
     return $this->usesFeature;
   }
   /**
-   * @param string[] $usesPermission
+   * @param string[]
    */
   public function setUsesPermission($usesPermission)
   {
@@ -234,25 +202,7 @@ class ApkManifest extends \Google\Collection
     return $this->usesPermission;
   }
   /**
-   * Permissions declared to be used by the application
-   *
-   * @param UsesPermissionTag[] $usesPermissionTags
-   */
-  public function setUsesPermissionTags($usesPermissionTags)
-  {
-    $this->usesPermissionTags = $usesPermissionTags;
-  }
-  /**
-   * @return UsesPermissionTag[]
-   */
-  public function getUsesPermissionTags()
-  {
-    return $this->usesPermissionTags;
-  }
-  /**
-   * Version number used internally by the app.
-   *
-   * @param string $versionCode
+   * @param string
    */
   public function setVersionCode($versionCode)
   {
@@ -266,9 +216,7 @@ class ApkManifest extends \Google\Collection
     return $this->versionCode;
   }
   /**
-   * Version number shown to users.
-   *
-   * @param string $versionName
+   * @param string
    */
   public function setVersionName($versionName)
   {

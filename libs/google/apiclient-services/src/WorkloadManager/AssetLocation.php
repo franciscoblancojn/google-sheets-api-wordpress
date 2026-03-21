@@ -20,10 +20,6 @@ namespace Google\Service\WorkloadManager;
 class AssetLocation extends \Google\Collection
 {
   protected $collection_key = 'parentAsset';
-  /**
-   * @var string
-   */
-  public $ccfeRmsPath;
   protected $expectedType = IsolationExpectations::class;
   protected $expectedDataType = '';
   protected $extraParametersType = ExtraParameter::class;
@@ -33,20 +29,6 @@ class AssetLocation extends \Google\Collection
   protected $parentAssetType = CloudAsset::class;
   protected $parentAssetDataType = 'array';
 
-  /**
-   * @param string
-   */
-  public function setCcfeRmsPath($ccfeRmsPath)
-  {
-    $this->ccfeRmsPath = $ccfeRmsPath;
-  }
-  /**
-   * @return string
-   */
-  public function getCcfeRmsPath()
-  {
-    return $this->ccfeRmsPath;
-  }
   /**
    * @param IsolationExpectations
    */

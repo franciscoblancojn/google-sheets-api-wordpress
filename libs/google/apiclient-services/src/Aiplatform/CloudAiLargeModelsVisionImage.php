@@ -20,51 +20,30 @@ namespace Google\Service\Aiplatform;
 class CloudAiLargeModelsVisionImage extends \Google\Model
 {
   /**
-   * Image encoding, encoded as "image/png" or "image/jpg".
-   *
    * @var string
    */
   public $encoding;
   /**
-   * Generation seed for the sampled image. This parameter is exposed to the
-   * user only if one of the following is true: 1. The user specified per-
-   * example seeds in the request. 2. The user doesn't specify the generation
-   * seed in the request.
-   *
-   * @var int
-   */
-  public $generationSeed;
-  /**
-   * Raw bytes.
-   *
    * @var string
    */
   public $image;
   protected $imageRaiScoresType = CloudAiLargeModelsVisionImageRAIScores::class;
   protected $imageRaiScoresDataType = '';
-  protected $imageSizeType = CloudAiLargeModelsVisionImageImageSize::class;
-  protected $imageSizeDataType = '';
   protected $raiInfoType = CloudAiLargeModelsVisionRaiInfo::class;
   protected $raiInfoDataType = '';
   protected $semanticFilterResponseType = CloudAiLargeModelsVisionSemanticFilterResponse::class;
   protected $semanticFilterResponseDataType = '';
   /**
-   * Text/Expanded text input for imagen.
-   *
    * @var string
    */
   public $text;
   /**
-   * Path to another storage (typically Google Cloud Storage).
-   *
    * @var string
    */
   public $uri;
 
   /**
-   * Image encoding, encoded as "image/png" or "image/jpg".
-   *
-   * @param string $encoding
+   * @param string
    */
   public function setEncoding($encoding)
   {
@@ -78,28 +57,7 @@ class CloudAiLargeModelsVisionImage extends \Google\Model
     return $this->encoding;
   }
   /**
-   * Generation seed for the sampled image. This parameter is exposed to the
-   * user only if one of the following is true: 1. The user specified per-
-   * example seeds in the request. 2. The user doesn't specify the generation
-   * seed in the request.
-   *
-   * @param int $generationSeed
-   */
-  public function setGenerationSeed($generationSeed)
-  {
-    $this->generationSeed = $generationSeed;
-  }
-  /**
-   * @return int
-   */
-  public function getGenerationSeed()
-  {
-    return $this->generationSeed;
-  }
-  /**
-   * Raw bytes.
-   *
-   * @param string $image
+   * @param string
    */
   public function setImage($image)
   {
@@ -113,9 +71,7 @@ class CloudAiLargeModelsVisionImage extends \Google\Model
     return $this->image;
   }
   /**
-   * RAI scores for generated image.
-   *
-   * @param CloudAiLargeModelsVisionImageRAIScores $imageRaiScores
+   * @param CloudAiLargeModelsVisionImageRAIScores
    */
   public function setImageRaiScores(CloudAiLargeModelsVisionImageRAIScores $imageRaiScores)
   {
@@ -129,26 +85,7 @@ class CloudAiLargeModelsVisionImage extends \Google\Model
     return $this->imageRaiScores;
   }
   /**
-   * Image size. The size of the image. Can be self reported, or computed from
-   * the image bytes.
-   *
-   * @param CloudAiLargeModelsVisionImageImageSize $imageSize
-   */
-  public function setImageSize(CloudAiLargeModelsVisionImageImageSize $imageSize)
-  {
-    $this->imageSize = $imageSize;
-  }
-  /**
-   * @return CloudAiLargeModelsVisionImageImageSize
-   */
-  public function getImageSize()
-  {
-    return $this->imageSize;
-  }
-  /**
-   * RAI info for image.
-   *
-   * @param CloudAiLargeModelsVisionRaiInfo $raiInfo
+   * @param CloudAiLargeModelsVisionRaiInfo
    */
   public function setRaiInfo(CloudAiLargeModelsVisionRaiInfo $raiInfo)
   {
@@ -162,9 +99,7 @@ class CloudAiLargeModelsVisionImage extends \Google\Model
     return $this->raiInfo;
   }
   /**
-   * Semantic filter info for image.
-   *
-   * @param CloudAiLargeModelsVisionSemanticFilterResponse $semanticFilterResponse
+   * @param CloudAiLargeModelsVisionSemanticFilterResponse
    */
   public function setSemanticFilterResponse(CloudAiLargeModelsVisionSemanticFilterResponse $semanticFilterResponse)
   {
@@ -178,9 +113,7 @@ class CloudAiLargeModelsVisionImage extends \Google\Model
     return $this->semanticFilterResponse;
   }
   /**
-   * Text/Expanded text input for imagen.
-   *
-   * @param string $text
+   * @param string
    */
   public function setText($text)
   {
@@ -194,9 +127,7 @@ class CloudAiLargeModelsVisionImage extends \Google\Model
     return $this->text;
   }
   /**
-   * Path to another storage (typically Google Cloud Storage).
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {

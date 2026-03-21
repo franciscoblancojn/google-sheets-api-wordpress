@@ -19,28 +19,26 @@ namespace Google\Service\Aiplatform;
 
 class CloudAiLargeModelsVisionGenerateVideoResponse extends \Google\Collection
 {
-  protected $collection_key = 'videos';
+  protected $collection_key = 'raiMediaFilteredReasons';
   protected $generatedSamplesType = CloudAiLargeModelsVisionMedia::class;
   protected $generatedSamplesDataType = 'array';
   /**
-   * Returns if any videos were filtered due to RAI policies.
-   *
+   * @var string
+   */
+  public $raiErrorMessage;
+  /**
    * @var int
    */
   public $raiMediaFilteredCount;
   /**
-   * Returns rai failure reasons if any.
-   *
    * @var string[]
    */
   public $raiMediaFilteredReasons;
-  protected $videosType = CloudAiLargeModelsVisionGenerateVideoResponseVideo::class;
-  protected $videosDataType = 'array';
+  protected $raiTextFilteredReasonType = CloudAiLargeModelsVisionFilteredText::class;
+  protected $raiTextFilteredReasonDataType = '';
 
   /**
-   * The generates samples.
-   *
-   * @param CloudAiLargeModelsVisionMedia[] $generatedSamples
+   * @param CloudAiLargeModelsVisionMedia[]
    */
   public function setGeneratedSamples($generatedSamples)
   {
@@ -54,9 +52,21 @@ class CloudAiLargeModelsVisionGenerateVideoResponse extends \Google\Collection
     return $this->generatedSamples;
   }
   /**
-   * Returns if any videos were filtered due to RAI policies.
-   *
-   * @param int $raiMediaFilteredCount
+   * @param string
+   */
+  public function setRaiErrorMessage($raiErrorMessage)
+  {
+    $this->raiErrorMessage = $raiErrorMessage;
+  }
+  /**
+   * @return string
+   */
+  public function getRaiErrorMessage()
+  {
+    return $this->raiErrorMessage;
+  }
+  /**
+   * @param int
    */
   public function setRaiMediaFilteredCount($raiMediaFilteredCount)
   {
@@ -70,9 +80,7 @@ class CloudAiLargeModelsVisionGenerateVideoResponse extends \Google\Collection
     return $this->raiMediaFilteredCount;
   }
   /**
-   * Returns rai failure reasons if any.
-   *
-   * @param string[] $raiMediaFilteredReasons
+   * @param string[]
    */
   public function setRaiMediaFilteredReasons($raiMediaFilteredReasons)
   {
@@ -86,20 +94,18 @@ class CloudAiLargeModelsVisionGenerateVideoResponse extends \Google\Collection
     return $this->raiMediaFilteredReasons;
   }
   /**
-   * List of videos, used to align naming with the external response.
-   *
-   * @param CloudAiLargeModelsVisionGenerateVideoResponseVideo[] $videos
+   * @param CloudAiLargeModelsVisionFilteredText
    */
-  public function setVideos($videos)
+  public function setRaiTextFilteredReason(CloudAiLargeModelsVisionFilteredText $raiTextFilteredReason)
   {
-    $this->videos = $videos;
+    $this->raiTextFilteredReason = $raiTextFilteredReason;
   }
   /**
-   * @return CloudAiLargeModelsVisionGenerateVideoResponseVideo[]
+   * @return CloudAiLargeModelsVisionFilteredText
    */
-  public function getVideos()
+  public function getRaiTextFilteredReason()
   {
-    return $this->videos;
+    return $this->raiTextFilteredReason;
   }
 }
 

@@ -76,11 +76,6 @@ class CloudFunctions extends \Google\Service
                   'type' => 'string',
                   'required' => true,
                 ],
-                'extraLocationTypes' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ],
                 'filter' => [
                   'location' => 'query',
                   'type' => 'string',
@@ -124,16 +119,6 @@ class CloudFunctions extends \Google\Service
                   'required' => true,
                 ],
               ],
-            ],'commitFunctionUpgradeAsGen2' => [
-              'path' => 'v2/{+name}:commitFunctionUpgradeAsGen2',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
             ],'create' => [
               'path' => 'v2/{+parent}/functions',
               'httpMethod' => 'POST',
@@ -151,16 +136,6 @@ class CloudFunctions extends \Google\Service
             ],'delete' => [
               'path' => 'v2/{+name}',
               'httpMethod' => 'DELETE',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'detachFunction' => [
-              'path' => 'v2/{+name}:detachFunction',
-              'httpMethod' => 'POST',
               'parameters' => [
                 'name' => [
                   'location' => 'path',
@@ -346,10 +321,6 @@ class CloudFunctions extends \Google\Service
                 'pageToken' => [
                   'location' => 'query',
                   'type' => 'string',
-                ],
-                'returnPartialSuccess' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
                 ],
               ],
             ],

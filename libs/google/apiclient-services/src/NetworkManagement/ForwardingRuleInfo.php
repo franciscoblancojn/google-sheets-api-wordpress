@@ -20,78 +20,36 @@ namespace Google\Service\NetworkManagement;
 class ForwardingRuleInfo extends \Google\Model
 {
   /**
-   * Name of the forwarding rule.
-   *
    * @var string
    */
   public $displayName;
   /**
-   * Name of the load balancer the forwarding rule belongs to. Empty for
-   * forwarding rules not related to load balancers (like PSC forwarding rules).
-   *
-   * @var string
-   */
-  public $loadBalancerName;
-  /**
-   * Port range defined in the forwarding rule that matches the packet.
-   *
    * @var string
    */
   public $matchedPortRange;
   /**
-   * Protocol defined in the forwarding rule that matches the packet.
-   *
    * @var string
    */
   public $matchedProtocol;
   /**
-   * Network URI.
-   *
    * @var string
    */
   public $networkUri;
   /**
-   * PSC Google API target this forwarding rule targets (if applicable).
-   *
-   * @var string
-   */
-  public $pscGoogleApiTarget;
-  /**
-   * URI of the PSC service attachment this forwarding rule targets (if
-   * applicable).
-   *
-   * @var string
-   */
-  public $pscServiceAttachmentUri;
-  /**
-   * Region of the forwarding rule. Set only for regional forwarding rules.
-   *
-   * @var string
-   */
-  public $region;
-  /**
-   * Target type of the forwarding rule.
-   *
    * @var string
    */
   public $target;
   /**
-   * URI of the forwarding rule.
-   *
    * @var string
    */
   public $uri;
   /**
-   * VIP of the forwarding rule.
-   *
    * @var string
    */
   public $vip;
 
   /**
-   * Name of the forwarding rule.
-   *
-   * @param string $displayName
+   * @param string
    */
   public function setDisplayName($displayName)
   {
@@ -105,26 +63,7 @@ class ForwardingRuleInfo extends \Google\Model
     return $this->displayName;
   }
   /**
-   * Name of the load balancer the forwarding rule belongs to. Empty for
-   * forwarding rules not related to load balancers (like PSC forwarding rules).
-   *
-   * @param string $loadBalancerName
-   */
-  public function setLoadBalancerName($loadBalancerName)
-  {
-    $this->loadBalancerName = $loadBalancerName;
-  }
-  /**
-   * @return string
-   */
-  public function getLoadBalancerName()
-  {
-    return $this->loadBalancerName;
-  }
-  /**
-   * Port range defined in the forwarding rule that matches the packet.
-   *
-   * @param string $matchedPortRange
+   * @param string
    */
   public function setMatchedPortRange($matchedPortRange)
   {
@@ -138,9 +77,7 @@ class ForwardingRuleInfo extends \Google\Model
     return $this->matchedPortRange;
   }
   /**
-   * Protocol defined in the forwarding rule that matches the packet.
-   *
-   * @param string $matchedProtocol
+   * @param string
    */
   public function setMatchedProtocol($matchedProtocol)
   {
@@ -154,9 +91,7 @@ class ForwardingRuleInfo extends \Google\Model
     return $this->matchedProtocol;
   }
   /**
-   * Network URI.
-   *
-   * @param string $networkUri
+   * @param string
    */
   public function setNetworkUri($networkUri)
   {
@@ -170,58 +105,7 @@ class ForwardingRuleInfo extends \Google\Model
     return $this->networkUri;
   }
   /**
-   * PSC Google API target this forwarding rule targets (if applicable).
-   *
-   * @param string $pscGoogleApiTarget
-   */
-  public function setPscGoogleApiTarget($pscGoogleApiTarget)
-  {
-    $this->pscGoogleApiTarget = $pscGoogleApiTarget;
-  }
-  /**
-   * @return string
-   */
-  public function getPscGoogleApiTarget()
-  {
-    return $this->pscGoogleApiTarget;
-  }
-  /**
-   * URI of the PSC service attachment this forwarding rule targets (if
-   * applicable).
-   *
-   * @param string $pscServiceAttachmentUri
-   */
-  public function setPscServiceAttachmentUri($pscServiceAttachmentUri)
-  {
-    $this->pscServiceAttachmentUri = $pscServiceAttachmentUri;
-  }
-  /**
-   * @return string
-   */
-  public function getPscServiceAttachmentUri()
-  {
-    return $this->pscServiceAttachmentUri;
-  }
-  /**
-   * Region of the forwarding rule. Set only for regional forwarding rules.
-   *
-   * @param string $region
-   */
-  public function setRegion($region)
-  {
-    $this->region = $region;
-  }
-  /**
-   * @return string
-   */
-  public function getRegion()
-  {
-    return $this->region;
-  }
-  /**
-   * Target type of the forwarding rule.
-   *
-   * @param string $target
+   * @param string
    */
   public function setTarget($target)
   {
@@ -235,9 +119,7 @@ class ForwardingRuleInfo extends \Google\Model
     return $this->target;
   }
   /**
-   * URI of the forwarding rule.
-   *
-   * @param string $uri
+   * @param string
    */
   public function setUri($uri)
   {
@@ -251,9 +133,7 @@ class ForwardingRuleInfo extends \Google\Model
     return $this->uri;
   }
   /**
-   * VIP of the forwarding rule.
-   *
-   * @param string $vip
+   * @param string
    */
   public function setVip($vip)
   {

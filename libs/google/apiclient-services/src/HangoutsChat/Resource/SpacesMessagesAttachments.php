@@ -36,13 +36,10 @@ class SpacesMessagesAttachments extends \Google\Service\Resource
    * message attachment](https://developers.google.com/workspace/chat/get-media-
    * attachments). Requires [app
    * authentication](https://developers.google.com/workspace/chat/authenticate-
-   * authorize-chat-app) with the [authorization
-   * scope](https://developers.google.com/workspace/chat/authenticate-
-   * authorize#chat-api-scopes): - `https://www.googleapis.com/auth/chat.bot`
-   * (attachments.get)
+   * authorize-chat-app). (attachments.get)
    *
    * @param string $name Required. Resource name of the attachment, in the form
-   * `spaces/{space}/messages/{message}/attachments/{attachment}`.
+   * `spaces/messages/attachments`.
    * @param array $optParams Optional parameters.
    * @return Attachment
    * @throws \Google\Service\Exception

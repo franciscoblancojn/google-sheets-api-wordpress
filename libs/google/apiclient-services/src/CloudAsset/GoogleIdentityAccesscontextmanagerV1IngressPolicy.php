@@ -23,21 +23,9 @@ class GoogleIdentityAccesscontextmanagerV1IngressPolicy extends \Google\Model
   protected $ingressFromDataType = '';
   protected $ingressToType = GoogleIdentityAccesscontextmanagerV1IngressTo::class;
   protected $ingressToDataType = '';
-  /**
-   * Optional. Human-readable title for the ingress rule. The title must be
-   * unique within the perimeter and can not exceed 100 characters. Within the
-   * access policy, the combined length of all rule titles must not exceed
-   * 240,000 characters.
-   *
-   * @var string
-   */
-  public $title;
 
   /**
-   * Defines the conditions on the source of a request causing this
-   * IngressPolicy to apply.
-   *
-   * @param GoogleIdentityAccesscontextmanagerV1IngressFrom $ingressFrom
+   * @param GoogleIdentityAccesscontextmanagerV1IngressFrom
    */
   public function setIngressFrom(GoogleIdentityAccesscontextmanagerV1IngressFrom $ingressFrom)
   {
@@ -51,10 +39,7 @@ class GoogleIdentityAccesscontextmanagerV1IngressPolicy extends \Google\Model
     return $this->ingressFrom;
   }
   /**
-   * Defines the conditions on the ApiOperation and request destination that
-   * cause this IngressPolicy to apply.
-   *
-   * @param GoogleIdentityAccesscontextmanagerV1IngressTo $ingressTo
+   * @param GoogleIdentityAccesscontextmanagerV1IngressTo
    */
   public function setIngressTo(GoogleIdentityAccesscontextmanagerV1IngressTo $ingressTo)
   {
@@ -66,25 +51,6 @@ class GoogleIdentityAccesscontextmanagerV1IngressPolicy extends \Google\Model
   public function getIngressTo()
   {
     return $this->ingressTo;
-  }
-  /**
-   * Optional. Human-readable title for the ingress rule. The title must be
-   * unique within the perimeter and can not exceed 100 characters. Within the
-   * access policy, the combined length of all rule titles must not exceed
-   * 240,000 characters.
-   *
-   * @param string $title
-   */
-  public function setTitle($title)
-  {
-    $this->title = $title;
-  }
-  /**
-   * @return string
-   */
-  public function getTitle()
-  {
-    return $this->title;
   }
 }
 

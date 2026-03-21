@@ -17,9 +17,8 @@
 
 namespace Google\Service\Compute;
 
-class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfig extends \Google\Collection
+class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfig extends \Google\Model
 {
-  protected $collection_key = 'trafficGranularityConfigs';
   /**
    * @var float
    */
@@ -37,29 +36,12 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
    */
   public $autoDeployLoadThreshold;
   /**
-   * @var float
-   */
-  public $detectionAbsoluteQps;
-  /**
-   * @var float
-   */
-  public $detectionLoadThreshold;
-  /**
-   * @var float
-   */
-  public $detectionRelativeToBaselineQps;
-  /**
-   * The name must be 1-63 characters long, and comply withRFC1035. The name
-   * must be unique within the security policy.
-   *
    * @var string
    */
   public $name;
-  protected $trafficGranularityConfigsType = SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig::class;
-  protected $trafficGranularityConfigsDataType = 'array';
 
   /**
-   * @param float $autoDeployConfidenceThreshold
+   * @param float
    */
   public function setAutoDeployConfidenceThreshold($autoDeployConfidenceThreshold)
   {
@@ -73,7 +55,7 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
     return $this->autoDeployConfidenceThreshold;
   }
   /**
-   * @param int $autoDeployExpirationSec
+   * @param int
    */
   public function setAutoDeployExpirationSec($autoDeployExpirationSec)
   {
@@ -87,7 +69,7 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
     return $this->autoDeployExpirationSec;
   }
   /**
-   * @param float $autoDeployImpactedBaselineThreshold
+   * @param float
    */
   public function setAutoDeployImpactedBaselineThreshold($autoDeployImpactedBaselineThreshold)
   {
@@ -101,7 +83,7 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
     return $this->autoDeployImpactedBaselineThreshold;
   }
   /**
-   * @param float $autoDeployLoadThreshold
+   * @param float
    */
   public function setAutoDeployLoadThreshold($autoDeployLoadThreshold)
   {
@@ -115,52 +97,7 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
     return $this->autoDeployLoadThreshold;
   }
   /**
-   * @param float $detectionAbsoluteQps
-   */
-  public function setDetectionAbsoluteQps($detectionAbsoluteQps)
-  {
-    $this->detectionAbsoluteQps = $detectionAbsoluteQps;
-  }
-  /**
-   * @return float
-   */
-  public function getDetectionAbsoluteQps()
-  {
-    return $this->detectionAbsoluteQps;
-  }
-  /**
-   * @param float $detectionLoadThreshold
-   */
-  public function setDetectionLoadThreshold($detectionLoadThreshold)
-  {
-    $this->detectionLoadThreshold = $detectionLoadThreshold;
-  }
-  /**
-   * @return float
-   */
-  public function getDetectionLoadThreshold()
-  {
-    return $this->detectionLoadThreshold;
-  }
-  /**
-   * @param float $detectionRelativeToBaselineQps
-   */
-  public function setDetectionRelativeToBaselineQps($detectionRelativeToBaselineQps)
-  {
-    $this->detectionRelativeToBaselineQps = $detectionRelativeToBaselineQps;
-  }
-  /**
-   * @return float
-   */
-  public function getDetectionRelativeToBaselineQps()
-  {
-    return $this->detectionRelativeToBaselineQps;
-  }
-  /**
-   * The name must be 1-63 characters long, and comply withRFC1035. The name
-   * must be unique within the security policy.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -172,23 +109,6 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConf
   public function getName()
   {
     return $this->name;
-  }
-  /**
-   * Configuration options for enabling Adaptive Protection to operate on
-   * specified granular traffic units.
-   *
-   * @param SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig[] $trafficGranularityConfigs
-   */
-  public function setTrafficGranularityConfigs($trafficGranularityConfigs)
-  {
-    $this->trafficGranularityConfigs = $trafficGranularityConfigs;
-  }
-  /**
-   * @return SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig[]
-   */
-  public function getTrafficGranularityConfigs()
-  {
-    return $this->trafficGranularityConfigs;
   }
 }
 

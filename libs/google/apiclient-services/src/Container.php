@@ -28,7 +28,7 @@ use Google\Client;
  *
  * <p>
  * For more information about this service, see the API
- * <a href="https://cloud.google.com/kubernetes-engine/docs/" target="_blank">Documentation</a>
+ * <a href="https://cloud.google.com/container-engine/" target="_blank">Documentation</a>
  * </p>
  *
  * @author Google, Inc.
@@ -182,20 +182,6 @@ class Container extends \Google\Service
                   'type' => 'string',
                 ],
                 'zone' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
-            ],'fetchClusterUpgradeInfo' => [
-              'path' => 'v1/{+name}:fetchClusterUpgradeInfo',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'version' => [
                   'location' => 'query',
                   'type' => 'string',
                 ],
@@ -422,20 +408,6 @@ class Container extends \Google\Service
                   'type' => 'string',
                 ],
                 'zone' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
-            ],'fetchNodePoolUpgradeInfo' => [
-              'path' => 'v1/{+name}:fetchNodePoolUpgradeInfo',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'version' => [
                   'location' => 'query',
                   'type' => 'string',
                 ],
@@ -732,20 +704,6 @@ class Container extends \Google\Service
                   'required' => true,
                 ],
                 'name' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
-            ],'fetchClusterUpgradeInfo' => [
-              'path' => 'v1/{+name}:fetchClusterUpgradeInfo',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'version' => [
                   'location' => 'query',
                   'type' => 'string',
                 ],
@@ -1093,20 +1051,6 @@ class Container extends \Google\Service
                   'required' => true,
                 ],
                 'name' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
-            ],'fetchNodePoolUpgradeInfo' => [
-              'path' => 'v1/{+name}:fetchNodePoolUpgradeInfo',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'version' => [
                   'location' => 'query',
                   'type' => 'string',
                 ],

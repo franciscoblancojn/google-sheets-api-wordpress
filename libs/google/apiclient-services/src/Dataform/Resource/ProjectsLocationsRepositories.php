@@ -99,12 +99,9 @@ class ProjectsLocationsRepositories extends \Google\Service\Resource
    * @param string $name Required. The repository's name.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param bool force Optional. If set to true, child resources of this
-   * repository (compilation results and workflow invocations) will also be
-   * deleted. Otherwise, the request will only succeed if the repository has no
-   * child resources. **Note:** *This flag doesn't support deletion of workspaces,
-   * release configs or workflow configs. If any of such resources exists in the
-   * repository, the request will fail.*.
+   * @opt_param bool force If set to true, any child resources of this repository
+   * will also be deleted. (Otherwise, the request will only succeed if the
+   * repository has no child resources.)
    * @return DataformEmpty
    * @throws \Google\Service\Exception
    */
@@ -126,9 +123,8 @@ class ProjectsLocationsRepositories extends \Google\Service\Resource
    * pick an appropriate default.
    * @opt_param string pageToken Optional. Page token received from a previous
    * `FetchRepositoryHistory` call. Provide this to retrieve the subsequent page.
-   * When paginating, all other parameters provided to `FetchRepositoryHistory`,
-   * with the exception of `page_size`, must match the call that provided the page
-   * token.
+   * When paginating, all other parameters provided to `FetchRepositoryHistory`
+   * must match the call that provided the page token.
    * @return FetchRepositoryHistoryResponse
    * @throws \Google\Service\Exception
    */
@@ -198,9 +194,7 @@ class ProjectsLocationsRepositories extends \Google\Service\Resource
     return $this->call('getIamPolicy', [$params], Policy::class);
   }
   /**
-   * Lists Repositories in a given project and location. **Note:** *This method
-   * can return repositories not shown in the [Dataform
-   * UI](https://console.cloud.google.com/bigquery/dataform)*.
+   * Lists Repositories in a given project and location.
    * (repositories.listProjectsLocationsRepositories)
    *
    * @param string $parent Required. The location in which to list repositories.
@@ -216,8 +210,8 @@ class ProjectsLocationsRepositories extends \Google\Service\Resource
    * will pick an appropriate default.
    * @opt_param string pageToken Optional. Page token received from a previous
    * `ListRepositories` call. Provide this to retrieve the subsequent page. When
-   * paginating, all other parameters provided to `ListRepositories`, with the
-   * exception of `page_size`, must match the call that provided the page token.
+   * paginating, all other parameters provided to `ListRepositories` must match
+   * the call that provided the page token.
    * @return ListRepositoriesResponse
    * @throws \Google\Service\Exception
    */
@@ -228,10 +222,7 @@ class ProjectsLocationsRepositories extends \Google\Service\Resource
     return $this->call('list', [$params], ListRepositoriesResponse::class);
   }
   /**
-   * Updates a single Repository. **Note:** *This method does not fully implement
-   * [AIP/134](https://google.aip.dev/134). The wildcard entry () is treated as a
-   * bad request, and when the `field_mask` is omitted, the request is treated as
-   * a full update on all modifiable fields.* (repositories.patch)
+   * Updates a single Repository. (repositories.patch)
    *
    * @param string $name Identifier. The repository's name.
    * @param Repository $postBody
@@ -264,8 +255,8 @@ class ProjectsLocationsRepositories extends \Google\Service\Resource
    * @opt_param string pageToken Optional. Page token received from a previous
    * `QueryRepositoryDirectoryContents` call. Provide this to retrieve the
    * subsequent page. When paginating, all other parameters provided to
-   * `QueryRepositoryDirectoryContents`, with the exception of `page_size`, must
-   * match the call that provided the page token.
+   * `QueryRepositoryDirectoryContents` must match the call that provided the page
+   * token.
    * @opt_param string path Optional. The directory's full path including
    * directory name, relative to root. If left unset, the root is used.
    * @return QueryRepositoryDirectoryContentsResponse

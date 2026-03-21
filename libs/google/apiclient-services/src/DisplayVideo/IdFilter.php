@@ -21,69 +21,32 @@ class IdFilter extends \Google\Collection
 {
   protected $collection_key = 'mediaProductIds';
   /**
-   * YouTube Ads to download by ID. All IDs must belong to the same Advertiser
-   * or Partner specified in CreateSdfDownloadTaskRequest.
-   *
    * @var string[]
    */
   public $adGroupAdIds;
   /**
-   * YouTube Ad Groups to download by ID. All IDs must belong to the same
-   * Advertiser or Partner specified in CreateSdfDownloadTaskRequest.
-   *
    * @var string[]
    */
   public $adGroupIds;
   /**
-   * Optional. YouTube Ad Groups, by ID, to download in QA format. All IDs must
-   * belong to the same Advertiser or Partner specified in
-   * CreateSdfDownloadTaskRequest.
-   *
-   * @var string[]
-   */
-  public $adGroupQaIds;
-  /**
-   * Campaigns to download by ID. All IDs must belong to the same Advertiser or
-   * Partner specified in CreateSdfDownloadTaskRequest.
-   *
    * @var string[]
    */
   public $campaignIds;
   /**
-   * Insertion Orders to download by ID. All IDs must belong to the same
-   * Advertiser or Partner specified in CreateSdfDownloadTaskRequest.
-   *
    * @var string[]
    */
   public $insertionOrderIds;
   /**
-   * Line Items to download by ID. All IDs must belong to the same Advertiser or
-   * Partner specified in CreateSdfDownloadTaskRequest.
-   *
    * @var string[]
    */
   public $lineItemIds;
   /**
-   * Optional. Line Items, by ID, to download in QA format. All IDs must belong
-   * to the same Advertiser or Partner specified in
-   * CreateSdfDownloadTaskRequest.
-   *
-   * @var string[]
-   */
-  public $lineItemQaIds;
-  /**
-   * Media Products to download by ID. All IDs must belong to the same
-   * Advertiser or Partner specified in CreateSdfDownloadTaskRequest.
-   *
    * @var string[]
    */
   public $mediaProductIds;
 
   /**
-   * YouTube Ads to download by ID. All IDs must belong to the same Advertiser
-   * or Partner specified in CreateSdfDownloadTaskRequest.
-   *
-   * @param string[] $adGroupAdIds
+   * @param string[]
    */
   public function setAdGroupAdIds($adGroupAdIds)
   {
@@ -97,10 +60,7 @@ class IdFilter extends \Google\Collection
     return $this->adGroupAdIds;
   }
   /**
-   * YouTube Ad Groups to download by ID. All IDs must belong to the same
-   * Advertiser or Partner specified in CreateSdfDownloadTaskRequest.
-   *
-   * @param string[] $adGroupIds
+   * @param string[]
    */
   public function setAdGroupIds($adGroupIds)
   {
@@ -114,28 +74,7 @@ class IdFilter extends \Google\Collection
     return $this->adGroupIds;
   }
   /**
-   * Optional. YouTube Ad Groups, by ID, to download in QA format. All IDs must
-   * belong to the same Advertiser or Partner specified in
-   * CreateSdfDownloadTaskRequest.
-   *
-   * @param string[] $adGroupQaIds
-   */
-  public function setAdGroupQaIds($adGroupQaIds)
-  {
-    $this->adGroupQaIds = $adGroupQaIds;
-  }
-  /**
-   * @return string[]
-   */
-  public function getAdGroupQaIds()
-  {
-    return $this->adGroupQaIds;
-  }
-  /**
-   * Campaigns to download by ID. All IDs must belong to the same Advertiser or
-   * Partner specified in CreateSdfDownloadTaskRequest.
-   *
-   * @param string[] $campaignIds
+   * @param string[]
    */
   public function setCampaignIds($campaignIds)
   {
@@ -149,10 +88,7 @@ class IdFilter extends \Google\Collection
     return $this->campaignIds;
   }
   /**
-   * Insertion Orders to download by ID. All IDs must belong to the same
-   * Advertiser or Partner specified in CreateSdfDownloadTaskRequest.
-   *
-   * @param string[] $insertionOrderIds
+   * @param string[]
    */
   public function setInsertionOrderIds($insertionOrderIds)
   {
@@ -166,10 +102,7 @@ class IdFilter extends \Google\Collection
     return $this->insertionOrderIds;
   }
   /**
-   * Line Items to download by ID. All IDs must belong to the same Advertiser or
-   * Partner specified in CreateSdfDownloadTaskRequest.
-   *
-   * @param string[] $lineItemIds
+   * @param string[]
    */
   public function setLineItemIds($lineItemIds)
   {
@@ -183,28 +116,7 @@ class IdFilter extends \Google\Collection
     return $this->lineItemIds;
   }
   /**
-   * Optional. Line Items, by ID, to download in QA format. All IDs must belong
-   * to the same Advertiser or Partner specified in
-   * CreateSdfDownloadTaskRequest.
-   *
-   * @param string[] $lineItemQaIds
-   */
-  public function setLineItemQaIds($lineItemQaIds)
-  {
-    $this->lineItemQaIds = $lineItemQaIds;
-  }
-  /**
-   * @return string[]
-   */
-  public function getLineItemQaIds()
-  {
-    return $this->lineItemQaIds;
-  }
-  /**
-   * Media Products to download by ID. All IDs must belong to the same
-   * Advertiser or Partner specified in CreateSdfDownloadTaskRequest.
-   *
-   * @param string[] $mediaProductIds
+   * @param string[]
    */
   public function setMediaProductIds($mediaProductIds)
   {

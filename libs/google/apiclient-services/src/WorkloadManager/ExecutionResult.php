@@ -17,78 +17,31 @@
 
 namespace Google\Service\WorkloadManager;
 
-class ExecutionResult extends \Google\Collection
+class ExecutionResult extends \Google\Model
 {
   /**
-   * Unknown state
-   */
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  /**
-   * resource successfully passed the rule
-   */
-  public const TYPE_TYPE_PASSED = 'TYPE_PASSED';
-  /**
-   * resource violated the rule
-   */
-  public const TYPE_TYPE_VIOLATED = 'TYPE_VIOLATED';
-  protected $collection_key = 'commands';
-  protected $commandsType = Command::class;
-  protected $commandsDataType = 'array';
-  /**
-   * The URL for the documentation of the rule.
-   *
    * @var string
    */
   public $documentationUrl;
   protected $resourceType = WorkloadmanagerResource::class;
   protected $resourceDataType = '';
   /**
-   * The rule that is violated in an evaluation.
-   *
    * @var string
    */
   public $rule;
   /**
-   * The severity of violation.
-   *
    * @var string
    */
   public $severity;
-  /**
-   * Execution result type of the scanned resource
-   *
-   * @var string
-   */
-  public $type;
   protected $violationDetailsType = ViolationDetails::class;
   protected $violationDetailsDataType = '';
   /**
-   * The violation message of an execution.
-   *
    * @var string
    */
   public $violationMessage;
 
   /**
-   * The commands to remediate the violation.
-   *
-   * @param Command[] $commands
-   */
-  public function setCommands($commands)
-  {
-    $this->commands = $commands;
-  }
-  /**
-   * @return Command[]
-   */
-  public function getCommands()
-  {
-    return $this->commands;
-  }
-  /**
-   * The URL for the documentation of the rule.
-   *
-   * @param string $documentationUrl
+   * @param string
    */
   public function setDocumentationUrl($documentationUrl)
   {
@@ -102,9 +55,7 @@ class ExecutionResult extends \Google\Collection
     return $this->documentationUrl;
   }
   /**
-   * The resource that violates the rule.
-   *
-   * @param WorkloadmanagerResource $resource
+   * @param WorkloadmanagerResource
    */
   public function setResource(WorkloadmanagerResource $resource)
   {
@@ -118,9 +69,7 @@ class ExecutionResult extends \Google\Collection
     return $this->resource;
   }
   /**
-   * The rule that is violated in an evaluation.
-   *
-   * @param string $rule
+   * @param string
    */
   public function setRule($rule)
   {
@@ -134,9 +83,7 @@ class ExecutionResult extends \Google\Collection
     return $this->rule;
   }
   /**
-   * The severity of violation.
-   *
-   * @param string $severity
+   * @param string
    */
   public function setSeverity($severity)
   {
@@ -150,27 +97,7 @@ class ExecutionResult extends \Google\Collection
     return $this->severity;
   }
   /**
-   * Execution result type of the scanned resource
-   *
-   * Accepted values: TYPE_UNSPECIFIED, TYPE_PASSED, TYPE_VIOLATED
-   *
-   * @param self::TYPE_* $type
-   */
-  public function setType($type)
-  {
-    $this->type = $type;
-  }
-  /**
-   * @return self::TYPE_*
-   */
-  public function getType()
-  {
-    return $this->type;
-  }
-  /**
-   * The details of violation in an evaluation result.
-   *
-   * @param ViolationDetails $violationDetails
+   * @param ViolationDetails
    */
   public function setViolationDetails(ViolationDetails $violationDetails)
   {
@@ -184,9 +111,7 @@ class ExecutionResult extends \Google\Collection
     return $this->violationDetails;
   }
   /**
-   * The violation message of an execution.
-   *
-   * @param string $violationMessage
+   * @param string
    */
   public function setViolationMessage($violationMessage)
   {

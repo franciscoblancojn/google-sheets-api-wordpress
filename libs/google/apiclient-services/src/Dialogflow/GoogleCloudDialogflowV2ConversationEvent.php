@@ -19,13 +19,6 @@ namespace Google\Service\Dialogflow;
 
 class GoogleCloudDialogflowV2ConversationEvent extends \Google\Model
 {
-  public const TYPE_TYPE_UNSPECIFIED = 'TYPE_UNSPECIFIED';
-  public const TYPE_CONVERSATION_STARTED = 'CONVERSATION_STARTED';
-  public const TYPE_CONVERSATION_FINISHED = 'CONVERSATION_FINISHED';
-  public const TYPE_HUMAN_INTERVENTION_NEEDED = 'HUMAN_INTERVENTION_NEEDED';
-  public const TYPE_NEW_MESSAGE = 'NEW_MESSAGE';
-  public const TYPE_NEW_RECOGNITION_RESULT = 'NEW_RECOGNITION_RESULT';
-  public const TYPE_UNRECOVERABLE_ERROR = 'UNRECOVERABLE_ERROR';
   /**
    * @var string
    */
@@ -34,15 +27,13 @@ class GoogleCloudDialogflowV2ConversationEvent extends \Google\Model
   protected $errorStatusDataType = '';
   protected $newMessagePayloadType = GoogleCloudDialogflowV2Message::class;
   protected $newMessagePayloadDataType = '';
-  protected $newRecognitionResultPayloadType = GoogleCloudDialogflowV2StreamingRecognitionResult::class;
-  protected $newRecognitionResultPayloadDataType = '';
   /**
    * @var string
    */
   public $type;
 
   /**
-   * @param string $conversation
+   * @param string
    */
   public function setConversation($conversation)
   {
@@ -56,7 +47,7 @@ class GoogleCloudDialogflowV2ConversationEvent extends \Google\Model
     return $this->conversation;
   }
   /**
-   * @param GoogleRpcStatus $errorStatus
+   * @param GoogleRpcStatus
    */
   public function setErrorStatus(GoogleRpcStatus $errorStatus)
   {
@@ -70,7 +61,7 @@ class GoogleCloudDialogflowV2ConversationEvent extends \Google\Model
     return $this->errorStatus;
   }
   /**
-   * @param GoogleCloudDialogflowV2Message $newMessagePayload
+   * @param GoogleCloudDialogflowV2Message
    */
   public function setNewMessagePayload(GoogleCloudDialogflowV2Message $newMessagePayload)
   {
@@ -84,28 +75,14 @@ class GoogleCloudDialogflowV2ConversationEvent extends \Google\Model
     return $this->newMessagePayload;
   }
   /**
-   * @param GoogleCloudDialogflowV2StreamingRecognitionResult $newRecognitionResultPayload
-   */
-  public function setNewRecognitionResultPayload(GoogleCloudDialogflowV2StreamingRecognitionResult $newRecognitionResultPayload)
-  {
-    $this->newRecognitionResultPayload = $newRecognitionResultPayload;
-  }
-  /**
-   * @return GoogleCloudDialogflowV2StreamingRecognitionResult
-   */
-  public function getNewRecognitionResultPayload()
-  {
-    return $this->newRecognitionResultPayload;
-  }
-  /**
-   * @param self::TYPE_* $type
+   * @param string
    */
   public function setType($type)
   {
     $this->type = $type;
   }
   /**
-   * @return self::TYPE_*
+   * @return string
    */
   public function getType()
   {

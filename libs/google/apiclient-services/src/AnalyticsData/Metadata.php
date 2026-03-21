@@ -20,39 +20,17 @@ namespace Google\Service\AnalyticsData;
 class Metadata extends \Google\Collection
 {
   protected $collection_key = 'metrics';
-  protected $comparisonsType = ComparisonMetadata::class;
-  protected $comparisonsDataType = 'array';
   protected $dimensionsType = DimensionMetadata::class;
   protected $dimensionsDataType = 'array';
   protected $metricsType = MetricMetadata::class;
   protected $metricsDataType = 'array';
   /**
-   * Resource name of this metadata.
-   *
    * @var string
    */
   public $name;
 
   /**
-   * The comparison descriptions.
-   *
-   * @param ComparisonMetadata[] $comparisons
-   */
-  public function setComparisons($comparisons)
-  {
-    $this->comparisons = $comparisons;
-  }
-  /**
-   * @return ComparisonMetadata[]
-   */
-  public function getComparisons()
-  {
-    return $this->comparisons;
-  }
-  /**
-   * The dimension descriptions.
-   *
-   * @param DimensionMetadata[] $dimensions
+   * @param DimensionMetadata[]
    */
   public function setDimensions($dimensions)
   {
@@ -66,9 +44,7 @@ class Metadata extends \Google\Collection
     return $this->dimensions;
   }
   /**
-   * The metric descriptions.
-   *
-   * @param MetricMetadata[] $metrics
+   * @param MetricMetadata[]
    */
   public function setMetrics($metrics)
   {
@@ -82,9 +58,7 @@ class Metadata extends \Google\Collection
     return $this->metrics;
   }
   /**
-   * Resource name of this metadata.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {

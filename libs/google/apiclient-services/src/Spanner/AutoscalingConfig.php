@@ -17,42 +17,15 @@
 
 namespace Google\Service\Spanner;
 
-class AutoscalingConfig extends \Google\Collection
+class AutoscalingConfig extends \Google\Model
 {
-  protected $collection_key = 'asymmetricAutoscalingOptions';
-  protected $asymmetricAutoscalingOptionsType = AsymmetricAutoscalingOption::class;
-  protected $asymmetricAutoscalingOptionsDataType = 'array';
   protected $autoscalingLimitsType = AutoscalingLimits::class;
   protected $autoscalingLimitsDataType = '';
   protected $autoscalingTargetsType = AutoscalingTargets::class;
   protected $autoscalingTargetsDataType = '';
 
   /**
-   * Optional. Optional asymmetric autoscaling options. Replicas matching the
-   * replica selection criteria will be autoscaled independently from other
-   * replicas. The autoscaler will scale the replicas based on the utilization
-   * of replicas identified by the replica selection. Replica selections should
-   * not overlap with each other. Other replicas (those do not match any replica
-   * selection) will be autoscaled together and will have the same compute
-   * capacity allocated to them.
-   *
-   * @param AsymmetricAutoscalingOption[] $asymmetricAutoscalingOptions
-   */
-  public function setAsymmetricAutoscalingOptions($asymmetricAutoscalingOptions)
-  {
-    $this->asymmetricAutoscalingOptions = $asymmetricAutoscalingOptions;
-  }
-  /**
-   * @return AsymmetricAutoscalingOption[]
-   */
-  public function getAsymmetricAutoscalingOptions()
-  {
-    return $this->asymmetricAutoscalingOptions;
-  }
-  /**
-   * Required. Autoscaling limits for an instance.
-   *
-   * @param AutoscalingLimits $autoscalingLimits
+   * @param AutoscalingLimits
    */
   public function setAutoscalingLimits(AutoscalingLimits $autoscalingLimits)
   {
@@ -66,9 +39,7 @@ class AutoscalingConfig extends \Google\Collection
     return $this->autoscalingLimits;
   }
   /**
-   * Required. The autoscaling targets for an instance.
-   *
-   * @param AutoscalingTargets $autoscalingTargets
+   * @param AutoscalingTargets
    */
   public function setAutoscalingTargets(AutoscalingTargets $autoscalingTargets)
   {

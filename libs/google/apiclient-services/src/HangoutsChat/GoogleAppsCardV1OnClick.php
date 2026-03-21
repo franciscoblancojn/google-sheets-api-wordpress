@@ -27,13 +27,9 @@ class GoogleAppsCardV1OnClick extends \Google\Model
   protected $openDynamicLinkActionDataType = '';
   protected $openLinkType = GoogleAppsCardV1OpenLink::class;
   protected $openLinkDataType = '';
-  protected $overflowMenuType = GoogleAppsCardV1OverflowMenu::class;
-  protected $overflowMenuDataType = '';
 
   /**
-   * If specified, an action is triggered by this `onClick`.
-   *
-   * @param GoogleAppsCardV1Action $action
+   * @param GoogleAppsCardV1Action
    */
   public function setAction(GoogleAppsCardV1Action $action)
   {
@@ -47,10 +43,7 @@ class GoogleAppsCardV1OnClick extends \Google\Model
     return $this->action;
   }
   /**
-   * A new card is pushed to the card stack after clicking if specified. [Google
-   * Workspace add-ons](https://developers.google.com/workspace/add-ons):
-   *
-   * @param GoogleAppsCardV1Card $card
+   * @param GoogleAppsCardV1Card
    */
   public function setCard(GoogleAppsCardV1Card $card)
   {
@@ -64,13 +57,7 @@ class GoogleAppsCardV1OnClick extends \Google\Model
     return $this->card;
   }
   /**
-   * An add-on triggers this action when the action needs to open a link. This
-   * differs from the `open_link` above in that this needs to talk to server to
-   * get the link. Thus some preparation work is required for web client to do
-   * before the open link action response comes back. [Google Workspace add-
-   * ons](https://developers.google.com/workspace/add-ons):
-   *
-   * @param GoogleAppsCardV1Action $openDynamicLinkAction
+   * @param GoogleAppsCardV1Action
    */
   public function setOpenDynamicLinkAction(GoogleAppsCardV1Action $openDynamicLinkAction)
   {
@@ -84,9 +71,7 @@ class GoogleAppsCardV1OnClick extends \Google\Model
     return $this->openDynamicLinkAction;
   }
   /**
-   * If specified, this `onClick` triggers an open link action.
-   *
-   * @param GoogleAppsCardV1OpenLink $openLink
+   * @param GoogleAppsCardV1OpenLink
    */
   public function setOpenLink(GoogleAppsCardV1OpenLink $openLink)
   {
@@ -98,22 +83,6 @@ class GoogleAppsCardV1OnClick extends \Google\Model
   public function getOpenLink()
   {
     return $this->openLink;
-  }
-  /**
-   * If specified, this `onClick` opens an overflow menu.
-   *
-   * @param GoogleAppsCardV1OverflowMenu $overflowMenu
-   */
-  public function setOverflowMenu(GoogleAppsCardV1OverflowMenu $overflowMenu)
-  {
-    $this->overflowMenu = $overflowMenu;
-  }
-  /**
-   * @return GoogleAppsCardV1OverflowMenu
-   */
-  public function getOverflowMenu()
-  {
-    return $this->overflowMenu;
   }
 }
 

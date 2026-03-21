@@ -20,44 +20,20 @@ namespace Google\Service\SecurityCommandCenter;
 class Attack extends \Google\Model
 {
   /**
-   * Type of attack, for example, 'SYN-flood', 'NTP-udp', or 'CHARGEN-udp'.
-   *
    * @var string
    */
   public $classification;
   /**
-   * Total BPS (bytes per second) volume of attack. Deprecated - refer to
-   * volume_bps_long instead.
-   *
-   * @deprecated
    * @var int
    */
   public $volumeBps;
   /**
-   * Total BPS (bytes per second) volume of attack.
-   *
-   * @var string
-   */
-  public $volumeBpsLong;
-  /**
-   * Total PPS (packets per second) volume of attack. Deprecated - refer to
-   * volume_pps_long instead.
-   *
-   * @deprecated
    * @var int
    */
   public $volumePps;
-  /**
-   * Total PPS (packets per second) volume of attack.
-   *
-   * @var string
-   */
-  public $volumePpsLong;
 
   /**
-   * Type of attack, for example, 'SYN-flood', 'NTP-udp', or 'CHARGEN-udp'.
-   *
-   * @param string $classification
+   * @param string
    */
   public function setClassification($classification)
   {
@@ -71,18 +47,13 @@ class Attack extends \Google\Model
     return $this->classification;
   }
   /**
-   * Total BPS (bytes per second) volume of attack. Deprecated - refer to
-   * volume_bps_long instead.
-   *
-   * @deprecated
-   * @param int $volumeBps
+   * @param int
    */
   public function setVolumeBps($volumeBps)
   {
     $this->volumeBps = $volumeBps;
   }
   /**
-   * @deprecated
    * @return int
    */
   public function getVolumeBps()
@@ -90,55 +61,18 @@ class Attack extends \Google\Model
     return $this->volumeBps;
   }
   /**
-   * Total BPS (bytes per second) volume of attack.
-   *
-   * @param string $volumeBpsLong
-   */
-  public function setVolumeBpsLong($volumeBpsLong)
-  {
-    $this->volumeBpsLong = $volumeBpsLong;
-  }
-  /**
-   * @return string
-   */
-  public function getVolumeBpsLong()
-  {
-    return $this->volumeBpsLong;
-  }
-  /**
-   * Total PPS (packets per second) volume of attack. Deprecated - refer to
-   * volume_pps_long instead.
-   *
-   * @deprecated
-   * @param int $volumePps
+   * @param int
    */
   public function setVolumePps($volumePps)
   {
     $this->volumePps = $volumePps;
   }
   /**
-   * @deprecated
    * @return int
    */
   public function getVolumePps()
   {
     return $this->volumePps;
-  }
-  /**
-   * Total PPS (packets per second) volume of attack.
-   *
-   * @param string $volumePpsLong
-   */
-  public function setVolumePpsLong($volumePpsLong)
-  {
-    $this->volumePpsLong = $volumePpsLong;
-  }
-  /**
-   * @return string
-   */
-  public function getVolumePpsLong()
-  {
-    return $this->volumePpsLong;
   }
 }
 

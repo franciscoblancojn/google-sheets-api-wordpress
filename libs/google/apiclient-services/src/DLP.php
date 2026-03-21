@@ -48,8 +48,6 @@ class DLP extends \Google\Service
   public $organizations_locations_deidentifyTemplates;
   public $organizations_locations_discoveryConfigs;
   public $organizations_locations_dlpJobs;
-  public $organizations_locations_fileStoreDataProfiles;
-  public $organizations_locations_infoTypes;
   public $organizations_locations_inspectTemplates;
   public $organizations_locations_jobTriggers;
   public $organizations_locations_projectDataProfiles;
@@ -68,9 +66,7 @@ class DLP extends \Google\Service
   public $projects_locations_deidentifyTemplates;
   public $projects_locations_discoveryConfigs;
   public $projects_locations_dlpJobs;
-  public $projects_locations_fileStoreDataProfiles;
   public $projects_locations_image;
-  public $projects_locations_infoTypes;
   public $projects_locations_inspectTemplates;
   public $projects_locations_jobTriggers;
   public $projects_locations_projectDataProfiles;
@@ -363,69 +359,7 @@ class DLP extends \Google\Service
         'connections',
         [
           'methods' => [
-            'create' => [
-              'path' => 'v2/{+parent}/connections',
-              'httpMethod' => 'POST',
-              'parameters' => [
-                'parent' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'delete' => [
-              'path' => 'v2/{+name}',
-              'httpMethod' => 'DELETE',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'get' => [
-              'path' => 'v2/{+name}',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'list' => [
-              'path' => 'v2/{+parent}/connections',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'parent' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'filter' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-                'pageSize' => [
-                  'location' => 'query',
-                  'type' => 'integer',
-                ],
-                'pageToken' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
-            ],'patch' => [
-              'path' => 'v2/{+name}',
-              'httpMethod' => 'PATCH',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'search' => [
+            'search' => [
               'path' => 'v2/{+parent}/connections:search',
               'httpMethod' => 'GET',
               'parameters' => [
@@ -635,94 +569,6 @@ class DLP extends \Google\Service
                   'type' => 'string',
                 ],
                 'type' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
-            ],
-          ]
-        ]
-    );
-    $this->organizations_locations_fileStoreDataProfiles = new DLP\Resource\OrganizationsLocationsFileStoreDataProfiles(
-        $this,
-        $this->serviceName,
-        'fileStoreDataProfiles',
-        [
-          'methods' => [
-            'delete' => [
-              'path' => 'v2/{+name}',
-              'httpMethod' => 'DELETE',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'get' => [
-              'path' => 'v2/{+name}',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'list' => [
-              'path' => 'v2/{+parent}/fileStoreDataProfiles',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'parent' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'filter' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-                'orderBy' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-                'pageSize' => [
-                  'location' => 'query',
-                  'type' => 'integer',
-                ],
-                'pageToken' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
-            ],
-          ]
-        ]
-    );
-    $this->organizations_locations_infoTypes = new DLP\Resource\OrganizationsLocationsInfoTypes(
-        $this,
-        $this->serviceName,
-        'infoTypes',
-        [
-          'methods' => [
-            'list' => [
-              'path' => 'v2/{+parent}/infoTypes',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'parent' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'filter' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-                'languageCode' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-                'locationId' => [
                   'location' => 'query',
                   'type' => 'string',
                 ],
@@ -1967,62 +1813,6 @@ class DLP extends \Google\Service
           ]
         ]
     );
-    $this->projects_locations_fileStoreDataProfiles = new DLP\Resource\ProjectsLocationsFileStoreDataProfiles(
-        $this,
-        $this->serviceName,
-        'fileStoreDataProfiles',
-        [
-          'methods' => [
-            'delete' => [
-              'path' => 'v2/{+name}',
-              'httpMethod' => 'DELETE',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'get' => [
-              'path' => 'v2/{+name}',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'list' => [
-              'path' => 'v2/{+parent}/fileStoreDataProfiles',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'parent' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'filter' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-                'orderBy' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-                'pageSize' => [
-                  'location' => 'query',
-                  'type' => 'integer',
-                ],
-                'pageToken' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
-            ],
-          ]
-        ]
-    );
     $this->projects_locations_image = new DLP\Resource\ProjectsLocationsImage(
         $this,
         $this->serviceName,
@@ -2037,38 +1827,6 @@ class DLP extends \Google\Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ],
-              ],
-            ],
-          ]
-        ]
-    );
-    $this->projects_locations_infoTypes = new DLP\Resource\ProjectsLocationsInfoTypes(
-        $this,
-        $this->serviceName,
-        'infoTypes',
-        [
-          'methods' => [
-            'list' => [
-              'path' => 'v2/{+parent}/infoTypes',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'parent' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'filter' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-                'languageCode' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-                'locationId' => [
-                  'location' => 'query',
-                  'type' => 'string',
                 ],
               ],
             ],

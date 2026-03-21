@@ -21,31 +21,21 @@ class ChannelToStoreLinkDetails extends \Google\Model
 {
   protected $billingDetailsType = ChannelToStoreLinkDetailsBillingDetails::class;
   protected $billingDetailsDataType = '';
-  protected $merchantAffiliateProgramDetailsType = ChannelToStoreLinkDetailsMerchantAffiliateProgramDetails::class;
-  protected $merchantAffiliateProgramDetailsDataType = '';
   /**
-   * Google Merchant Center id of the store.
-   *
    * @var string
    */
   public $merchantId;
   /**
-   * Name of the store.
-   *
    * @var string
    */
   public $storeName;
   /**
-   * Landing page of the store.
-   *
    * @var string
    */
   public $storeUrl;
 
   /**
-   * Information specific to billing (read-only).
-   *
-   * @param ChannelToStoreLinkDetailsBillingDetails $billingDetails
+   * @param ChannelToStoreLinkDetailsBillingDetails
    */
   public function setBillingDetails(ChannelToStoreLinkDetailsBillingDetails $billingDetails)
   {
@@ -59,25 +49,7 @@ class ChannelToStoreLinkDetails extends \Google\Model
     return $this->billingDetails;
   }
   /**
-   * Information specific to merchant affiliate program (read-only).
-   *
-   * @param ChannelToStoreLinkDetailsMerchantAffiliateProgramDetails $merchantAffiliateProgramDetails
-   */
-  public function setMerchantAffiliateProgramDetails(ChannelToStoreLinkDetailsMerchantAffiliateProgramDetails $merchantAffiliateProgramDetails)
-  {
-    $this->merchantAffiliateProgramDetails = $merchantAffiliateProgramDetails;
-  }
-  /**
-   * @return ChannelToStoreLinkDetailsMerchantAffiliateProgramDetails
-   */
-  public function getMerchantAffiliateProgramDetails()
-  {
-    return $this->merchantAffiliateProgramDetails;
-  }
-  /**
-   * Google Merchant Center id of the store.
-   *
-   * @param string $merchantId
+   * @param string
    */
   public function setMerchantId($merchantId)
   {
@@ -91,9 +63,7 @@ class ChannelToStoreLinkDetails extends \Google\Model
     return $this->merchantId;
   }
   /**
-   * Name of the store.
-   *
-   * @param string $storeName
+   * @param string
    */
   public function setStoreName($storeName)
   {
@@ -107,9 +77,7 @@ class ChannelToStoreLinkDetails extends \Google\Model
     return $this->storeName;
   }
   /**
-   * Landing page of the store.
-   *
-   * @param string $storeUrl
+   * @param string
    */
   public function setStoreUrl($storeUrl)
   {

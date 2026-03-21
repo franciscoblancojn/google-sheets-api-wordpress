@@ -21,16 +21,16 @@ class CompatibleFields extends \Google\Model
 {
   protected $crossDimensionReachReportCompatibleFieldsType = CrossDimensionReachReportCompatibleFields::class;
   protected $crossDimensionReachReportCompatibleFieldsDataType = '';
-  protected $crossMediaReachReportCompatibleFieldsType = CrossMediaReachReportCompatibleFields::class;
-  protected $crossMediaReachReportCompatibleFieldsDataType = '';
   protected $floodlightReportCompatibleFieldsType = FloodlightReportCompatibleFields::class;
   protected $floodlightReportCompatibleFieldsDataType = '';
   /**
-   * The kind of resource this is, in this case dfareporting#compatibleFields.
-   *
    * @var string
    */
   public $kind;
+  protected $pathAttributionReportCompatibleFieldsType = PathReportCompatibleFields::class;
+  protected $pathAttributionReportCompatibleFieldsDataType = '';
+  protected $pathReportCompatibleFieldsType = PathReportCompatibleFields::class;
+  protected $pathReportCompatibleFieldsDataType = '';
   protected $pathToConversionReportCompatibleFieldsType = PathToConversionReportCompatibleFields::class;
   protected $pathToConversionReportCompatibleFieldsDataType = '';
   protected $reachReportCompatibleFieldsType = ReachReportCompatibleFields::class;
@@ -39,10 +39,7 @@ class CompatibleFields extends \Google\Model
   protected $reportCompatibleFieldsDataType = '';
 
   /**
-   * Contains items that are compatible to be selected for a report of type
-   * "CROSS_DIMENSION_REACH".
-   *
-   * @param CrossDimensionReachReportCompatibleFields $crossDimensionReachReportCompatibleFields
+   * @param CrossDimensionReachReportCompatibleFields
    */
   public function setCrossDimensionReachReportCompatibleFields(CrossDimensionReachReportCompatibleFields $crossDimensionReachReportCompatibleFields)
   {
@@ -56,27 +53,7 @@ class CompatibleFields extends \Google\Model
     return $this->crossDimensionReachReportCompatibleFields;
   }
   /**
-   * Contains items that are compatible to be selected for a report of type
-   * "CROSS_MEDIA_REACH".
-   *
-   * @param CrossMediaReachReportCompatibleFields $crossMediaReachReportCompatibleFields
-   */
-  public function setCrossMediaReachReportCompatibleFields(CrossMediaReachReportCompatibleFields $crossMediaReachReportCompatibleFields)
-  {
-    $this->crossMediaReachReportCompatibleFields = $crossMediaReachReportCompatibleFields;
-  }
-  /**
-   * @return CrossMediaReachReportCompatibleFields
-   */
-  public function getCrossMediaReachReportCompatibleFields()
-  {
-    return $this->crossMediaReachReportCompatibleFields;
-  }
-  /**
-   * Contains items that are compatible to be selected for a report of type
-   * "FLOODLIGHT".
-   *
-   * @param FloodlightReportCompatibleFields $floodlightReportCompatibleFields
+   * @param FloodlightReportCompatibleFields
    */
   public function setFloodlightReportCompatibleFields(FloodlightReportCompatibleFields $floodlightReportCompatibleFields)
   {
@@ -90,9 +67,7 @@ class CompatibleFields extends \Google\Model
     return $this->floodlightReportCompatibleFields;
   }
   /**
-   * The kind of resource this is, in this case dfareporting#compatibleFields.
-   *
-   * @param string $kind
+   * @param string
    */
   public function setKind($kind)
   {
@@ -106,10 +81,35 @@ class CompatibleFields extends \Google\Model
     return $this->kind;
   }
   /**
-   * Contains items that are compatible to be selected for a report of type
-   * "PATH_TO_CONVERSION".
-   *
-   * @param PathToConversionReportCompatibleFields $pathToConversionReportCompatibleFields
+   * @param PathReportCompatibleFields
+   */
+  public function setPathAttributionReportCompatibleFields(PathReportCompatibleFields $pathAttributionReportCompatibleFields)
+  {
+    $this->pathAttributionReportCompatibleFields = $pathAttributionReportCompatibleFields;
+  }
+  /**
+   * @return PathReportCompatibleFields
+   */
+  public function getPathAttributionReportCompatibleFields()
+  {
+    return $this->pathAttributionReportCompatibleFields;
+  }
+  /**
+   * @param PathReportCompatibleFields
+   */
+  public function setPathReportCompatibleFields(PathReportCompatibleFields $pathReportCompatibleFields)
+  {
+    $this->pathReportCompatibleFields = $pathReportCompatibleFields;
+  }
+  /**
+   * @return PathReportCompatibleFields
+   */
+  public function getPathReportCompatibleFields()
+  {
+    return $this->pathReportCompatibleFields;
+  }
+  /**
+   * @param PathToConversionReportCompatibleFields
    */
   public function setPathToConversionReportCompatibleFields(PathToConversionReportCompatibleFields $pathToConversionReportCompatibleFields)
   {
@@ -123,10 +123,7 @@ class CompatibleFields extends \Google\Model
     return $this->pathToConversionReportCompatibleFields;
   }
   /**
-   * Contains items that are compatible to be selected for a report of type
-   * "REACH".
-   *
-   * @param ReachReportCompatibleFields $reachReportCompatibleFields
+   * @param ReachReportCompatibleFields
    */
   public function setReachReportCompatibleFields(ReachReportCompatibleFields $reachReportCompatibleFields)
   {
@@ -140,10 +137,7 @@ class CompatibleFields extends \Google\Model
     return $this->reachReportCompatibleFields;
   }
   /**
-   * Contains items that are compatible to be selected for a report of type
-   * "STANDARD".
-   *
-   * @param ReportCompatibleFields $reportCompatibleFields
+   * @param ReportCompatibleFields
    */
   public function setReportCompatibleFields(ReportCompatibleFields $reportCompatibleFields)
   {

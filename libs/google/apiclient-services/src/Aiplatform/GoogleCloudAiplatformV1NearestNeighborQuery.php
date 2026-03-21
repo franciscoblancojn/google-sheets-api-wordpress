@@ -23,29 +23,16 @@ class GoogleCloudAiplatformV1NearestNeighborQuery extends \Google\Collection
   protected $embeddingType = GoogleCloudAiplatformV1NearestNeighborQueryEmbedding::class;
   protected $embeddingDataType = '';
   /**
-   * Optional. The entity id whose similar entities should be searched for. If
-   * embedding is set, search will use embedding instead of entity_id.
-   *
    * @var string
    */
   public $entityId;
   /**
-   * Optional. The number of similar entities to be retrieved from feature view
-   * for each query.
-   *
    * @var int
    */
   public $neighborCount;
-  protected $numericFiltersType = GoogleCloudAiplatformV1NearestNeighborQueryNumericFilter::class;
-  protected $numericFiltersDataType = 'array';
   protected $parametersType = GoogleCloudAiplatformV1NearestNeighborQueryParameters::class;
   protected $parametersDataType = '';
   /**
-   * Optional. Crowding is a constraint on a neighbor list produced by nearest
-   * neighbor search requiring that no more than
-   * sper_crowding_attribute_neighbor_count of the k neighbors returned have the
-   * same value of crowding_attribute. It's used for improving result diversity.
-   *
    * @var int
    */
   public $perCrowdingAttributeNeighborCount;
@@ -53,9 +40,7 @@ class GoogleCloudAiplatformV1NearestNeighborQuery extends \Google\Collection
   protected $stringFiltersDataType = 'array';
 
   /**
-   * Optional. The embedding vector that be used for similar search.
-   *
-   * @param GoogleCloudAiplatformV1NearestNeighborQueryEmbedding $embedding
+   * @param GoogleCloudAiplatformV1NearestNeighborQueryEmbedding
    */
   public function setEmbedding(GoogleCloudAiplatformV1NearestNeighborQueryEmbedding $embedding)
   {
@@ -69,10 +54,7 @@ class GoogleCloudAiplatformV1NearestNeighborQuery extends \Google\Collection
     return $this->embedding;
   }
   /**
-   * Optional. The entity id whose similar entities should be searched for. If
-   * embedding is set, search will use embedding instead of entity_id.
-   *
-   * @param string $entityId
+   * @param string
    */
   public function setEntityId($entityId)
   {
@@ -86,10 +68,7 @@ class GoogleCloudAiplatformV1NearestNeighborQuery extends \Google\Collection
     return $this->entityId;
   }
   /**
-   * Optional. The number of similar entities to be retrieved from feature view
-   * for each query.
-   *
-   * @param int $neighborCount
+   * @param int
    */
   public function setNeighborCount($neighborCount)
   {
@@ -103,25 +82,7 @@ class GoogleCloudAiplatformV1NearestNeighborQuery extends \Google\Collection
     return $this->neighborCount;
   }
   /**
-   * Optional. The list of numeric filters.
-   *
-   * @param GoogleCloudAiplatformV1NearestNeighborQueryNumericFilter[] $numericFilters
-   */
-  public function setNumericFilters($numericFilters)
-  {
-    $this->numericFilters = $numericFilters;
-  }
-  /**
-   * @return GoogleCloudAiplatformV1NearestNeighborQueryNumericFilter[]
-   */
-  public function getNumericFilters()
-  {
-    return $this->numericFilters;
-  }
-  /**
-   * Optional. Parameters that can be set to tune query on the fly.
-   *
-   * @param GoogleCloudAiplatformV1NearestNeighborQueryParameters $parameters
+   * @param GoogleCloudAiplatformV1NearestNeighborQueryParameters
    */
   public function setParameters(GoogleCloudAiplatformV1NearestNeighborQueryParameters $parameters)
   {
@@ -135,12 +96,7 @@ class GoogleCloudAiplatformV1NearestNeighborQuery extends \Google\Collection
     return $this->parameters;
   }
   /**
-   * Optional. Crowding is a constraint on a neighbor list produced by nearest
-   * neighbor search requiring that no more than
-   * sper_crowding_attribute_neighbor_count of the k neighbors returned have the
-   * same value of crowding_attribute. It's used for improving result diversity.
-   *
-   * @param int $perCrowdingAttributeNeighborCount
+   * @param int
    */
   public function setPerCrowdingAttributeNeighborCount($perCrowdingAttributeNeighborCount)
   {
@@ -154,9 +110,7 @@ class GoogleCloudAiplatformV1NearestNeighborQuery extends \Google\Collection
     return $this->perCrowdingAttributeNeighborCount;
   }
   /**
-   * Optional. The list of string filters.
-   *
-   * @param GoogleCloudAiplatformV1NearestNeighborQueryStringFilter[] $stringFilters
+   * @param GoogleCloudAiplatformV1NearestNeighborQueryStringFilter[]
    */
   public function setStringFilters($stringFilters)
   {

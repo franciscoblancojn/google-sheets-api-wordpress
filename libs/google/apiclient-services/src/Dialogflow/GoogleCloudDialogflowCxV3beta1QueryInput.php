@@ -33,11 +33,9 @@ class GoogleCloudDialogflowCxV3beta1QueryInput extends \Google\Model
   public $languageCode;
   protected $textType = GoogleCloudDialogflowCxV3beta1TextInput::class;
   protected $textDataType = '';
-  protected $toolCallResultType = GoogleCloudDialogflowCxV3beta1ToolCallResult::class;
-  protected $toolCallResultDataType = '';
 
   /**
-   * @param GoogleCloudDialogflowCxV3beta1AudioInput $audio
+   * @param GoogleCloudDialogflowCxV3beta1AudioInput
    */
   public function setAudio(GoogleCloudDialogflowCxV3beta1AudioInput $audio)
   {
@@ -51,7 +49,7 @@ class GoogleCloudDialogflowCxV3beta1QueryInput extends \Google\Model
     return $this->audio;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3beta1DtmfInput $dtmf
+   * @param GoogleCloudDialogflowCxV3beta1DtmfInput
    */
   public function setDtmf(GoogleCloudDialogflowCxV3beta1DtmfInput $dtmf)
   {
@@ -65,7 +63,7 @@ class GoogleCloudDialogflowCxV3beta1QueryInput extends \Google\Model
     return $this->dtmf;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3beta1EventInput $event
+   * @param GoogleCloudDialogflowCxV3beta1EventInput
    */
   public function setEvent(GoogleCloudDialogflowCxV3beta1EventInput $event)
   {
@@ -79,7 +77,7 @@ class GoogleCloudDialogflowCxV3beta1QueryInput extends \Google\Model
     return $this->event;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3beta1IntentInput $intent
+   * @param GoogleCloudDialogflowCxV3beta1IntentInput
    */
   public function setIntent(GoogleCloudDialogflowCxV3beta1IntentInput $intent)
   {
@@ -93,7 +91,7 @@ class GoogleCloudDialogflowCxV3beta1QueryInput extends \Google\Model
     return $this->intent;
   }
   /**
-   * @param string $languageCode
+   * @param string
    */
   public function setLanguageCode($languageCode)
   {
@@ -107,7 +105,7 @@ class GoogleCloudDialogflowCxV3beta1QueryInput extends \Google\Model
     return $this->languageCode;
   }
   /**
-   * @param GoogleCloudDialogflowCxV3beta1TextInput $text
+   * @param GoogleCloudDialogflowCxV3beta1TextInput
    */
   public function setText(GoogleCloudDialogflowCxV3beta1TextInput $text)
   {
@@ -119,20 +117,6 @@ class GoogleCloudDialogflowCxV3beta1QueryInput extends \Google\Model
   public function getText()
   {
     return $this->text;
-  }
-  /**
-   * @param GoogleCloudDialogflowCxV3beta1ToolCallResult $toolCallResult
-   */
-  public function setToolCallResult(GoogleCloudDialogflowCxV3beta1ToolCallResult $toolCallResult)
-  {
-    $this->toolCallResult = $toolCallResult;
-  }
-  /**
-   * @return GoogleCloudDialogflowCxV3beta1ToolCallResult
-   */
-  public function getToolCallResult()
-  {
-    return $this->toolCallResult;
   }
 }
 

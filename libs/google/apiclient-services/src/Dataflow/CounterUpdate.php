@@ -20,28 +20,15 @@ namespace Google\Service\Dataflow;
 class CounterUpdate extends \Google\Model
 {
   /**
-   * Boolean value for And, Or.
-   *
    * @var bool
    */
   public $boolean;
-  protected $boundedTrieType = BoundedTrie::class;
-  protected $boundedTrieDataType = '';
   /**
-   * True if this counter is reported as the total cumulative aggregate value
-   * accumulated since the worker started working on this WorkItem. By default
-   * this is false, indicating that this counter is reported as a delta.
-   *
    * @var bool
    */
   public $cumulative;
   protected $distributionType = DistributionUpdate::class;
   protected $distributionDataType = '';
-  /**
-   * Floating point value for Sum, Max, Min.
-   *
-   * @var 
-   */
   public $floatingPoint;
   protected $floatingPointListType = FloatingPointList::class;
   protected $floatingPointListDataType = '';
@@ -56,17 +43,12 @@ class CounterUpdate extends \Google\Model
   protected $integerMeanType = IntegerMean::class;
   protected $integerMeanDataType = '';
   /**
-   * Value for internally-defined counters used by the Dataflow service.
-   *
    * @var array
    */
   public $internal;
   protected $nameAndKindType = NameAndKind::class;
   protected $nameAndKindDataType = '';
   /**
-   * The service-generated short identifier for this counter. The short_id ->
-   * (name, metadata) mapping is constant for the lifetime of a job.
-   *
    * @var string
    */
   public $shortId;
@@ -76,9 +58,7 @@ class CounterUpdate extends \Google\Model
   protected $structuredNameAndMetadataDataType = '';
 
   /**
-   * Boolean value for And, Or.
-   *
-   * @param bool $boolean
+   * @param bool
    */
   public function setBoolean($boolean)
   {
@@ -92,27 +72,7 @@ class CounterUpdate extends \Google\Model
     return $this->boolean;
   }
   /**
-   * Bounded trie data
-   *
-   * @param BoundedTrie $boundedTrie
-   */
-  public function setBoundedTrie(BoundedTrie $boundedTrie)
-  {
-    $this->boundedTrie = $boundedTrie;
-  }
-  /**
-   * @return BoundedTrie
-   */
-  public function getBoundedTrie()
-  {
-    return $this->boundedTrie;
-  }
-  /**
-   * True if this counter is reported as the total cumulative aggregate value
-   * accumulated since the worker started working on this WorkItem. By default
-   * this is false, indicating that this counter is reported as a delta.
-   *
-   * @param bool $cumulative
+   * @param bool
    */
   public function setCumulative($cumulative)
   {
@@ -126,9 +86,7 @@ class CounterUpdate extends \Google\Model
     return $this->cumulative;
   }
   /**
-   * Distribution data
-   *
-   * @param DistributionUpdate $distribution
+   * @param DistributionUpdate
    */
   public function setDistribution(DistributionUpdate $distribution)
   {
@@ -150,9 +108,7 @@ class CounterUpdate extends \Google\Model
     return $this->floatingPoint;
   }
   /**
-   * List of floating point numbers, for Set.
-   *
-   * @param FloatingPointList $floatingPointList
+   * @param FloatingPointList
    */
   public function setFloatingPointList(FloatingPointList $floatingPointList)
   {
@@ -166,9 +122,7 @@ class CounterUpdate extends \Google\Model
     return $this->floatingPointList;
   }
   /**
-   * Floating point mean aggregation value for Mean.
-   *
-   * @param FloatingPointMean $floatingPointMean
+   * @param FloatingPointMean
    */
   public function setFloatingPointMean(FloatingPointMean $floatingPointMean)
   {
@@ -182,9 +136,7 @@ class CounterUpdate extends \Google\Model
     return $this->floatingPointMean;
   }
   /**
-   * Integer value for Sum, Max, Min.
-   *
-   * @param SplitInt64 $integer
+   * @param SplitInt64
    */
   public function setInteger(SplitInt64 $integer)
   {
@@ -198,9 +150,7 @@ class CounterUpdate extends \Google\Model
     return $this->integer;
   }
   /**
-   * Gauge data
-   *
-   * @param IntegerGauge $integerGauge
+   * @param IntegerGauge
    */
   public function setIntegerGauge(IntegerGauge $integerGauge)
   {
@@ -214,9 +164,7 @@ class CounterUpdate extends \Google\Model
     return $this->integerGauge;
   }
   /**
-   * List of integers, for Set.
-   *
-   * @param IntegerList $integerList
+   * @param IntegerList
    */
   public function setIntegerList(IntegerList $integerList)
   {
@@ -230,9 +178,7 @@ class CounterUpdate extends \Google\Model
     return $this->integerList;
   }
   /**
-   * Integer mean aggregation value for Mean.
-   *
-   * @param IntegerMean $integerMean
+   * @param IntegerMean
    */
   public function setIntegerMean(IntegerMean $integerMean)
   {
@@ -246,9 +192,7 @@ class CounterUpdate extends \Google\Model
     return $this->integerMean;
   }
   /**
-   * Value for internally-defined counters used by the Dataflow service.
-   *
-   * @param array $internal
+   * @param array
    */
   public function setInternal($internal)
   {
@@ -262,9 +206,7 @@ class CounterUpdate extends \Google\Model
     return $this->internal;
   }
   /**
-   * Counter name and aggregation type.
-   *
-   * @param NameAndKind $nameAndKind
+   * @param NameAndKind
    */
   public function setNameAndKind(NameAndKind $nameAndKind)
   {
@@ -278,10 +220,7 @@ class CounterUpdate extends \Google\Model
     return $this->nameAndKind;
   }
   /**
-   * The service-generated short identifier for this counter. The short_id ->
-   * (name, metadata) mapping is constant for the lifetime of a job.
-   *
-   * @param string $shortId
+   * @param string
    */
   public function setShortId($shortId)
   {
@@ -295,9 +234,7 @@ class CounterUpdate extends \Google\Model
     return $this->shortId;
   }
   /**
-   * List of strings, for Set.
-   *
-   * @param StringList $stringList
+   * @param StringList
    */
   public function setStringList(StringList $stringList)
   {
@@ -311,9 +248,7 @@ class CounterUpdate extends \Google\Model
     return $this->stringList;
   }
   /**
-   * Counter structured name and metadata.
-   *
-   * @param CounterStructuredNameAndMetadata $structuredNameAndMetadata
+   * @param CounterStructuredNameAndMetadata
    */
   public function setStructuredNameAndMetadata(CounterStructuredNameAndMetadata $structuredNameAndMetadata)
   {

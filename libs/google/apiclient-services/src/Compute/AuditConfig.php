@@ -19,22 +19,20 @@ namespace Google\Service\Compute;
 
 class AuditConfig extends \Google\Collection
 {
-  protected $collection_key = 'auditLogConfigs';
+  protected $collection_key = 'exemptedMembers';
   protected $auditLogConfigsType = AuditLogConfig::class;
   protected $auditLogConfigsDataType = 'array';
   /**
-   * Specifies a service that will be enabled for audit logging. For example,
-   * `storage.googleapis.com`, `cloudsql.googleapis.com`. `allServices` is a
-   * special value that covers all services.
-   *
+   * @var string[]
+   */
+  public $exemptedMembers;
+  /**
    * @var string
    */
   public $service;
 
   /**
-   * The configuration for logging of each type of permission.
-   *
-   * @param AuditLogConfig[] $auditLogConfigs
+   * @param AuditLogConfig[]
    */
   public function setAuditLogConfigs($auditLogConfigs)
   {
@@ -48,11 +46,21 @@ class AuditConfig extends \Google\Collection
     return $this->auditLogConfigs;
   }
   /**
-   * Specifies a service that will be enabled for audit logging. For example,
-   * `storage.googleapis.com`, `cloudsql.googleapis.com`. `allServices` is a
-   * special value that covers all services.
-   *
-   * @param string $service
+   * @param string[]
+   */
+  public function setExemptedMembers($exemptedMembers)
+  {
+    $this->exemptedMembers = $exemptedMembers;
+  }
+  /**
+   * @return string[]
+   */
+  public function getExemptedMembers()
+  {
+    return $this->exemptedMembers;
+  }
+  /**
+   * @param string
    */
   public function setService($service)
   {

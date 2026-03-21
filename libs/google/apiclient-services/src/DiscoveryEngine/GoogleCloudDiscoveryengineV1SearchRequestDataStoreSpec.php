@@ -19,81 +19,13 @@ namespace Google\Service\DiscoveryEngine;
 
 class GoogleCloudDiscoveryengineV1SearchRequestDataStoreSpec extends \Google\Model
 {
-  protected $boostSpecType = GoogleCloudDiscoveryengineV1SearchRequestBoostSpec::class;
-  protected $boostSpecDataType = '';
   /**
-   * Optional. Custom search operators which if specified will be used to filter
-   * results from workspace data stores. For more information on custom search
-   * operators, see
-   * [SearchOperators](https://support.google.com/cloudsearch/answer/6172299).
-   *
-   * @var string
-   */
-  public $customSearchOperators;
-  /**
-   * Required. Full resource name of DataStore, such as `projects/{project}/loca
-   * tions/{location}/collections/{collection_id}/dataStores/{data_store_id}`.
-   * The path must include the project number, project id is not supported for
-   * this field.
-   *
    * @var string
    */
   public $dataStore;
-  /**
-   * Optional. Filter specification to filter documents in the data store
-   * specified by data_store field. For more information on filtering, see
-   * [Filtering](https://cloud.google.com/generative-ai-app-builder/docs/filter-
-   * search-metadata)
-   *
-   * @var string
-   */
-  public $filter;
 
   /**
-   * Optional. Boost specification to boost certain documents. For more
-   * information on boosting, see
-   * [Boosting](https://cloud.google.com/generative-ai-app-builder/docs/boost-
-   * search-results)
-   *
-   * @param GoogleCloudDiscoveryengineV1SearchRequestBoostSpec $boostSpec
-   */
-  public function setBoostSpec(GoogleCloudDiscoveryengineV1SearchRequestBoostSpec $boostSpec)
-  {
-    $this->boostSpec = $boostSpec;
-  }
-  /**
-   * @return GoogleCloudDiscoveryengineV1SearchRequestBoostSpec
-   */
-  public function getBoostSpec()
-  {
-    return $this->boostSpec;
-  }
-  /**
-   * Optional. Custom search operators which if specified will be used to filter
-   * results from workspace data stores. For more information on custom search
-   * operators, see
-   * [SearchOperators](https://support.google.com/cloudsearch/answer/6172299).
-   *
-   * @param string $customSearchOperators
-   */
-  public function setCustomSearchOperators($customSearchOperators)
-  {
-    $this->customSearchOperators = $customSearchOperators;
-  }
-  /**
-   * @return string
-   */
-  public function getCustomSearchOperators()
-  {
-    return $this->customSearchOperators;
-  }
-  /**
-   * Required. Full resource name of DataStore, such as `projects/{project}/loca
-   * tions/{location}/collections/{collection_id}/dataStores/{data_store_id}`.
-   * The path must include the project number, project id is not supported for
-   * this field.
-   *
-   * @param string $dataStore
+   * @param string
    */
   public function setDataStore($dataStore)
   {
@@ -105,25 +37,6 @@ class GoogleCloudDiscoveryengineV1SearchRequestDataStoreSpec extends \Google\Mod
   public function getDataStore()
   {
     return $this->dataStore;
-  }
-  /**
-   * Optional. Filter specification to filter documents in the data store
-   * specified by data_store field. For more information on filtering, see
-   * [Filtering](https://cloud.google.com/generative-ai-app-builder/docs/filter-
-   * search-metadata)
-   *
-   * @param string $filter
-   */
-  public function setFilter($filter)
-  {
-    $this->filter = $filter;
-  }
-  /**
-   * @return string
-   */
-  public function getFilter()
-  {
-    return $this->filter;
   }
 }
 

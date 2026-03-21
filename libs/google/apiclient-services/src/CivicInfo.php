@@ -39,6 +39,7 @@ class CivicInfo extends \Google\Service
 
   public $divisions;
   public $elections;
+  public $representatives;
   public $rootUrlTemplate;
 
   /**
@@ -64,16 +65,7 @@ class CivicInfo extends \Google\Service
         'divisions',
         [
           'methods' => [
-            'queryDivisionByAddress' => [
-              'path' => 'civicinfo/v2/divisionsByAddress',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'address' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
-            ],'search' => [
+            'search' => [
               'path' => 'civicinfo/v2/divisions',
               'httpMethod' => 'GET',
               'parameters' => [
@@ -108,6 +100,7 @@ class CivicInfo extends \Google\Service
                 'address' => [
                   'location' => 'query',
                   'type' => 'string',
+                  'required' => true,
                 ],
                 'electionId' => [
                   'location' => 'query',
@@ -124,6 +117,63 @@ class CivicInfo extends \Google\Service
                 'returnAllAvailableData' => [
                   'location' => 'query',
                   'type' => 'boolean',
+                ],
+              ],
+            ],
+          ]
+        ]
+    );
+    $this->representatives = new CivicInfo\Resource\Representatives(
+        $this,
+        $this->serviceName,
+        'representatives',
+        [
+          'methods' => [
+            'representativeInfoByAddress' => [
+              'path' => 'civicinfo/v2/representatives',
+              'httpMethod' => 'GET',
+              'parameters' => [
+                'address' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                ],
+                'includeOffices' => [
+                  'location' => 'query',
+                  'type' => 'boolean',
+                ],
+                'levels' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
+                ],
+                'roles' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
+                ],
+              ],
+            ],'representativeInfoByDivision' => [
+              'path' => 'civicinfo/v2/representatives/{ocdId}',
+              'httpMethod' => 'GET',
+              'parameters' => [
+                'ocdId' => [
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ],
+                'levels' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
+                ],
+                'recursive' => [
+                  'location' => 'query',
+                  'type' => 'boolean',
+                ],
+                'roles' => [
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
                 ],
               ],
             ],

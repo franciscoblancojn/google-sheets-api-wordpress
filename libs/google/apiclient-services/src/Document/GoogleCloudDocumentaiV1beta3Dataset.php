@@ -19,48 +19,17 @@ namespace Google\Service\Document;
 
 class GoogleCloudDocumentaiV1beta3Dataset extends \Google\Model
 {
-  /**
-   * Default unspecified enum, should not be used.
-   */
-  public const STATE_STATE_UNSPECIFIED = 'STATE_UNSPECIFIED';
-  /**
-   * Dataset has not been initialized.
-   */
-  public const STATE_UNINITIALIZED = 'UNINITIALIZED';
-  /**
-   * Dataset is being initialized.
-   */
-  public const STATE_INITIALIZING = 'INITIALIZING';
-  /**
-   * Dataset has been initialized.
-   */
-  public const STATE_INITIALIZED = 'INITIALIZED';
   protected $documentWarehouseConfigType = GoogleCloudDocumentaiV1beta3DatasetDocumentWarehouseConfig::class;
   protected $documentWarehouseConfigDataType = '';
   protected $gcsManagedConfigType = GoogleCloudDocumentaiV1beta3DatasetGCSManagedConfig::class;
   protected $gcsManagedConfigDataType = '';
   /**
-   * Dataset resource name. Format:
-   * `projects/{project}/locations/{location}/processors/{processor}/dataset`
-   *
    * @var string
    */
   public $name;
+  protected $spannerIndexingConfigType = GoogleCloudDocumentaiV1beta3DatasetSpannerIndexingConfig::class;
+  protected $spannerIndexingConfigDataType = '';
   /**
-   * Output only. Reserved for future use.
-   *
-   * @var bool
-   */
-  public $satisfiesPzi;
-  /**
-   * Output only. Reserved for future use.
-   *
-   * @var bool
-   */
-  public $satisfiesPzs;
-  /**
-   * Required. State of the dataset. Ignored when updating dataset.
-   *
    * @var string
    */
   public $state;
@@ -68,18 +37,13 @@ class GoogleCloudDocumentaiV1beta3Dataset extends \Google\Model
   protected $unmanagedDatasetConfigDataType = '';
 
   /**
-   * Optional. Deprecated. Warehouse-based dataset configuration is not
-   * supported.
-   *
-   * @deprecated
-   * @param GoogleCloudDocumentaiV1beta3DatasetDocumentWarehouseConfig $documentWarehouseConfig
+   * @param GoogleCloudDocumentaiV1beta3DatasetDocumentWarehouseConfig
    */
   public function setDocumentWarehouseConfig(GoogleCloudDocumentaiV1beta3DatasetDocumentWarehouseConfig $documentWarehouseConfig)
   {
     $this->documentWarehouseConfig = $documentWarehouseConfig;
   }
   /**
-   * @deprecated
    * @return GoogleCloudDocumentaiV1beta3DatasetDocumentWarehouseConfig
    */
   public function getDocumentWarehouseConfig()
@@ -87,11 +51,7 @@ class GoogleCloudDocumentaiV1beta3Dataset extends \Google\Model
     return $this->documentWarehouseConfig;
   }
   /**
-   * Optional. User-managed Cloud Storage dataset configuration. Use this
-   * configuration if the dataset documents are stored under a user-managed
-   * Cloud Storage location.
-   *
-   * @param GoogleCloudDocumentaiV1beta3DatasetGCSManagedConfig $gcsManagedConfig
+   * @param GoogleCloudDocumentaiV1beta3DatasetGCSManagedConfig
    */
   public function setGcsManagedConfig(GoogleCloudDocumentaiV1beta3DatasetGCSManagedConfig $gcsManagedConfig)
   {
@@ -105,10 +65,7 @@ class GoogleCloudDocumentaiV1beta3Dataset extends \Google\Model
     return $this->gcsManagedConfig;
   }
   /**
-   * Dataset resource name. Format:
-   * `projects/{project}/locations/{location}/processors/{processor}/dataset`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -122,62 +79,35 @@ class GoogleCloudDocumentaiV1beta3Dataset extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. Reserved for future use.
-   *
-   * @param bool $satisfiesPzi
+   * @param GoogleCloudDocumentaiV1beta3DatasetSpannerIndexingConfig
    */
-  public function setSatisfiesPzi($satisfiesPzi)
+  public function setSpannerIndexingConfig(GoogleCloudDocumentaiV1beta3DatasetSpannerIndexingConfig $spannerIndexingConfig)
   {
-    $this->satisfiesPzi = $satisfiesPzi;
+    $this->spannerIndexingConfig = $spannerIndexingConfig;
   }
   /**
-   * @return bool
+   * @return GoogleCloudDocumentaiV1beta3DatasetSpannerIndexingConfig
    */
-  public function getSatisfiesPzi()
+  public function getSpannerIndexingConfig()
   {
-    return $this->satisfiesPzi;
+    return $this->spannerIndexingConfig;
   }
   /**
-   * Output only. Reserved for future use.
-   *
-   * @param bool $satisfiesPzs
-   */
-  public function setSatisfiesPzs($satisfiesPzs)
-  {
-    $this->satisfiesPzs = $satisfiesPzs;
-  }
-  /**
-   * @return bool
-   */
-  public function getSatisfiesPzs()
-  {
-    return $this->satisfiesPzs;
-  }
-  /**
-   * Required. State of the dataset. Ignored when updating dataset.
-   *
-   * Accepted values: STATE_UNSPECIFIED, UNINITIALIZED, INITIALIZING,
-   * INITIALIZED
-   *
-   * @param self::STATE_* $state
+   * @param string
    */
   public function setState($state)
   {
     $this->state = $state;
   }
   /**
-   * @return self::STATE_*
+   * @return string
    */
   public function getState()
   {
     return $this->state;
   }
   /**
-   * Optional. Unmanaged dataset configuration. Use this configuration if the
-   * dataset documents are managed by the document service internally (not user-
-   * managed).
-   *
-   * @param GoogleCloudDocumentaiV1beta3DatasetUnmanagedDatasetConfig $unmanagedDatasetConfig
+   * @param GoogleCloudDocumentaiV1beta3DatasetUnmanagedDatasetConfig
    */
   public function setUnmanagedDatasetConfig(GoogleCloudDocumentaiV1beta3DatasetUnmanagedDatasetConfig $unmanagedDatasetConfig)
   {

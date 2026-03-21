@@ -20,28 +20,12 @@ namespace Google\Service\Aiplatform;
 class GoogleCloudAiplatformV1ModelGardenSource extends \Google\Model
 {
   /**
-   * Required. The model garden source model resource name.
-   *
    * @var string
    */
   public $publicModelName;
-  /**
-   * Optional. Whether to avoid pulling the model from the HF cache.
-   *
-   * @var bool
-   */
-  public $skipHfModelCache;
-  /**
-   * Optional. The model garden source model version ID.
-   *
-   * @var string
-   */
-  public $versionId;
 
   /**
-   * Required. The model garden source model resource name.
-   *
-   * @param string $publicModelName
+   * @param string
    */
   public function setPublicModelName($publicModelName)
   {
@@ -53,38 +37,6 @@ class GoogleCloudAiplatformV1ModelGardenSource extends \Google\Model
   public function getPublicModelName()
   {
     return $this->publicModelName;
-  }
-  /**
-   * Optional. Whether to avoid pulling the model from the HF cache.
-   *
-   * @param bool $skipHfModelCache
-   */
-  public function setSkipHfModelCache($skipHfModelCache)
-  {
-    $this->skipHfModelCache = $skipHfModelCache;
-  }
-  /**
-   * @return bool
-   */
-  public function getSkipHfModelCache()
-  {
-    return $this->skipHfModelCache;
-  }
-  /**
-   * Optional. The model garden source model version ID.
-   *
-   * @param string $versionId
-   */
-  public function setVersionId($versionId)
-  {
-    $this->versionId = $versionId;
-  }
-  /**
-   * @return string
-   */
-  public function getVersionId()
-  {
-    return $this->versionId;
   }
 }
 

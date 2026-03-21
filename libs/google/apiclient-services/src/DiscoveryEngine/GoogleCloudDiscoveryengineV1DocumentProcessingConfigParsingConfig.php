@@ -21,15 +21,11 @@ class GoogleCloudDiscoveryengineV1DocumentProcessingConfigParsingConfig extends 
 {
   protected $digitalParsingConfigType = GoogleCloudDiscoveryengineV1DocumentProcessingConfigParsingConfigDigitalParsingConfig::class;
   protected $digitalParsingConfigDataType = '';
-  protected $layoutParsingConfigType = GoogleCloudDiscoveryengineV1DocumentProcessingConfigParsingConfigLayoutParsingConfig::class;
-  protected $layoutParsingConfigDataType = '';
   protected $ocrParsingConfigType = GoogleCloudDiscoveryengineV1DocumentProcessingConfigParsingConfigOcrParsingConfig::class;
   protected $ocrParsingConfigDataType = '';
 
   /**
-   * Configurations applied to digital parser.
-   *
-   * @param GoogleCloudDiscoveryengineV1DocumentProcessingConfigParsingConfigDigitalParsingConfig $digitalParsingConfig
+   * @param GoogleCloudDiscoveryengineV1DocumentProcessingConfigParsingConfigDigitalParsingConfig
    */
   public function setDigitalParsingConfig(GoogleCloudDiscoveryengineV1DocumentProcessingConfigParsingConfigDigitalParsingConfig $digitalParsingConfig)
   {
@@ -43,25 +39,7 @@ class GoogleCloudDiscoveryengineV1DocumentProcessingConfigParsingConfig extends 
     return $this->digitalParsingConfig;
   }
   /**
-   * Configurations applied to layout parser.
-   *
-   * @param GoogleCloudDiscoveryengineV1DocumentProcessingConfigParsingConfigLayoutParsingConfig $layoutParsingConfig
-   */
-  public function setLayoutParsingConfig(GoogleCloudDiscoveryengineV1DocumentProcessingConfigParsingConfigLayoutParsingConfig $layoutParsingConfig)
-  {
-    $this->layoutParsingConfig = $layoutParsingConfig;
-  }
-  /**
-   * @return GoogleCloudDiscoveryengineV1DocumentProcessingConfigParsingConfigLayoutParsingConfig
-   */
-  public function getLayoutParsingConfig()
-  {
-    return $this->layoutParsingConfig;
-  }
-  /**
-   * Configurations applied to OCR parser. Currently it only applies to PDFs.
-   *
-   * @param GoogleCloudDiscoveryengineV1DocumentProcessingConfigParsingConfigOcrParsingConfig $ocrParsingConfig
+   * @param GoogleCloudDiscoveryengineV1DocumentProcessingConfigParsingConfigOcrParsingConfig
    */
   public function setOcrParsingConfig(GoogleCloudDiscoveryengineV1DocumentProcessingConfigParsingConfigOcrParsingConfig $ocrParsingConfig)
   {

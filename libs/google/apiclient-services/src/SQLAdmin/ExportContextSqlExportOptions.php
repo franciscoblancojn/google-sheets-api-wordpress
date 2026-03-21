@@ -23,38 +23,24 @@ class ExportContextSqlExportOptions extends \Google\Collection
   protected $mysqlExportOptionsType = ExportContextSqlExportOptionsMysqlExportOptions::class;
   protected $mysqlExportOptionsDataType = '';
   /**
-   * Optional. Whether or not the export should be parallel.
-   *
    * @var bool
    */
   public $parallel;
-  protected $postgresExportOptionsType = ExportContextSqlExportOptionsPostgresExportOptions::class;
-  protected $postgresExportOptionsDataType = '';
   /**
-   * Export only schemas.
-   *
    * @var bool
    */
   public $schemaOnly;
   /**
-   * Tables to export, or that were exported, from the specified database. If
-   * you specify tables, specify one and only one database. For PostgreSQL
-   * instances, you can specify only one table.
-   *
    * @var string[]
    */
   public $tables;
   /**
-   * Optional. The number of threads to use for parallel export.
-   *
    * @var int
    */
   public $threads;
 
   /**
-   * Options for exporting from MySQL.
-   *
-   * @param ExportContextSqlExportOptionsMysqlExportOptions $mysqlExportOptions
+   * @param ExportContextSqlExportOptionsMysqlExportOptions
    */
   public function setMysqlExportOptions(ExportContextSqlExportOptionsMysqlExportOptions $mysqlExportOptions)
   {
@@ -68,9 +54,7 @@ class ExportContextSqlExportOptions extends \Google\Collection
     return $this->mysqlExportOptions;
   }
   /**
-   * Optional. Whether or not the export should be parallel.
-   *
-   * @param bool $parallel
+   * @param bool
    */
   public function setParallel($parallel)
   {
@@ -84,25 +68,7 @@ class ExportContextSqlExportOptions extends \Google\Collection
     return $this->parallel;
   }
   /**
-   * Options for exporting from a Cloud SQL for PostgreSQL instance.
-   *
-   * @param ExportContextSqlExportOptionsPostgresExportOptions $postgresExportOptions
-   */
-  public function setPostgresExportOptions(ExportContextSqlExportOptionsPostgresExportOptions $postgresExportOptions)
-  {
-    $this->postgresExportOptions = $postgresExportOptions;
-  }
-  /**
-   * @return ExportContextSqlExportOptionsPostgresExportOptions
-   */
-  public function getPostgresExportOptions()
-  {
-    return $this->postgresExportOptions;
-  }
-  /**
-   * Export only schemas.
-   *
-   * @param bool $schemaOnly
+   * @param bool
    */
   public function setSchemaOnly($schemaOnly)
   {
@@ -116,11 +82,7 @@ class ExportContextSqlExportOptions extends \Google\Collection
     return $this->schemaOnly;
   }
   /**
-   * Tables to export, or that were exported, from the specified database. If
-   * you specify tables, specify one and only one database. For PostgreSQL
-   * instances, you can specify only one table.
-   *
-   * @param string[] $tables
+   * @param string[]
    */
   public function setTables($tables)
   {
@@ -134,9 +96,7 @@ class ExportContextSqlExportOptions extends \Google\Collection
     return $this->tables;
   }
   /**
-   * Optional. The number of threads to use for parallel export.
-   *
-   * @param int $threads
+   * @param int
    */
   public function setThreads($threads)
   {

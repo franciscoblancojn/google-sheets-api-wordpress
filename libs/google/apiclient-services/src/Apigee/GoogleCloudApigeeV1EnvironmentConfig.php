@@ -23,18 +23,10 @@ class GoogleCloudApigeeV1EnvironmentConfig extends \Google\Collection
   protected $addonsConfigType = GoogleCloudApigeeV1RuntimeAddonsConfig::class;
   protected $addonsConfigDataType = '';
   /**
-   * The location for the config blob of API Runtime Control, aka Envoy Adapter,
-   * for op-based authentication as a URI, e.g. a Cloud Storage URI. This is
-   * only used by Envoy-based gateways.
-   *
    * @var string
    */
   public $arcConfigLocation;
-  protected $clientIpResolutionConfigType = GoogleCloudApigeeV1EnvironmentConfigClientIPResolutionConfig::class;
-  protected $clientIpResolutionConfigDataType = '';
   /**
-   * Time that the environment configuration was created.
-   *
    * @var string
    */
   public $createTime;
@@ -47,55 +39,34 @@ class GoogleCloudApigeeV1EnvironmentConfig extends \Google\Collection
   protected $deploymentsType = GoogleCloudApigeeV1DeploymentConfig::class;
   protected $deploymentsDataType = 'array';
   /**
-   * Revision ID for environment-scoped resources (e.g. target servers,
-   * keystores) in this config. This ID will increment any time a resource not
-   * scoped to a deployment group changes.
-   *
    * @var string
    */
   public $envScopedRevisionId;
   /**
-   * Feature flags inherited from the organization and environment.
-   *
    * @var string[]
    */
   public $featureFlags;
   protected $flowhooksType = GoogleCloudApigeeV1FlowHookConfig::class;
   protected $flowhooksDataType = 'array';
   /**
-   * The forward proxy's url to be used by the runtime. When set, runtime will
-   * send requests to the target via the given forward proxy. This is only used
-   * by programmable gateways.
-   *
    * @var string
    */
   public $forwardProxyUri;
   /**
-   * The location for the gateway config blob as a URI, e.g. a Cloud Storage
-   * URI. This is only used by Envoy-based gateways.
-   *
    * @var string
    */
   public $gatewayConfigLocation;
   protected $keystoresType = GoogleCloudApigeeV1KeystoreConfig::class;
   protected $keystoresDataType = 'array';
   /**
-   * Name of the environment configuration in the following format:
-   * `organizations/{org}/environments/{env}/configs/{config}`
-   *
    * @var string
    */
   public $name;
   /**
-   * Used by the Control plane to add context information to help detect the
-   * source of the document during diagnostics and debugging.
-   *
    * @var string
    */
   public $provider;
   /**
-   * Name of the PubSub topic for the environment.
-   *
    * @var string
    */
   public $pubsubTopic;
@@ -104,15 +75,10 @@ class GoogleCloudApigeeV1EnvironmentConfig extends \Google\Collection
   protected $resourcesType = GoogleCloudApigeeV1ResourceConfig::class;
   protected $resourcesDataType = 'array';
   /**
-   * Revision ID of the environment configuration. The higher the value, the
-   * more recently the configuration was deployed.
-   *
    * @var string
    */
   public $revisionId;
   /**
-   * DEPRECATED: Use revision_id.
-   *
    * @var string
    */
   public $sequenceNumber;
@@ -121,17 +87,12 @@ class GoogleCloudApigeeV1EnvironmentConfig extends \Google\Collection
   protected $traceConfigType = GoogleCloudApigeeV1RuntimeTraceConfig::class;
   protected $traceConfigDataType = '';
   /**
-   * Unique ID for the environment configuration. The ID will only change if the
-   * environment is deleted and recreated.
-   *
    * @var string
    */
   public $uid;
 
   /**
-   * The latest runtime configurations for add-ons.
-   *
-   * @param GoogleCloudApigeeV1RuntimeAddonsConfig $addonsConfig
+   * @param GoogleCloudApigeeV1RuntimeAddonsConfig
    */
   public function setAddonsConfig(GoogleCloudApigeeV1RuntimeAddonsConfig $addonsConfig)
   {
@@ -145,11 +106,7 @@ class GoogleCloudApigeeV1EnvironmentConfig extends \Google\Collection
     return $this->addonsConfig;
   }
   /**
-   * The location for the config blob of API Runtime Control, aka Envoy Adapter,
-   * for op-based authentication as a URI, e.g. a Cloud Storage URI. This is
-   * only used by Envoy-based gateways.
-   *
-   * @param string $arcConfigLocation
+   * @param string
    */
   public function setArcConfigLocation($arcConfigLocation)
   {
@@ -163,25 +120,7 @@ class GoogleCloudApigeeV1EnvironmentConfig extends \Google\Collection
     return $this->arcConfigLocation;
   }
   /**
-   * The algorithm to resolve IP.
-   *
-   * @param GoogleCloudApigeeV1EnvironmentConfigClientIPResolutionConfig $clientIpResolutionConfig
-   */
-  public function setClientIpResolutionConfig(GoogleCloudApigeeV1EnvironmentConfigClientIPResolutionConfig $clientIpResolutionConfig)
-  {
-    $this->clientIpResolutionConfig = $clientIpResolutionConfig;
-  }
-  /**
-   * @return GoogleCloudApigeeV1EnvironmentConfigClientIPResolutionConfig
-   */
-  public function getClientIpResolutionConfig()
-  {
-    return $this->clientIpResolutionConfig;
-  }
-  /**
-   * Time that the environment configuration was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -195,9 +134,7 @@ class GoogleCloudApigeeV1EnvironmentConfig extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * List of data collectors used by the deployments in the environment.
-   *
-   * @param GoogleCloudApigeeV1DataCollectorConfig[] $dataCollectors
+   * @param GoogleCloudApigeeV1DataCollectorConfig[]
    */
   public function setDataCollectors($dataCollectors)
   {
@@ -211,9 +148,7 @@ class GoogleCloudApigeeV1EnvironmentConfig extends \Google\Collection
     return $this->dataCollectors;
   }
   /**
-   * Debug mask that applies to all deployments in the environment.
-   *
-   * @param GoogleCloudApigeeV1DebugMask $debugMask
+   * @param GoogleCloudApigeeV1DebugMask
    */
   public function setDebugMask(GoogleCloudApigeeV1DebugMask $debugMask)
   {
@@ -227,9 +162,7 @@ class GoogleCloudApigeeV1EnvironmentConfig extends \Google\Collection
     return $this->debugMask;
   }
   /**
-   * List of deployment groups in the environment.
-   *
-   * @param GoogleCloudApigeeV1DeploymentGroupConfig[] $deploymentGroups
+   * @param GoogleCloudApigeeV1DeploymentGroupConfig[]
    */
   public function setDeploymentGroups($deploymentGroups)
   {
@@ -243,9 +176,7 @@ class GoogleCloudApigeeV1EnvironmentConfig extends \Google\Collection
     return $this->deploymentGroups;
   }
   /**
-   * List of deployments in the environment.
-   *
-   * @param GoogleCloudApigeeV1DeploymentConfig[] $deployments
+   * @param GoogleCloudApigeeV1DeploymentConfig[]
    */
   public function setDeployments($deployments)
   {
@@ -259,11 +190,7 @@ class GoogleCloudApigeeV1EnvironmentConfig extends \Google\Collection
     return $this->deployments;
   }
   /**
-   * Revision ID for environment-scoped resources (e.g. target servers,
-   * keystores) in this config. This ID will increment any time a resource not
-   * scoped to a deployment group changes.
-   *
-   * @param string $envScopedRevisionId
+   * @param string
    */
   public function setEnvScopedRevisionId($envScopedRevisionId)
   {
@@ -277,9 +204,7 @@ class GoogleCloudApigeeV1EnvironmentConfig extends \Google\Collection
     return $this->envScopedRevisionId;
   }
   /**
-   * Feature flags inherited from the organization and environment.
-   *
-   * @param string[] $featureFlags
+   * @param string[]
    */
   public function setFeatureFlags($featureFlags)
   {
@@ -293,9 +218,7 @@ class GoogleCloudApigeeV1EnvironmentConfig extends \Google\Collection
     return $this->featureFlags;
   }
   /**
-   * List of flow hooks in the environment.
-   *
-   * @param GoogleCloudApigeeV1FlowHookConfig[] $flowhooks
+   * @param GoogleCloudApigeeV1FlowHookConfig[]
    */
   public function setFlowhooks($flowhooks)
   {
@@ -309,11 +232,7 @@ class GoogleCloudApigeeV1EnvironmentConfig extends \Google\Collection
     return $this->flowhooks;
   }
   /**
-   * The forward proxy's url to be used by the runtime. When set, runtime will
-   * send requests to the target via the given forward proxy. This is only used
-   * by programmable gateways.
-   *
-   * @param string $forwardProxyUri
+   * @param string
    */
   public function setForwardProxyUri($forwardProxyUri)
   {
@@ -327,10 +246,7 @@ class GoogleCloudApigeeV1EnvironmentConfig extends \Google\Collection
     return $this->forwardProxyUri;
   }
   /**
-   * The location for the gateway config blob as a URI, e.g. a Cloud Storage
-   * URI. This is only used by Envoy-based gateways.
-   *
-   * @param string $gatewayConfigLocation
+   * @param string
    */
   public function setGatewayConfigLocation($gatewayConfigLocation)
   {
@@ -344,9 +260,7 @@ class GoogleCloudApigeeV1EnvironmentConfig extends \Google\Collection
     return $this->gatewayConfigLocation;
   }
   /**
-   * List of keystores in the environment.
-   *
-   * @param GoogleCloudApigeeV1KeystoreConfig[] $keystores
+   * @param GoogleCloudApigeeV1KeystoreConfig[]
    */
   public function setKeystores($keystores)
   {
@@ -360,10 +274,7 @@ class GoogleCloudApigeeV1EnvironmentConfig extends \Google\Collection
     return $this->keystores;
   }
   /**
-   * Name of the environment configuration in the following format:
-   * `organizations/{org}/environments/{env}/configs/{config}`
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -377,10 +288,7 @@ class GoogleCloudApigeeV1EnvironmentConfig extends \Google\Collection
     return $this->name;
   }
   /**
-   * Used by the Control plane to add context information to help detect the
-   * source of the document during diagnostics and debugging.
-   *
-   * @param string $provider
+   * @param string
    */
   public function setProvider($provider)
   {
@@ -394,9 +302,7 @@ class GoogleCloudApigeeV1EnvironmentConfig extends \Google\Collection
     return $this->provider;
   }
   /**
-   * Name of the PubSub topic for the environment.
-   *
-   * @param string $pubsubTopic
+   * @param string
    */
   public function setPubsubTopic($pubsubTopic)
   {
@@ -410,9 +316,7 @@ class GoogleCloudApigeeV1EnvironmentConfig extends \Google\Collection
     return $this->pubsubTopic;
   }
   /**
-   * List of resource references in the environment.
-   *
-   * @param GoogleCloudApigeeV1ReferenceConfig[] $resourceReferences
+   * @param GoogleCloudApigeeV1ReferenceConfig[]
    */
   public function setResourceReferences($resourceReferences)
   {
@@ -426,9 +330,7 @@ class GoogleCloudApigeeV1EnvironmentConfig extends \Google\Collection
     return $this->resourceReferences;
   }
   /**
-   * List of resource versions in the environment.
-   *
-   * @param GoogleCloudApigeeV1ResourceConfig[] $resources
+   * @param GoogleCloudApigeeV1ResourceConfig[]
    */
   public function setResources($resources)
   {
@@ -442,10 +344,7 @@ class GoogleCloudApigeeV1EnvironmentConfig extends \Google\Collection
     return $this->resources;
   }
   /**
-   * Revision ID of the environment configuration. The higher the value, the
-   * more recently the configuration was deployed.
-   *
-   * @param string $revisionId
+   * @param string
    */
   public function setRevisionId($revisionId)
   {
@@ -459,9 +358,7 @@ class GoogleCloudApigeeV1EnvironmentConfig extends \Google\Collection
     return $this->revisionId;
   }
   /**
-   * DEPRECATED: Use revision_id.
-   *
-   * @param string $sequenceNumber
+   * @param string
    */
   public function setSequenceNumber($sequenceNumber)
   {
@@ -475,10 +372,7 @@ class GoogleCloudApigeeV1EnvironmentConfig extends \Google\Collection
     return $this->sequenceNumber;
   }
   /**
-   * List of target servers in the environment. Disabled target servers are not
-   * displayed.
-   *
-   * @param GoogleCloudApigeeV1TargetServerConfig[] $targets
+   * @param GoogleCloudApigeeV1TargetServerConfig[]
    */
   public function setTargets($targets)
   {
@@ -492,10 +386,7 @@ class GoogleCloudApigeeV1EnvironmentConfig extends \Google\Collection
     return $this->targets;
   }
   /**
-   * Trace configurations. Contains config for the environment and config
-   * overrides for specific API proxies.
-   *
-   * @param GoogleCloudApigeeV1RuntimeTraceConfig $traceConfig
+   * @param GoogleCloudApigeeV1RuntimeTraceConfig
    */
   public function setTraceConfig(GoogleCloudApigeeV1RuntimeTraceConfig $traceConfig)
   {
@@ -509,10 +400,7 @@ class GoogleCloudApigeeV1EnvironmentConfig extends \Google\Collection
     return $this->traceConfig;
   }
   /**
-   * Unique ID for the environment configuration. The ID will only change if the
-   * environment is deleted and recreated.
-   *
-   * @param string $uid
+   * @param string
    */
   public function setUid($uid)
   {

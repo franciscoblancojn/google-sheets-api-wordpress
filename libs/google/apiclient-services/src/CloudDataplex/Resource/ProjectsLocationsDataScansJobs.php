@@ -33,14 +33,12 @@ use Google\Service\CloudDataplex\GoogleCloudDataplexV1ListDataScanJobsResponse;
 class ProjectsLocationsDataScansJobs extends \Google\Service\Resource
 {
   /**
-   * Generates recommended data quality rules based on the results of a data
-   * profiling scan.Use the recommendations to build rules for a data quality
-   * scan. (jobs.generateDataQualityRules)
+   * Generates recommended DataQualityRule from a data profiling DataScan.
+   * (jobs.generateDataQualityRules)
    *
-   * @param string $name Required. The name must be one of the following: The name
-   * of a data scan with at least one successful, completed data profiling job The
-   * name of a successful, completed data profiling job (a data scan job where the
-   * job type is data profiling)
+   * @param string $name Required. The name should be either * the name of a
+   * datascan with at least one successful completed data profiling job, or * the
+   * name of a successful completed data profiling datascan job.
    * @param GoogleCloudDataplexV1GenerateDataQualityRulesRequest $postBody
    * @param array $optParams Optional parameters.
    * @return GoogleCloudDataplexV1GenerateDataQualityRulesResponse
@@ -58,7 +56,7 @@ class ProjectsLocationsDataScansJobs extends \Google\Service\Resource
    * @param string $name Required. The resource name of the DataScanJob: projects/
    * {project}/locations/{location_id}/dataScans/{data_scan_id}/jobs/{data_scan_jo
    * b_id} where project refers to a project_id or project_number and location_id
-   * refers to a Google Cloud region.
+   * refers to a GCP region.
    * @param array $optParams Optional parameters.
    *
    * @opt_param string view Optional. Select the DataScanJob view to return.
@@ -79,7 +77,7 @@ class ProjectsLocationsDataScansJobs extends \Google\Service\Resource
    * @param string $parent Required. The resource name of the parent environment:
    * projects/{project}/locations/{location_id}/dataScans/{data_scan_id} where
    * project refers to a project_id or project_number and location_id refers to a
-   * Google Cloud region.
+   * GCP region.
    * @param array $optParams Optional parameters.
    *
    * @opt_param string filter Optional. An expression for filtering the results of

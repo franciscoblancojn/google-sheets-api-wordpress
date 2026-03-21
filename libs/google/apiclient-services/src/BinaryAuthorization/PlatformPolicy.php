@@ -20,38 +20,22 @@ namespace Google\Service\BinaryAuthorization;
 class PlatformPolicy extends \Google\Model
 {
   /**
-   * Optional. A description comment about the policy.
-   *
    * @var string
    */
   public $description;
-  /**
-   * Optional. Used to prevent updating the policy when another request has
-   * updated it since it was retrieved.
-   *
-   * @var string
-   */
-  public $etag;
   protected $gkePolicyType = GkePolicy::class;
   protected $gkePolicyDataType = '';
   /**
-   * Output only. The relative resource name of the Binary Authorization
-   * platform policy, in the form of `projects/platforms/policies`.
-   *
    * @var string
    */
   public $name;
   /**
-   * Output only. Time when the policy was last updated.
-   *
    * @var string
    */
   public $updateTime;
 
   /**
-   * Optional. A description comment about the policy.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -65,26 +49,7 @@ class PlatformPolicy extends \Google\Model
     return $this->description;
   }
   /**
-   * Optional. Used to prevent updating the policy when another request has
-   * updated it since it was retrieved.
-   *
-   * @param string $etag
-   */
-  public function setEtag($etag)
-  {
-    $this->etag = $etag;
-  }
-  /**
-   * @return string
-   */
-  public function getEtag()
-  {
-    return $this->etag;
-  }
-  /**
-   * Optional. GKE platform-specific policy.
-   *
-   * @param GkePolicy $gkePolicy
+   * @param GkePolicy
    */
   public function setGkePolicy(GkePolicy $gkePolicy)
   {
@@ -98,10 +63,7 @@ class PlatformPolicy extends \Google\Model
     return $this->gkePolicy;
   }
   /**
-   * Output only. The relative resource name of the Binary Authorization
-   * platform policy, in the form of `projects/platforms/policies`.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -115,9 +77,7 @@ class PlatformPolicy extends \Google\Model
     return $this->name;
   }
   /**
-   * Output only. Time when the policy was last updated.
-   *
-   * @param string $updateTime
+   * @param string
    */
   public function setUpdateTime($updateTime)
   {

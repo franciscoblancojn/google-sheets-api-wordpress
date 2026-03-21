@@ -19,28 +19,16 @@ namespace Google\Service\CloudFilestore;
 
 class ListSnapshotsResponse extends \Google\Collection
 {
-  protected $collection_key = 'unreachable';
+  protected $collection_key = 'snapshots';
   /**
-   * The token you can use to retrieve the next page of results. Not returned if
-   * there are no more results in the list.
-   *
    * @var string
    */
   public $nextPageToken;
   protected $snapshotsType = Snapshot::class;
   protected $snapshotsDataType = 'array';
-  /**
-   * Unordered list. Locations that could not be reached.
-   *
-   * @var string[]
-   */
-  public $unreachable;
 
   /**
-   * The token you can use to retrieve the next page of results. Not returned if
-   * there are no more results in the list.
-   *
-   * @param string $nextPageToken
+   * @param string
    */
   public function setNextPageToken($nextPageToken)
   {
@@ -54,9 +42,7 @@ class ListSnapshotsResponse extends \Google\Collection
     return $this->nextPageToken;
   }
   /**
-   * A list of snapshots in the project for the specified instance.
-   *
-   * @param Snapshot[] $snapshots
+   * @param Snapshot[]
    */
   public function setSnapshots($snapshots)
   {
@@ -68,22 +54,6 @@ class ListSnapshotsResponse extends \Google\Collection
   public function getSnapshots()
   {
     return $this->snapshots;
-  }
-  /**
-   * Unordered list. Locations that could not be reached.
-   *
-   * @param string[] $unreachable
-   */
-  public function setUnreachable($unreachable)
-  {
-    $this->unreachable = $unreachable;
-  }
-  /**
-   * @return string[]
-   */
-  public function getUnreachable()
-  {
-    return $this->unreachable;
   }
 }
 

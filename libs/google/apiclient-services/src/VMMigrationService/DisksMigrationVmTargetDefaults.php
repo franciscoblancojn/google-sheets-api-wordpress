@@ -21,8 +21,6 @@ class DisksMigrationVmTargetDefaults extends \Google\Collection
 {
   protected $collection_key = 'networkTags';
   /**
-   * Optional. Additional licenses to assign to the VM.
-   *
    * @var string[]
    */
   public $additionalLicenses;
@@ -30,83 +28,49 @@ class DisksMigrationVmTargetDefaults extends \Google\Collection
   protected $bootDiskDefaultsDataType = '';
   protected $computeSchedulingType = ComputeScheduling::class;
   protected $computeSchedulingDataType = '';
-  /**
-   * Optional. Defines whether the instance has integrity monitoring enabled.
-   *
-   * @var bool
-   */
-  public $enableIntegrityMonitoring;
-  /**
-   * Optional. Defines whether the instance has vTPM enabled.
-   *
-   * @var bool
-   */
-  public $enableVtpm;
   protected $encryptionType = Encryption::class;
   protected $encryptionDataType = '';
   /**
-   * Optional. The hostname to assign to the VM.
-   *
    * @var string
    */
   public $hostname;
   /**
-   * Optional. A map of labels to associate with the VM.
-   *
    * @var string[]
    */
   public $labels;
   /**
-   * Required. The machine type to create the VM with.
-   *
    * @var string
    */
   public $machineType;
   /**
-   * Optional. The machine type series to create the VM with. For presentation
-   * only.
-   *
    * @var string
    */
   public $machineTypeSeries;
   /**
-   * Optional. The metadata key/value pairs to assign to the VM.
-   *
    * @var string[]
    */
   public $metadata;
   protected $networkInterfacesType = NetworkInterface::class;
   protected $networkInterfacesDataType = 'array';
   /**
-   * Optional. A list of network tags to associate with the VM.
-   *
    * @var string[]
    */
   public $networkTags;
   /**
-   * Optional. Defines whether the instance has Secure Boot enabled. This can be
-   * set to true only if the VM boot option is EFI.
-   *
    * @var bool
    */
   public $secureBoot;
   /**
-   * Optional. The service account to associate the VM with.
-   *
    * @var string
    */
   public $serviceAccount;
   /**
-   * Required. The name of the VM to create.
-   *
    * @var string
    */
   public $vmName;
 
   /**
-   * Optional. Additional licenses to assign to the VM.
-   *
-   * @param string[] $additionalLicenses
+   * @param string[]
    */
   public function setAdditionalLicenses($additionalLicenses)
   {
@@ -120,9 +84,7 @@ class DisksMigrationVmTargetDefaults extends \Google\Collection
     return $this->additionalLicenses;
   }
   /**
-   * Optional. Details of the boot disk of the VM.
-   *
-   * @param BootDiskDefaults $bootDiskDefaults
+   * @param BootDiskDefaults
    */
   public function setBootDiskDefaults(BootDiskDefaults $bootDiskDefaults)
   {
@@ -136,10 +98,7 @@ class DisksMigrationVmTargetDefaults extends \Google\Collection
     return $this->bootDiskDefaults;
   }
   /**
-   * Optional. Compute instance scheduling information (if empty default is
-   * used).
-   *
-   * @param ComputeScheduling $computeScheduling
+   * @param ComputeScheduling
    */
   public function setComputeScheduling(ComputeScheduling $computeScheduling)
   {
@@ -153,41 +112,7 @@ class DisksMigrationVmTargetDefaults extends \Google\Collection
     return $this->computeScheduling;
   }
   /**
-   * Optional. Defines whether the instance has integrity monitoring enabled.
-   *
-   * @param bool $enableIntegrityMonitoring
-   */
-  public function setEnableIntegrityMonitoring($enableIntegrityMonitoring)
-  {
-    $this->enableIntegrityMonitoring = $enableIntegrityMonitoring;
-  }
-  /**
-   * @return bool
-   */
-  public function getEnableIntegrityMonitoring()
-  {
-    return $this->enableIntegrityMonitoring;
-  }
-  /**
-   * Optional. Defines whether the instance has vTPM enabled.
-   *
-   * @param bool $enableVtpm
-   */
-  public function setEnableVtpm($enableVtpm)
-  {
-    $this->enableVtpm = $enableVtpm;
-  }
-  /**
-   * @return bool
-   */
-  public function getEnableVtpm()
-  {
-    return $this->enableVtpm;
-  }
-  /**
-   * Optional. The encryption to apply to the VM.
-   *
-   * @param Encryption $encryption
+   * @param Encryption
    */
   public function setEncryption(Encryption $encryption)
   {
@@ -201,9 +126,7 @@ class DisksMigrationVmTargetDefaults extends \Google\Collection
     return $this->encryption;
   }
   /**
-   * Optional. The hostname to assign to the VM.
-   *
-   * @param string $hostname
+   * @param string
    */
   public function setHostname($hostname)
   {
@@ -217,9 +140,7 @@ class DisksMigrationVmTargetDefaults extends \Google\Collection
     return $this->hostname;
   }
   /**
-   * Optional. A map of labels to associate with the VM.
-   *
-   * @param string[] $labels
+   * @param string[]
    */
   public function setLabels($labels)
   {
@@ -233,9 +154,7 @@ class DisksMigrationVmTargetDefaults extends \Google\Collection
     return $this->labels;
   }
   /**
-   * Required. The machine type to create the VM with.
-   *
-   * @param string $machineType
+   * @param string
    */
   public function setMachineType($machineType)
   {
@@ -249,10 +168,7 @@ class DisksMigrationVmTargetDefaults extends \Google\Collection
     return $this->machineType;
   }
   /**
-   * Optional. The machine type series to create the VM with. For presentation
-   * only.
-   *
-   * @param string $machineTypeSeries
+   * @param string
    */
   public function setMachineTypeSeries($machineTypeSeries)
   {
@@ -266,9 +182,7 @@ class DisksMigrationVmTargetDefaults extends \Google\Collection
     return $this->machineTypeSeries;
   }
   /**
-   * Optional. The metadata key/value pairs to assign to the VM.
-   *
-   * @param string[] $metadata
+   * @param string[]
    */
   public function setMetadata($metadata)
   {
@@ -282,9 +196,7 @@ class DisksMigrationVmTargetDefaults extends \Google\Collection
     return $this->metadata;
   }
   /**
-   * Optional. NICs to attach to the VM.
-   *
-   * @param NetworkInterface[] $networkInterfaces
+   * @param NetworkInterface[]
    */
   public function setNetworkInterfaces($networkInterfaces)
   {
@@ -298,9 +210,7 @@ class DisksMigrationVmTargetDefaults extends \Google\Collection
     return $this->networkInterfaces;
   }
   /**
-   * Optional. A list of network tags to associate with the VM.
-   *
-   * @param string[] $networkTags
+   * @param string[]
    */
   public function setNetworkTags($networkTags)
   {
@@ -314,10 +224,7 @@ class DisksMigrationVmTargetDefaults extends \Google\Collection
     return $this->networkTags;
   }
   /**
-   * Optional. Defines whether the instance has Secure Boot enabled. This can be
-   * set to true only if the VM boot option is EFI.
-   *
-   * @param bool $secureBoot
+   * @param bool
    */
   public function setSecureBoot($secureBoot)
   {
@@ -331,9 +238,7 @@ class DisksMigrationVmTargetDefaults extends \Google\Collection
     return $this->secureBoot;
   }
   /**
-   * Optional. The service account to associate the VM with.
-   *
-   * @param string $serviceAccount
+   * @param string
    */
   public function setServiceAccount($serviceAccount)
   {
@@ -347,9 +252,7 @@ class DisksMigrationVmTargetDefaults extends \Google\Collection
     return $this->serviceAccount;
   }
   /**
-   * Required. The name of the VM to create.
-   *
-   * @param string $vmName
+   * @param string
    */
   public function setVmName($vmName)
   {

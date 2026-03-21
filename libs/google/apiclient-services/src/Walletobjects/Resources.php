@@ -28,10 +28,6 @@ class Resources extends \Google\Collection
   protected $flightClassesDataType = 'array';
   protected $flightObjectsType = FlightObject::class;
   protected $flightObjectsDataType = 'array';
-  protected $genericClassesType = GenericClass::class;
-  protected $genericClassesDataType = 'array';
-  protected $genericObjectsType = GenericObject::class;
-  protected $genericObjectsDataType = 'array';
   protected $giftCardClassesType = GiftCardClass::class;
   protected $giftCardClassesDataType = 'array';
   protected $giftCardObjectsType = GiftCardObject::class;
@@ -50,9 +46,7 @@ class Resources extends \Google\Collection
   protected $transitObjectsDataType = 'array';
 
   /**
-   * A list of event ticket classes.
-   *
-   * @param EventTicketClass[] $eventTicketClasses
+   * @param EventTicketClass[]
    */
   public function setEventTicketClasses($eventTicketClasses)
   {
@@ -66,9 +60,7 @@ class Resources extends \Google\Collection
     return $this->eventTicketClasses;
   }
   /**
-   * A list of event ticket objects.
-   *
-   * @param EventTicketObject[] $eventTicketObjects
+   * @param EventTicketObject[]
    */
   public function setEventTicketObjects($eventTicketObjects)
   {
@@ -82,9 +74,7 @@ class Resources extends \Google\Collection
     return $this->eventTicketObjects;
   }
   /**
-   * A list of flight classes.
-   *
-   * @param FlightClass[] $flightClasses
+   * @param FlightClass[]
    */
   public function setFlightClasses($flightClasses)
   {
@@ -98,9 +88,7 @@ class Resources extends \Google\Collection
     return $this->flightClasses;
   }
   /**
-   * A list of flight objects.
-   *
-   * @param FlightObject[] $flightObjects
+   * @param FlightObject[]
    */
   public function setFlightObjects($flightObjects)
   {
@@ -114,41 +102,7 @@ class Resources extends \Google\Collection
     return $this->flightObjects;
   }
   /**
-   * A list of generic classes.
-   *
-   * @param GenericClass[] $genericClasses
-   */
-  public function setGenericClasses($genericClasses)
-  {
-    $this->genericClasses = $genericClasses;
-  }
-  /**
-   * @return GenericClass[]
-   */
-  public function getGenericClasses()
-  {
-    return $this->genericClasses;
-  }
-  /**
-   * A list of generic objects.
-   *
-   * @param GenericObject[] $genericObjects
-   */
-  public function setGenericObjects($genericObjects)
-  {
-    $this->genericObjects = $genericObjects;
-  }
-  /**
-   * @return GenericObject[]
-   */
-  public function getGenericObjects()
-  {
-    return $this->genericObjects;
-  }
-  /**
-   * A list of gift card classes.
-   *
-   * @param GiftCardClass[] $giftCardClasses
+   * @param GiftCardClass[]
    */
   public function setGiftCardClasses($giftCardClasses)
   {
@@ -162,9 +116,7 @@ class Resources extends \Google\Collection
     return $this->giftCardClasses;
   }
   /**
-   * A list of gift card objects.
-   *
-   * @param GiftCardObject[] $giftCardObjects
+   * @param GiftCardObject[]
    */
   public function setGiftCardObjects($giftCardObjects)
   {
@@ -178,9 +130,7 @@ class Resources extends \Google\Collection
     return $this->giftCardObjects;
   }
   /**
-   * A list of loyalty classes.
-   *
-   * @param LoyaltyClass[] $loyaltyClasses
+   * @param LoyaltyClass[]
    */
   public function setLoyaltyClasses($loyaltyClasses)
   {
@@ -194,9 +144,7 @@ class Resources extends \Google\Collection
     return $this->loyaltyClasses;
   }
   /**
-   * A list of loyalty objects.
-   *
-   * @param LoyaltyObject[] $loyaltyObjects
+   * @param LoyaltyObject[]
    */
   public function setLoyaltyObjects($loyaltyObjects)
   {
@@ -210,9 +158,7 @@ class Resources extends \Google\Collection
     return $this->loyaltyObjects;
   }
   /**
-   * A list of offer classes.
-   *
-   * @param OfferClass[] $offerClasses
+   * @param OfferClass[]
    */
   public function setOfferClasses($offerClasses)
   {
@@ -226,9 +172,7 @@ class Resources extends \Google\Collection
     return $this->offerClasses;
   }
   /**
-   * A list of offer objects.
-   *
-   * @param OfferObject[] $offerObjects
+   * @param OfferObject[]
    */
   public function setOfferObjects($offerObjects)
   {
@@ -242,9 +186,7 @@ class Resources extends \Google\Collection
     return $this->offerObjects;
   }
   /**
-   * A list of transit classes.
-   *
-   * @param TransitClass[] $transitClasses
+   * @param TransitClass[]
    */
   public function setTransitClasses($transitClasses)
   {
@@ -258,9 +200,7 @@ class Resources extends \Google\Collection
     return $this->transitClasses;
   }
   /**
-   * A list of transit objects.
-   *
-   * @param TransitObject[] $transitObjects
+   * @param TransitObject[]
    */
   public function setTransitObjects($transitObjects)
   {

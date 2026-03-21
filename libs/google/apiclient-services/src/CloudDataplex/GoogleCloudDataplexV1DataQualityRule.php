@@ -17,45 +17,25 @@
 
 namespace Google\Service\CloudDataplex;
 
-class GoogleCloudDataplexV1DataQualityRule extends \Google\Collection
+class GoogleCloudDataplexV1DataQualityRule extends \Google\Model
 {
-  protected $collection_key = 'debugQueries';
   /**
-   * Optional. The unnested column which this rule is evaluated against.
-   *
    * @var string
    */
   public $column;
-  protected $debugQueriesType = GoogleCloudDataplexV1DataQualityRuleDebugQuery::class;
-  protected $debugQueriesDataType = 'array';
   /**
-   * Optional. Description of the rule. The maximum length is 1,024 characters.
-   *
    * @var string
    */
   public $description;
   /**
-   * Optional. The dimension a rule belongs to. Results are also aggregated at
-   * the dimension level. Custom dimension name is supported with all uppercase
-   * letters and maximum length of 30 characters.
-   *
    * @var string
    */
   public $dimension;
   /**
-   * Optional. Rows with null values will automatically fail a rule, unless
-   * ignore_null is true. In that case, such null rows are trivially considered
-   * passing.This field is only valid for the following type of rules:
-   * RangeExpectation RegexExpectation SetExpectation UniquenessExpectation
-   *
    * @var bool
    */
   public $ignoreNull;
   /**
-   * Optional. A mutable name for the rule. The name must contain only letters
-   * (a-z, A-Z), numbers (0-9), or hyphens (-). The maximum length is 63
-   * characters. Must start with a letter. Must end with a number or a letter.
-   *
    * @var string
    */
   public $name;
@@ -73,29 +53,14 @@ class GoogleCloudDataplexV1DataQualityRule extends \Google\Collection
   protected $sqlAssertionDataType = '';
   protected $statisticRangeExpectationType = GoogleCloudDataplexV1DataQualityRuleStatisticRangeExpectation::class;
   protected $statisticRangeExpectationDataType = '';
-  /**
-   * Optional. Whether the Rule is active or suspended. Default is false.
-   *
-   * @var bool
-   */
-  public $suspended;
   protected $tableConditionExpectationType = GoogleCloudDataplexV1DataQualityRuleTableConditionExpectation::class;
   protected $tableConditionExpectationDataType = '';
-  /**
-   * Optional. The minimum ratio of passing_rows / total_rows required to pass
-   * this rule, with a range of 0.0, 1.0.0 indicates default value (i.e.
-   * 1.0).This field is only valid for row-level type rules.
-   *
-   * @var 
-   */
   public $threshold;
   protected $uniquenessExpectationType = GoogleCloudDataplexV1DataQualityRuleUniquenessExpectation::class;
   protected $uniquenessExpectationDataType = '';
 
   /**
-   * Optional. The unnested column which this rule is evaluated against.
-   *
-   * @param string $column
+   * @param string
    */
   public function setColumn($column)
   {
@@ -109,26 +74,7 @@ class GoogleCloudDataplexV1DataQualityRule extends \Google\Collection
     return $this->column;
   }
   /**
-   * Optional. Specifies the debug queries for this rule. Currently, only one
-   * query is supported, but this may be expanded in the future.
-   *
-   * @param GoogleCloudDataplexV1DataQualityRuleDebugQuery[] $debugQueries
-   */
-  public function setDebugQueries($debugQueries)
-  {
-    $this->debugQueries = $debugQueries;
-  }
-  /**
-   * @return GoogleCloudDataplexV1DataQualityRuleDebugQuery[]
-   */
-  public function getDebugQueries()
-  {
-    return $this->debugQueries;
-  }
-  /**
-   * Optional. Description of the rule. The maximum length is 1,024 characters.
-   *
-   * @param string $description
+   * @param string
    */
   public function setDescription($description)
   {
@@ -142,11 +88,7 @@ class GoogleCloudDataplexV1DataQualityRule extends \Google\Collection
     return $this->description;
   }
   /**
-   * Optional. The dimension a rule belongs to. Results are also aggregated at
-   * the dimension level. Custom dimension name is supported with all uppercase
-   * letters and maximum length of 30 characters.
-   *
-   * @param string $dimension
+   * @param string
    */
   public function setDimension($dimension)
   {
@@ -160,12 +102,7 @@ class GoogleCloudDataplexV1DataQualityRule extends \Google\Collection
     return $this->dimension;
   }
   /**
-   * Optional. Rows with null values will automatically fail a rule, unless
-   * ignore_null is true. In that case, such null rows are trivially considered
-   * passing.This field is only valid for the following type of rules:
-   * RangeExpectation RegexExpectation SetExpectation UniquenessExpectation
-   *
-   * @param bool $ignoreNull
+   * @param bool
    */
   public function setIgnoreNull($ignoreNull)
   {
@@ -179,11 +116,7 @@ class GoogleCloudDataplexV1DataQualityRule extends \Google\Collection
     return $this->ignoreNull;
   }
   /**
-   * Optional. A mutable name for the rule. The name must contain only letters
-   * (a-z, A-Z), numbers (0-9), or hyphens (-). The maximum length is 63
-   * characters. Must start with a letter. Must end with a number or a letter.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -197,9 +130,7 @@ class GoogleCloudDataplexV1DataQualityRule extends \Google\Collection
     return $this->name;
   }
   /**
-   * Row-level rule which evaluates whether each column value is null.
-   *
-   * @param GoogleCloudDataplexV1DataQualityRuleNonNullExpectation $nonNullExpectation
+   * @param GoogleCloudDataplexV1DataQualityRuleNonNullExpectation
    */
   public function setNonNullExpectation(GoogleCloudDataplexV1DataQualityRuleNonNullExpectation $nonNullExpectation)
   {
@@ -213,10 +144,7 @@ class GoogleCloudDataplexV1DataQualityRule extends \Google\Collection
     return $this->nonNullExpectation;
   }
   /**
-   * Row-level rule which evaluates whether each column value lies between a
-   * specified range.
-   *
-   * @param GoogleCloudDataplexV1DataQualityRuleRangeExpectation $rangeExpectation
+   * @param GoogleCloudDataplexV1DataQualityRuleRangeExpectation
    */
   public function setRangeExpectation(GoogleCloudDataplexV1DataQualityRuleRangeExpectation $rangeExpectation)
   {
@@ -230,10 +158,7 @@ class GoogleCloudDataplexV1DataQualityRule extends \Google\Collection
     return $this->rangeExpectation;
   }
   /**
-   * Row-level rule which evaluates whether each column value matches a
-   * specified regex.
-   *
-   * @param GoogleCloudDataplexV1DataQualityRuleRegexExpectation $regexExpectation
+   * @param GoogleCloudDataplexV1DataQualityRuleRegexExpectation
    */
   public function setRegexExpectation(GoogleCloudDataplexV1DataQualityRuleRegexExpectation $regexExpectation)
   {
@@ -247,10 +172,7 @@ class GoogleCloudDataplexV1DataQualityRule extends \Google\Collection
     return $this->regexExpectation;
   }
   /**
-   * Row-level rule which evaluates whether each row in a table passes the
-   * specified condition.
-   *
-   * @param GoogleCloudDataplexV1DataQualityRuleRowConditionExpectation $rowConditionExpectation
+   * @param GoogleCloudDataplexV1DataQualityRuleRowConditionExpectation
    */
   public function setRowConditionExpectation(GoogleCloudDataplexV1DataQualityRuleRowConditionExpectation $rowConditionExpectation)
   {
@@ -264,10 +186,7 @@ class GoogleCloudDataplexV1DataQualityRule extends \Google\Collection
     return $this->rowConditionExpectation;
   }
   /**
-   * Row-level rule which evaluates whether each column value is contained by a
-   * specified set.
-   *
-   * @param GoogleCloudDataplexV1DataQualityRuleSetExpectation $setExpectation
+   * @param GoogleCloudDataplexV1DataQualityRuleSetExpectation
    */
   public function setSetExpectation(GoogleCloudDataplexV1DataQualityRuleSetExpectation $setExpectation)
   {
@@ -281,10 +200,7 @@ class GoogleCloudDataplexV1DataQualityRule extends \Google\Collection
     return $this->setExpectation;
   }
   /**
-   * Aggregate rule which evaluates the number of rows returned for the provided
-   * statement. If any rows are returned, this rule fails.
-   *
-   * @param GoogleCloudDataplexV1DataQualityRuleSqlAssertion $sqlAssertion
+   * @param GoogleCloudDataplexV1DataQualityRuleSqlAssertion
    */
   public function setSqlAssertion(GoogleCloudDataplexV1DataQualityRuleSqlAssertion $sqlAssertion)
   {
@@ -298,10 +214,7 @@ class GoogleCloudDataplexV1DataQualityRule extends \Google\Collection
     return $this->sqlAssertion;
   }
   /**
-   * Aggregate rule which evaluates whether the column aggregate statistic lies
-   * between a specified range.
-   *
-   * @param GoogleCloudDataplexV1DataQualityRuleStatisticRangeExpectation $statisticRangeExpectation
+   * @param GoogleCloudDataplexV1DataQualityRuleStatisticRangeExpectation
    */
   public function setStatisticRangeExpectation(GoogleCloudDataplexV1DataQualityRuleStatisticRangeExpectation $statisticRangeExpectation)
   {
@@ -315,26 +228,7 @@ class GoogleCloudDataplexV1DataQualityRule extends \Google\Collection
     return $this->statisticRangeExpectation;
   }
   /**
-   * Optional. Whether the Rule is active or suspended. Default is false.
-   *
-   * @param bool $suspended
-   */
-  public function setSuspended($suspended)
-  {
-    $this->suspended = $suspended;
-  }
-  /**
-   * @return bool
-   */
-  public function getSuspended()
-  {
-    return $this->suspended;
-  }
-  /**
-   * Aggregate rule which evaluates whether the provided expression is true for
-   * a table.
-   *
-   * @param GoogleCloudDataplexV1DataQualityRuleTableConditionExpectation $tableConditionExpectation
+   * @param GoogleCloudDataplexV1DataQualityRuleTableConditionExpectation
    */
   public function setTableConditionExpectation(GoogleCloudDataplexV1DataQualityRuleTableConditionExpectation $tableConditionExpectation)
   {
@@ -356,9 +250,7 @@ class GoogleCloudDataplexV1DataQualityRule extends \Google\Collection
     return $this->threshold;
   }
   /**
-   * Row-level rule which evaluates whether each column value is unique.
-   *
-   * @param GoogleCloudDataplexV1DataQualityRuleUniquenessExpectation $uniquenessExpectation
+   * @param GoogleCloudDataplexV1DataQualityRuleUniquenessExpectation
    */
   public function setUniquenessExpectation(GoogleCloudDataplexV1DataQualityRuleUniquenessExpectation $uniquenessExpectation)
   {

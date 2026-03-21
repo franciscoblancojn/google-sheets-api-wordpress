@@ -17,16 +17,10 @@
 
 namespace Google\Service\Integrations\Resource;
 
-use Google\Service\Integrations\GoogleCloudIntegrationsV1alphaDownloadTestCaseResponse;
 use Google\Service\Integrations\GoogleCloudIntegrationsV1alphaExecuteTestCaseRequest;
 use Google\Service\Integrations\GoogleCloudIntegrationsV1alphaExecuteTestCaseResponse;
-use Google\Service\Integrations\GoogleCloudIntegrationsV1alphaExecuteTestCasesRequest;
-use Google\Service\Integrations\GoogleCloudIntegrationsV1alphaExecuteTestCasesResponse;
-use Google\Service\Integrations\GoogleCloudIntegrationsV1alphaListTestCasesResponse;
-use Google\Service\Integrations\GoogleCloudIntegrationsV1alphaTakeoverTestCaseEditLockRequest;
+use Google\Service\Integrations\GoogleCloudIntegrationsV1alphaListTestCaseExecutionsResponse;
 use Google\Service\Integrations\GoogleCloudIntegrationsV1alphaTestCase;
-use Google\Service\Integrations\GoogleCloudIntegrationsV1alphaUploadTestCaseRequest;
-use Google\Service\Integrations\GoogleCloudIntegrationsV1alphaUploadTestCaseResponse;
 use Google\Service\Integrations\GoogleProtobufEmpty;
 
 /**
@@ -73,42 +67,6 @@ class ProjectsLocationsIntegrationsVersionsTestCases extends \Google\Service\Res
     return $this->call('delete', [$params], GoogleProtobufEmpty::class);
   }
   /**
-   * Downloads a test case. Retrieves the `TestCase` for a given `test_case_id`
-   * and returns the response as a string. (testCases.download)
-   *
-   * @param string $name Required. The test case to download. Format: projects/{pr
-   * oject}/locations/{location}/integrations/{integration}/versions/{integration_
-   * version}/testCases/{test_case_id}
-   * @param array $optParams Optional parameters.
-   *
-   * @opt_param string fileFormat File format for download request.
-   * @return GoogleCloudIntegrationsV1alphaDownloadTestCaseResponse
-   * @throws \Google\Service\Exception
-   */
-  public function download($name, $optParams = [])
-  {
-    $params = ['name' => $name];
-    $params = array_merge($params, $optParams);
-    return $this->call('download', [$params], GoogleCloudIntegrationsV1alphaDownloadTestCaseResponse::class);
-  }
-  /**
-   * Executes all test cases in an integration version. (testCases.execute)
-   *
-   * @param string $parent Required. The parent resource whose test cases are
-   * executed. Format: projects/{project}/locations/{location}/integrations/{integ
-   * ration}/versions/{integration_version}
-   * @param GoogleCloudIntegrationsV1alphaExecuteTestCasesRequest $postBody
-   * @param array $optParams Optional parameters.
-   * @return GoogleCloudIntegrationsV1alphaExecuteTestCasesResponse
-   * @throws \Google\Service\Exception
-   */
-  public function execute($parent, GoogleCloudIntegrationsV1alphaExecuteTestCasesRequest $postBody, $optParams = [])
-  {
-    $params = ['parent' => $parent, 'postBody' => $postBody];
-    $params = array_merge($params, $optParams);
-    return $this->call('execute', [$params], GoogleCloudIntegrationsV1alphaExecuteTestCasesResponse::class);
-  }
-  /**
    * Executes functional test (testCases.executeTest)
    *
    * @param string $testCaseName Required. Test case resource name
@@ -138,36 +96,45 @@ class ProjectsLocationsIntegrationsVersionsTestCases extends \Google\Service\Res
     return $this->call('get', [$params], GoogleCloudIntegrationsV1alphaTestCase::class);
   }
   /**
-   * Lists all the test cases that satisfy the filters.
-   * (testCases.listProjectsLocationsIntegrationsVersionsTestCases)
+   * Lists the results of all functional test executions. The response includes
+   * the same information as the [execution
+   * log](https://cloud.google.com/application-integration/docs/viewing-logs) in
+   * the Integration UI. (testCases.listExecutions)
    *
-   * @param string $parent Required. The parent resource where this TestCase was
-   * created.
+   * @param string $parent Required. The parent resource name of the test case
+   * execution.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string filter Optional. Standard filter field. Filtering as
-   * supported in https://developers.google.com/authorized-
-   * buyers/apis/guides/list-filters.
+   * @opt_param string filter Optional. Standard filter field, we support
+   * filtering on following fields: test_case_id: the ID of the test case.
+   * CreateTimestamp: the execution created time. event_execution_state: the state
+   * of the executions. execution_id: the id of the execution. trigger_id: the id
+   * of the trigger. parameter_type: the type of the parameters involved in the
+   * execution. All fields support for EQUALS, in additional: CreateTimestamp
+   * support for LESS_THAN, GREATER_THAN ParameterType support for HAS For
+   * example: "parameter_type" HAS \"string\" Also supports operators like AND,
+   * OR, NOT For example, trigger_id=\"id1\" AND test_case_id=\"testCaseId\"
    * @opt_param string orderBy Optional. The results would be returned in order
-   * specified here. Currently supported sort keys are: Descending sort order for
-   * "last_modified_time", "created_time". Ascending sort order for "name".
-   * @opt_param int pageSize Optional. The maximum number of test cases to return.
-   * The service may return fewer than this value. If unspecified, at most 100
-   * test cases will be returned.
-   * @opt_param string pageToken Optional. A page token, received from a previous
-   * `ListTestCases` call. Provide this to retrieve the subsequent page. When
-   * paginating, all other parameters provided to `ListTestCases` must match the
-   * call that provided the page token.
-   * @opt_param string readMask Optional. The mask which specifies fields that
-   * need to be returned in the TestCases's response.
-   * @return GoogleCloudIntegrationsV1alphaListTestCasesResponse
+   * you specified here. Currently supporting "last_modified_time" and
+   * "create_time".
+   * @opt_param int pageSize Optional. The size of entries in the response.
+   * @opt_param string pageToken Optional. The token returned in the previous
+   * response.
+   * @opt_param string readMask Optional. View mask for the response data. If set,
+   * only the field specified will be returned as part of the result. If not set,
+   * all fields in event execution info will be filled and returned.
+   * @opt_param bool truncateParams Optional. If true, the service will truncate
+   * the params to only keep the first 1000 characters of string params and empty
+   * the executions in order to make response smaller. Only works for UI and when
+   * the params fields are not filtered out.
+   * @return GoogleCloudIntegrationsV1alphaListTestCaseExecutionsResponse
    * @throws \Google\Service\Exception
    */
-  public function listProjectsLocationsIntegrationsVersionsTestCases($parent, $optParams = [])
+  public function listExecutions($parent, $optParams = [])
   {
     $params = ['parent' => $parent];
     $params = array_merge($params, $optParams);
-    return $this->call('list', [$params], GoogleCloudIntegrationsV1alphaListTestCasesResponse::class);
+    return $this->call('listExecutions', [$params], GoogleCloudIntegrationsV1alphaListTestCaseExecutionsResponse::class);
   }
   /**
    * Updates a test case (testCases.patch)
@@ -186,44 +153,6 @@ class ProjectsLocationsIntegrationsVersionsTestCases extends \Google\Service\Res
     $params = ['name' => $name, 'postBody' => $postBody];
     $params = array_merge($params, $optParams);
     return $this->call('patch', [$params], GoogleCloudIntegrationsV1alphaTestCase::class);
-  }
-  /**
-   * Clear the lock fields and assign them to current user
-   * (testCases.takeoverEditLock)
-   *
-   * @param string $name Required. The ID of test case to takeover edit lock.
-   * Format: projects/{project}/locations/{location}/integrations/{integration}/ve
-   * rsions/{integration_version}/testCases/{test_case_id}
-   * @param GoogleCloudIntegrationsV1alphaTakeoverTestCaseEditLockRequest $postBody
-   * @param array $optParams Optional parameters.
-   * @return GoogleCloudIntegrationsV1alphaTestCase
-   * @throws \Google\Service\Exception
-   */
-  public function takeoverEditLock($name, GoogleCloudIntegrationsV1alphaTakeoverTestCaseEditLockRequest $postBody, $optParams = [])
-  {
-    $params = ['name' => $name, 'postBody' => $postBody];
-    $params = array_merge($params, $optParams);
-    return $this->call('takeoverEditLock', [$params], GoogleCloudIntegrationsV1alphaTestCase::class);
-  }
-  /**
-   * Uploads a test case. The content can be a previously downloaded test case.
-   * Performs the same function as CreateTestCase, but accepts input in a string
-   * format, which holds the complete representation of the TestCase content.
-   * (testCases.upload)
-   *
-   * @param string $parent Required. The test case to upload. Format: projects/{pr
-   * oject}/locations/{location}/integrations/{integration}/versions/{integration_
-   * version}
-   * @param GoogleCloudIntegrationsV1alphaUploadTestCaseRequest $postBody
-   * @param array $optParams Optional parameters.
-   * @return GoogleCloudIntegrationsV1alphaUploadTestCaseResponse
-   * @throws \Google\Service\Exception
-   */
-  public function upload($parent, GoogleCloudIntegrationsV1alphaUploadTestCaseRequest $postBody, $optParams = [])
-  {
-    $params = ['parent' => $parent, 'postBody' => $postBody];
-    $params = array_merge($params, $optParams);
-    return $this->call('upload', [$params], GoogleCloudIntegrationsV1alphaUploadTestCaseResponse::class);
   }
 }
 

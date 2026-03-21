@@ -23,21 +23,9 @@ class EgressPolicy extends \Google\Model
   protected $egressFromDataType = '';
   protected $egressToType = EgressTo::class;
   protected $egressToDataType = '';
-  /**
-   * Optional. Human-readable title for the egress rule. The title must be
-   * unique within the perimeter and can not exceed 100 characters. Within the
-   * access policy, the combined length of all rule titles must not exceed
-   * 240,000 characters.
-   *
-   * @var string
-   */
-  public $title;
 
   /**
-   * Defines conditions on the source of a request causing this EgressPolicy to
-   * apply.
-   *
-   * @param EgressFrom $egressFrom
+   * @param EgressFrom
    */
   public function setEgressFrom(EgressFrom $egressFrom)
   {
@@ -51,10 +39,7 @@ class EgressPolicy extends \Google\Model
     return $this->egressFrom;
   }
   /**
-   * Defines the conditions on the ApiOperation and destination resources that
-   * cause this EgressPolicy to apply.
-   *
-   * @param EgressTo $egressTo
+   * @param EgressTo
    */
   public function setEgressTo(EgressTo $egressTo)
   {
@@ -66,25 +51,6 @@ class EgressPolicy extends \Google\Model
   public function getEgressTo()
   {
     return $this->egressTo;
-  }
-  /**
-   * Optional. Human-readable title for the egress rule. The title must be
-   * unique within the perimeter and can not exceed 100 characters. Within the
-   * access policy, the combined length of all rule titles must not exceed
-   * 240,000 characters.
-   *
-   * @param string $title
-   */
-  public function setTitle($title)
-  {
-    $this->title = $title;
-  }
-  /**
-   * @return string
-   */
-  public function getTitle()
-  {
-    return $this->title;
   }
 }
 

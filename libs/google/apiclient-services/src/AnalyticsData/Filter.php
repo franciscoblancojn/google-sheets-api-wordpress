@@ -21,14 +21,7 @@ class Filter extends \Google\Model
 {
   protected $betweenFilterType = BetweenFilter::class;
   protected $betweenFilterDataType = '';
-  protected $emptyFilterType = EmptyFilter::class;
-  protected $emptyFilterDataType = '';
   /**
-   * The dimension name or metric name. In most methods, dimensions & metrics
-   * can be used for the first time in this field. However in a
-   * RunPivotReportRequest, this field must be additionally specified by name in
-   * the RunPivotReportRequest's dimensions or metrics.
-   *
    * @var string
    */
   public $fieldName;
@@ -40,9 +33,7 @@ class Filter extends \Google\Model
   protected $stringFilterDataType = '';
 
   /**
-   * A filter for two values.
-   *
-   * @param BetweenFilter $betweenFilter
+   * @param BetweenFilter
    */
   public function setBetweenFilter(BetweenFilter $betweenFilter)
   {
@@ -56,28 +47,7 @@ class Filter extends \Google\Model
     return $this->betweenFilter;
   }
   /**
-   * A filter for empty values such as "(not set)" and "" values.
-   *
-   * @param EmptyFilter $emptyFilter
-   */
-  public function setEmptyFilter(EmptyFilter $emptyFilter)
-  {
-    $this->emptyFilter = $emptyFilter;
-  }
-  /**
-   * @return EmptyFilter
-   */
-  public function getEmptyFilter()
-  {
-    return $this->emptyFilter;
-  }
-  /**
-   * The dimension name or metric name. In most methods, dimensions & metrics
-   * can be used for the first time in this field. However in a
-   * RunPivotReportRequest, this field must be additionally specified by name in
-   * the RunPivotReportRequest's dimensions or metrics.
-   *
-   * @param string $fieldName
+   * @param string
    */
   public function setFieldName($fieldName)
   {
@@ -91,9 +61,7 @@ class Filter extends \Google\Model
     return $this->fieldName;
   }
   /**
-   * A filter for in list values.
-   *
-   * @param InListFilter $inListFilter
+   * @param InListFilter
    */
   public function setInListFilter(InListFilter $inListFilter)
   {
@@ -107,9 +75,7 @@ class Filter extends \Google\Model
     return $this->inListFilter;
   }
   /**
-   * A filter for numeric or date values.
-   *
-   * @param NumericFilter $numericFilter
+   * @param NumericFilter
    */
   public function setNumericFilter(NumericFilter $numericFilter)
   {
@@ -123,9 +89,7 @@ class Filter extends \Google\Model
     return $this->numericFilter;
   }
   /**
-   * Strings related filter.
-   *
-   * @param StringFilter $stringFilter
+   * @param StringFilter
    */
   public function setStringFilter(StringFilter $stringFilter)
   {

@@ -21,15 +21,10 @@ class ImageImport extends \Google\Collection
 {
   protected $collection_key = 'recentImageImportJobs';
   /**
-   * Immutable. The path to the Cloud Storage file from which the image should
-   * be imported.
-   *
    * @var string
    */
   public $cloudStorageUri;
   /**
-   * Output only. The time the image import was created.
-   *
    * @var string
    */
   public $createTime;
@@ -37,11 +32,7 @@ class ImageImport extends \Google\Collection
   protected $diskImageTargetDefaultsDataType = '';
   protected $encryptionType = Encryption::class;
   protected $encryptionDataType = '';
-  protected $machineImageTargetDefaultsType = MachineImageTargetDetails::class;
-  protected $machineImageTargetDefaultsDataType = '';
   /**
-   * Output only. The resource path of the ImageImport.
-   *
    * @var string
    */
   public $name;
@@ -49,10 +40,7 @@ class ImageImport extends \Google\Collection
   protected $recentImageImportJobsDataType = 'array';
 
   /**
-   * Immutable. The path to the Cloud Storage file from which the image should
-   * be imported.
-   *
-   * @param string $cloudStorageUri
+   * @param string
    */
   public function setCloudStorageUri($cloudStorageUri)
   {
@@ -66,9 +54,7 @@ class ImageImport extends \Google\Collection
     return $this->cloudStorageUri;
   }
   /**
-   * Output only. The time the image import was created.
-   *
-   * @param string $createTime
+   * @param string
    */
   public function setCreateTime($createTime)
   {
@@ -82,10 +68,7 @@ class ImageImport extends \Google\Collection
     return $this->createTime;
   }
   /**
-   * Immutable. Target details for importing a disk image, will be used by
-   * ImageImportJob.
-   *
-   * @param DiskImageTargetDetails $diskImageTargetDefaults
+   * @param DiskImageTargetDetails
    */
   public function setDiskImageTargetDefaults(DiskImageTargetDetails $diskImageTargetDefaults)
   {
@@ -99,10 +82,7 @@ class ImageImport extends \Google\Collection
     return $this->diskImageTargetDefaults;
   }
   /**
-   * Immutable. The encryption details used by the image import process during
-   * the image adaptation for Compute Engine.
-   *
-   * @param Encryption $encryption
+   * @param Encryption
    */
   public function setEncryption(Encryption $encryption)
   {
@@ -116,26 +96,7 @@ class ImageImport extends \Google\Collection
     return $this->encryption;
   }
   /**
-   * Immutable. Target details for importing a machine image, will be used by
-   * ImageImportJob.
-   *
-   * @param MachineImageTargetDetails $machineImageTargetDefaults
-   */
-  public function setMachineImageTargetDefaults(MachineImageTargetDetails $machineImageTargetDefaults)
-  {
-    $this->machineImageTargetDefaults = $machineImageTargetDefaults;
-  }
-  /**
-   * @return MachineImageTargetDetails
-   */
-  public function getMachineImageTargetDefaults()
-  {
-    return $this->machineImageTargetDefaults;
-  }
-  /**
-   * Output only. The resource path of the ImageImport.
-   *
-   * @param string $name
+   * @param string
    */
   public function setName($name)
   {
@@ -149,10 +110,7 @@ class ImageImport extends \Google\Collection
     return $this->name;
   }
   /**
-   * Output only. The result of the most recent runs for this ImageImport. All
-   * jobs for this ImageImport can be listed via ListImageImportJobs.
-   *
-   * @param ImageImportJob[] $recentImageImportJobs
+   * @param ImageImportJob[]
    */
   public function setRecentImageImportJobs($recentImageImportJobs)
   {

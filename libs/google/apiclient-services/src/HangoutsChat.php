@@ -28,89 +28,53 @@ use Google\Client;
  *
  * <p>
  * For more information about this service, see the API
- * <a href="https://developers.google.com/workspace/chat" target="_blank">Documentation</a>
+ * <a href="https://developers.google.com/hangouts/chat" target="_blank">Documentation</a>
  * </p>
  *
  * @author Google, Inc.
  */
 class HangoutsChat extends \Google\Service
 {
-  /** Delete conversations and spaces owned by your organization and remove access to associated files in Google Chat. */
-  const CHAT_ADMIN_DELETE =
-      "https://www.googleapis.com/auth/chat.admin.delete";
-  /** View, add, update and remove members and managers in conversations owned by your organization. */
-  const CHAT_ADMIN_MEMBERSHIPS =
-      "https://www.googleapis.com/auth/chat.admin.memberships";
-  /** View members and managers in conversations owned by your organization. */
-  const CHAT_ADMIN_MEMBERSHIPS_READONLY =
-      "https://www.googleapis.com/auth/chat.admin.memberships.readonly";
-  /** View or edit display name, description, and other metadata for all Google Chat conversations owned by your organization. */
-  const CHAT_ADMIN_SPACES =
-      "https://www.googleapis.com/auth/chat.admin.spaces";
-  /** View display name, description, and other metadata for all Google Chat conversations owned by your organization. */
-  const CHAT_ADMIN_SPACES_READONLY =
-      "https://www.googleapis.com/auth/chat.admin.spaces.readonly";
-  /** On their own behalf, apps in Google Chat can delete conversations and spaces and remove access to associated files. */
-  const CHAT_APP_DELETE =
-      "https://www.googleapis.com/auth/chat.app.delete";
-  /** On their own behalf, apps in Google Chat can see, add, update, and remove members from conversations and spaces. */
-  const CHAT_APP_MEMBERSHIPS =
-      "https://www.googleapis.com/auth/chat.app.memberships";
-  /** On their own behalf, apps in Google Chat can see all messages and their associated reactions and message content. */
-  const CHAT_APP_MESSAGES_READONLY =
-      "https://www.googleapis.com/auth/chat.app.messages.readonly";
-  /** On their own behalf, apps in Google Chat can create conversations and spaces and see or update their metadata (including history settings and access settings). */
-  const CHAT_APP_SPACES =
-      "https://www.googleapis.com/auth/chat.app.spaces";
-  /** On their own behalf, apps in Google Chat can create conversations and spaces. */
-  const CHAT_APP_SPACES_CREATE =
-      "https://www.googleapis.com/auth/chat.app.spaces.create";
   /** Private Service: https://www.googleapis.com/auth/chat.bot. */
   const CHAT_BOT =
       "https://www.googleapis.com/auth/chat.bot";
-  /** View, create, and delete custom emoji in Google Chat. */
-  const CHAT_CUSTOMEMOJIS =
-      "https://www.googleapis.com/auth/chat.customemojis";
-  /** View custom emoji in Google Chat. */
-  const CHAT_CUSTOMEMOJIS_READONLY =
-      "https://www.googleapis.com/auth/chat.customemojis.readonly";
-  /** Delete conversations and spaces and remove access to associated files in Google Chat. */
+  /** Delete conversations and spaces & remove access to associated files in Google Chat. */
   const CHAT_DELETE =
       "https://www.googleapis.com/auth/chat.delete";
   /** Import spaces, messages, and memberships into Google Chat.. */
   const CHAT_IMPORT =
       "https://www.googleapis.com/auth/chat.import";
-  /** See, add, update, and remove members from conversations and spaces in Google Chat. */
+  /** View, add, update, and remove members from conversations in Google Chat. */
   const CHAT_MEMBERSHIPS =
       "https://www.googleapis.com/auth/chat.memberships";
-  /** Add and remove itself from conversations and spaces in Google Chat. */
+  /** Add and remove itself from conversations in Google Chat. */
   const CHAT_MEMBERSHIPS_APP =
       "https://www.googleapis.com/auth/chat.memberships.app";
   /** View members in Google Chat conversations.. */
   const CHAT_MEMBERSHIPS_READONLY =
       "https://www.googleapis.com/auth/chat.memberships.readonly";
-  /** See, compose, send, update, and delete messages as well as their message content; add, see, and delete reactions to messages.. */
+  /** View, compose, send, update, and delete messages, and add, view, and delete reactions to messages.. */
   const CHAT_MESSAGES =
       "https://www.googleapis.com/auth/chat.messages";
   /** Compose and send messages in Google Chat. */
   const CHAT_MESSAGES_CREATE =
       "https://www.googleapis.com/auth/chat.messages.create";
-  /** See, add, and delete reactions as well as their reaction content to messages in Google Chat. */
+  /** View, add, and delete reactions to messages in Google Chat. */
   const CHAT_MESSAGES_REACTIONS =
       "https://www.googleapis.com/auth/chat.messages.reactions";
   /** Add reactions to messages in Google Chat. */
   const CHAT_MESSAGES_REACTIONS_CREATE =
       "https://www.googleapis.com/auth/chat.messages.reactions.create";
-  /** View reactions as well as their reaction content to messages in Google Chat. */
+  /** View reactions to messages in Google Chat. */
   const CHAT_MESSAGES_REACTIONS_READONLY =
       "https://www.googleapis.com/auth/chat.messages.reactions.readonly";
-  /** See messages as well as their reactions and message content in Google Chat. */
+  /** View messages and reactions in Google Chat. */
   const CHAT_MESSAGES_READONLY =
       "https://www.googleapis.com/auth/chat.messages.readonly";
-  /** Create conversations and spaces and see or update metadata (including history settings and access settings) in Google Chat. */
+  /** Create conversations and spaces and see or edit metadata (including history settings and access settings) in Google Chat. */
   const CHAT_SPACES =
       "https://www.googleapis.com/auth/chat.spaces";
-  /** Create new conversations and spaces in Google Chat. */
+  /** Create new conversations in Google Chat. */
   const CHAT_SPACES_CREATE =
       "https://www.googleapis.com/auth/chat.spaces.create";
   /** View chat and spaces in Google Chat. */
@@ -122,11 +86,7 @@ class HangoutsChat extends \Google\Service
   /** View last read time for Google Chat conversations. */
   const CHAT_USERS_READSTATE_READONLY =
       "https://www.googleapis.com/auth/chat.users.readstate.readonly";
-  /** Read and update your space settings. */
-  const CHAT_USERS_SPACESETTINGS =
-      "https://www.googleapis.com/auth/chat.users.spacesettings";
 
-  public $customEmojis;
   public $media;
   public $spaces;
   public $spaces_members;
@@ -135,7 +95,6 @@ class HangoutsChat extends \Google\Service
   public $spaces_messages_reactions;
   public $spaces_spaceEvents;
   public $users_spaces;
-  public $users_spaces_spaceNotificationSetting;
   public $users_spaces_threads;
   public $rootUrlTemplate;
 
@@ -156,57 +115,6 @@ class HangoutsChat extends \Google\Service
     $this->version = 'v1';
     $this->serviceName = 'chat';
 
-    $this->customEmojis = new HangoutsChat\Resource\CustomEmojis(
-        $this,
-        $this->serviceName,
-        'customEmojis',
-        [
-          'methods' => [
-            'create' => [
-              'path' => 'v1/customEmojis',
-              'httpMethod' => 'POST',
-              'parameters' => [],
-            ],'delete' => [
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'DELETE',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'get' => [
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'list' => [
-              'path' => 'v1/customEmojis',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'filter' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-                'pageSize' => [
-                  'location' => 'query',
-                  'type' => 'integer',
-                ],
-                'pageToken' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
-            ],
-          ]
-        ]
-    );
     $this->media = new HangoutsChat\Resource\Media(
         $this,
         $this->serviceName,
@@ -271,10 +179,6 @@ class HangoutsChat extends \Google\Service
                   'type' => 'string',
                   'required' => true,
                 ],
-                'useAdminAccess' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ],
               ],
             ],'findDirectMessage' => [
               'path' => 'v1/spaces:findDirectMessage',
@@ -293,10 +197,6 @@ class HangoutsChat extends \Google\Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ],
-                'useAdminAccess' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
                 ],
               ],
             ],'list' => [
@@ -329,35 +229,6 @@ class HangoutsChat extends \Google\Service
                   'location' => 'query',
                   'type' => 'string',
                 ],
-                'useAdminAccess' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ],
-              ],
-            ],'search' => [
-              'path' => 'v1/spaces:search',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'orderBy' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-                'pageSize' => [
-                  'location' => 'query',
-                  'type' => 'integer',
-                ],
-                'pageToken' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-                'query' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-                'useAdminAccess' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ],
               ],
             ],'setup' => [
               'path' => 'v1/spaces:setup',
@@ -382,10 +253,6 @@ class HangoutsChat extends \Google\Service
                   'type' => 'string',
                   'required' => true,
                 ],
-                'useAdminAccess' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ],
               ],
             ],'delete' => [
               'path' => 'v1/{+name}',
@@ -396,10 +263,6 @@ class HangoutsChat extends \Google\Service
                   'type' => 'string',
                   'required' => true,
                 ],
-                'useAdminAccess' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ],
               ],
             ],'get' => [
               'path' => 'v1/{+name}',
@@ -409,10 +272,6 @@ class HangoutsChat extends \Google\Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
-                ],
-                'useAdminAccess' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
                 ],
               ],
             ],'list' => [
@@ -444,10 +303,6 @@ class HangoutsChat extends \Google\Service
                   'location' => 'query',
                   'type' => 'boolean',
                 ],
-                'useAdminAccess' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
-                ],
               ],
             ],'patch' => [
               'path' => 'v1/{+name}',
@@ -461,10 +316,6 @@ class HangoutsChat extends \Google\Service
                 'updateMask' => [
                   'location' => 'query',
                   'type' => 'string',
-                ],
-                'useAdminAccess' => [
-                  'location' => 'query',
-                  'type' => 'boolean',
                 ],
               ],
             ],
@@ -728,40 +579,6 @@ class HangoutsChat extends \Google\Service
                 ],
               ],
             ],'updateSpaceReadState' => [
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'PATCH',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-                'updateMask' => [
-                  'location' => 'query',
-                  'type' => 'string',
-                ],
-              ],
-            ],
-          ]
-        ]
-    );
-    $this->users_spaces_spaceNotificationSetting = new HangoutsChat\Resource\UsersSpacesSpaceNotificationSetting(
-        $this,
-        $this->serviceName,
-        'spaceNotificationSetting',
-        [
-          'methods' => [
-            'get' => [
-              'path' => 'v1/{+name}',
-              'httpMethod' => 'GET',
-              'parameters' => [
-                'name' => [
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ],
-              ],
-            ],'patch' => [
               'path' => 'v1/{+name}',
               'httpMethod' => 'PATCH',
               'parameters' => [

@@ -20,36 +20,20 @@ namespace Google\Service\SA360;
 class GoogleAdsSearchads360V0ResourcesAdGroupLabel extends \Google\Model
 {
   /**
-   * Immutable. The ad group to which the label is attached.
-   *
    * @var string
    */
   public $adGroup;
   /**
-   * Immutable. The label assigned to the ad group.
-   *
    * @var string
    */
   public $label;
   /**
-   * Output only. The ID of the Customer which owns the label.
-   *
-   * @var string
-   */
-  public $ownerCustomerId;
-  /**
-   * Immutable. The resource name of the ad group label. Ad group label resource
-   * names have the form:
-   * `customers/{owner_customer_id}/adGroupLabels/{ad_group_id}~{label_id}`
-   *
    * @var string
    */
   public $resourceName;
 
   /**
-   * Immutable. The ad group to which the label is attached.
-   *
-   * @param string $adGroup
+   * @param string
    */
   public function setAdGroup($adGroup)
   {
@@ -63,9 +47,7 @@ class GoogleAdsSearchads360V0ResourcesAdGroupLabel extends \Google\Model
     return $this->adGroup;
   }
   /**
-   * Immutable. The label assigned to the ad group.
-   *
-   * @param string $label
+   * @param string
    */
   public function setLabel($label)
   {
@@ -79,27 +61,7 @@ class GoogleAdsSearchads360V0ResourcesAdGroupLabel extends \Google\Model
     return $this->label;
   }
   /**
-   * Output only. The ID of the Customer which owns the label.
-   *
-   * @param string $ownerCustomerId
-   */
-  public function setOwnerCustomerId($ownerCustomerId)
-  {
-    $this->ownerCustomerId = $ownerCustomerId;
-  }
-  /**
-   * @return string
-   */
-  public function getOwnerCustomerId()
-  {
-    return $this->ownerCustomerId;
-  }
-  /**
-   * Immutable. The resource name of the ad group label. Ad group label resource
-   * names have the form:
-   * `customers/{owner_customer_id}/adGroupLabels/{ad_group_id}~{label_id}`
-   *
-   * @param string $resourceName
+   * @param string
    */
   public function setResourceName($resourceName)
   {

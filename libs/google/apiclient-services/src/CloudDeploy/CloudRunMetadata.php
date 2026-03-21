@@ -21,48 +21,24 @@ class CloudRunMetadata extends \Google\Collection
 {
   protected $collection_key = 'serviceUrls';
   /**
-   * Output only. The name of the Cloud Run job that is associated with a
-   * `Rollout`. Format is
-   * `projects/{project}/locations/{location}/jobs/{job_name}`.
-   *
    * @var string
    */
   public $job;
   /**
-   * Output only. The Cloud Run Revision id associated with a `Rollout`.
-   *
    * @var string
    */
   public $revision;
   /**
-   * Output only. The name of the Cloud Run Service that is associated with a
-   * `Rollout`. Format is
-   * `projects/{project}/locations/{location}/services/{service}`.
-   *
    * @var string
    */
   public $service;
   /**
-   * Output only. The Cloud Run Service urls that are associated with a
-   * `Rollout`.
-   *
    * @var string[]
    */
   public $serviceUrls;
-  /**
-   * Output only. The Cloud Run worker pool associated with a `Rollout`. Format
-   * is `projects/{project}/locations/{location}/workerPools/{worker_pool}`.
-   *
-   * @var string
-   */
-  public $workerPool;
 
   /**
-   * Output only. The name of the Cloud Run job that is associated with a
-   * `Rollout`. Format is
-   * `projects/{project}/locations/{location}/jobs/{job_name}`.
-   *
-   * @param string $job
+   * @param string
    */
   public function setJob($job)
   {
@@ -76,9 +52,7 @@ class CloudRunMetadata extends \Google\Collection
     return $this->job;
   }
   /**
-   * Output only. The Cloud Run Revision id associated with a `Rollout`.
-   *
-   * @param string $revision
+   * @param string
    */
   public function setRevision($revision)
   {
@@ -92,11 +66,7 @@ class CloudRunMetadata extends \Google\Collection
     return $this->revision;
   }
   /**
-   * Output only. The name of the Cloud Run Service that is associated with a
-   * `Rollout`. Format is
-   * `projects/{project}/locations/{location}/services/{service}`.
-   *
-   * @param string $service
+   * @param string
    */
   public function setService($service)
   {
@@ -110,10 +80,7 @@ class CloudRunMetadata extends \Google\Collection
     return $this->service;
   }
   /**
-   * Output only. The Cloud Run Service urls that are associated with a
-   * `Rollout`.
-   *
-   * @param string[] $serviceUrls
+   * @param string[]
    */
   public function setServiceUrls($serviceUrls)
   {
@@ -125,23 +92,6 @@ class CloudRunMetadata extends \Google\Collection
   public function getServiceUrls()
   {
     return $this->serviceUrls;
-  }
-  /**
-   * Output only. The Cloud Run worker pool associated with a `Rollout`. Format
-   * is `projects/{project}/locations/{location}/workerPools/{worker_pool}`.
-   *
-   * @param string $workerPool
-   */
-  public function setWorkerPool($workerPool)
-  {
-    $this->workerPool = $workerPool;
-  }
-  /**
-   * @return string
-   */
-  public function getWorkerPool()
-  {
-    return $this->workerPool;
   }
 }
 
