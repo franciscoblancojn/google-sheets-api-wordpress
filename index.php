@@ -17,10 +17,10 @@ if (!function_exists( 'is_plugin_active' ))
 require_once __DIR__ . '/libs/autoload.php';
 
 //GOSHAP_
-define("GOSHAP_KEY",'GOSHAP');
-define("GOSHAP_CONFIG",'GOSHAP_CONFIG');
+define("GOSHAP_KEY",'GOSHAP_2');
+define("GOSHAP_CONFIG",'GOSHAP_CONFIG_2');
 define("GOSHAP_LOG",true);
-define("GOSHAP_LOG_KEY","GOSHAP_LOG");
+define("GOSHAP_LOG_KEY","GOSHAP_LOG_2");
 define("GOSHAP_LOG_COUNT",100);
 define("GOSHAP_BASENAME",plugin_basename(__FILE__));
 define("GOSHAP_DIR",plugin_dir_path( __FILE__ ));
@@ -83,7 +83,7 @@ github_updater_plugin_wordpress([
 
 use franciscoblancojn\wordpress_utils\FWUSystemLog;
 if (is_admin()) {
-    FWUSystemLog::init("GOSHAP");
+    FWUSystemLog::init(GOSHAP_KEY);
 }
 
 require_once GOSHAP_DIR . 'src/_.php';

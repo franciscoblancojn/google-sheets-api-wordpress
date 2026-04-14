@@ -41,10 +41,6 @@ for ($i = 0; $i < count($ITEMS); $i++) {
     $ITEMS[$i]['APP_NAME'] = esc_attr($ITEMS[$i]['APP_NAME'] ?? 'Sheets API PHP');
     $ITEMS[$i]['SHEETNAME'] = esc_attr($ITEMS[$i]['SHEETNAME'] ?? '');
     $ITEMS[$i]['SPREADSHEET_ID'] = esc_attr($ITEMS[$i]['SPREADSHEET_ID'] ?? '');
-    $ITEMS[$i]['AUTH_CONFIG'] = esc_textarea($ITEMS[$i]['AUTH_CONFIG'] ?
-        json_encode($ITEMS[$i]['AUTH_CONFIG'], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES)
-        :
-        '');
 }
 ?>
 <script>
@@ -57,6 +53,8 @@ for ($i = 0; $i < count($ITEMS); $i++) {
         SPREADSHEET_ID,
         AUTH_CONFIG,
     }) => {
+        let client_email = AUTH_CONFIG?.client_email
+
         return `
         <table class="form-table">
             <tr>
@@ -154,18 +152,18 @@ for ($i = 0; $i < count($ITEMS); $i++) {
                         placeholder="{.....}"
                         class="large-text code"
                         style="min-height: 500px;"
-                        rows="8">${AUTH_CONFIG}</textarea>
+                        rows="8">${JSON.stringify(AUTH_CONFIG, null, 2)}</textarea>
                 </td>
             </tr>
             ${
-                AUTH_CONFIG?.client_email ?
+                client_email ?
                 `
                 <tr>
                     <th>
                         PERMISOS
                     </th>
                     <td>
-                        Es importante dale permisos de editor a <strong>${AUTH_CONFIG?.client_email}</strong>
+                        Es importante dale permisos de editor a <strong>${client_email}</strong>
                     </td>
                 </tr>
                 `
@@ -184,7 +182,7 @@ for ($i = 0; $i < count($ITEMS); $i++) {
     }) => {
         return `
             <details id="collapse-${index}">
-                <summary style="display: flex;">
+                <summary style="display: flex;align-items:center;">
                     <span>Conexion ${index + 1} (${KEY ?? "Sin Key"})</span>
                     <span style="margin-left: auto; margin-right:1rem">
                     <button 
