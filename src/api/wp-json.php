@@ -4,11 +4,18 @@ use franciscoblancojn\wordpress_utils\FWUSystemLog;
 
 class GOSHAP_WP_JSON
 {
-    public static function api()
+    
+    public static function api($key)
     {
         $CONFIG = get_option(GOSHAP_CONFIG, []);
-        $api = new GOSHAP_Api($CONFIG);
-        return $api;
+        $connections = $CONFIG['connections'] ?? [];
+
+        foreach ($connections as $conn) {
+            if (isset($conn['KEY']) && $conn['KEY'] === $key) {
+                return new GOSHAP_Api($conn);
+            }
+        }
+        return null;
     }
     public static function init()
     {
@@ -20,7 +27,15 @@ class GOSHAP_WP_JSON
 
     public static function sendRows($request)
     {
-        $api = self::api();
+        // 🔥 obtener key desde query param ?k=
+        $key = $request->get_param('k');
+        if (!$key) {
+            return [
+                "status" => "error",
+                'message' => 'Key (k) requerida'
+            ];
+        }
+        $api = self::api($key);
         $values = $request->get_json_params();
         $result = $api->sendRows($values);
         FWUSystemLog::add(GOSHAP_KEY, [
