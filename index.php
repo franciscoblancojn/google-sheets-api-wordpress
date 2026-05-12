@@ -26,12 +26,8 @@ define("GOSHAP_BASENAME",plugin_basename(__FILE__));
 define("GOSHAP_DIR",plugin_dir_path( __FILE__ ));
 define("GOSHAP_URL",plugin_dir_url(__FILE__));
 
-//importar libreria
-// add_system_log("GOSHAP")
-
-
 require_once GOSHAP_DIR . 'update.php';
-github_updater_plugin_wordpress([
+github_updater_plugin_wordpress_v1([
     'basename'=>GOSHAP_BASENAME,
     'dir'=>GOSHAP_DIR,
     'file'=>"index.php",
@@ -87,9 +83,3 @@ if (is_admin()) {
 }
 
 require_once GOSHAP_DIR . 'src/_.php';
-
-// FWUSystemLog::add("GOSHAP", [
-//     "type" => "API",
-//     "message" => "Se envió data a Google Sheets",
-//     "data" => ["id" => 123]
-// ]);
